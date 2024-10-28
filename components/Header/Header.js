@@ -76,7 +76,12 @@ const Header = () =>{
        }
     }, [scrollY])
 
-   
+  const [showMobileMenu, setShowMobileMenu] = useState(false)
+
+  const openMobileMenuHandler = () =>{
+
+    setShowMobileMenu(!showMobileMenu)
+  }
 
 
 
@@ -144,9 +149,22 @@ const Header = () =>{
           </div>
         )}
 
-
+        {isVisible && (
+          <div className={styles.mobileMenuContainer}>
+            <button className={styles.menu_button} onClick={openMobileMenuHandler}> menu </button>
+            {showMobileMenu && (
+              <div className={styles.mobileMenu}>
+                <ul>
+                  <li> {aboutMe} </li>
+                  <li> PORTFOLIO </li>
+                  <li>{contact}</li>
+                </ul>
+              </div>
+          
+            )}
+          </div>
+        )}
       </div>
-       
 
       <div className={styles.headerImage_row}>
         <Image

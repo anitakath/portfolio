@@ -150,8 +150,6 @@ const AboutMe = () => {
 
 
 
-  console.log(aboutMeData)
-
 
   return (
     <div id="aboutMe" className="sub_container">

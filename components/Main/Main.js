@@ -9,10 +9,6 @@ const Main = () =>{
 
     return(
         <div className='container_main'>
-            <h1 className='title_test'> HALLO </h1>
-            <div className='title_test'>
-                moin
-            </div>
            <AboutMe/>
            <Portfolio/>
            <Contact/>
