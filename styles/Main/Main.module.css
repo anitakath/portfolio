@@ -30,11 +30,18 @@
     color: var(--font-dark);
     font-size: 1.5rem;
 
+
+}
+.aboutmeContainer div button{
+    width: 100%;
+    padding: 10px;
+    height: 120px;
+    transition: 0.4s ease;
 }
 
 .aboutmeContainer div button:hover{
-    transition: 0.4s ease;
     color: var(--font-plum);
+    background: rgba(255,255,255,0.5);
 }
 
 
@@ -45,17 +52,82 @@
 .portfolio_container{
     width: 100%;
     min-height: 100vh;
+    max-height: 150vh;
     background: url('/images/kugel.jpg');
     object-fit: cover;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
 }
 
-.portfolio_container h1{
+.portfolio_title{
     color: white;
     font-size: 1.5rem;
-    margin: 20px 0;
+    margin: 30px 0;
     letter-spacing: 1.5px;
+}
+
+.portfolio_field {
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 16px;
+    overflow: scroll; 
+    padding-bottom: 16px;
+}
+
+.portfolio_item{
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 20px;
+  height: 400px;
+  box-shadow: 0px 0px 30px lightgrey;
+  border-radius: 2px;
+  overflow: scroll;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.portfolio_item:hover{
+    transform: scale(1.01);
+    box-shadow: -1px 2px 2px grey;
+    
+}
+
+.description {
+    width: 100%;
+    height: 100%; 
+    border: 2px solid var(--font-plum);
+    padding: 5px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.item_title{
+    border-bottom: 2px solid var(--font-plum);
+    height: 10%;
+    padding: 5px;
+}
+
+.item_image{
+    height: 75%;
+    padding: 5px;
+}
+
+.item_subtitle{
+    background: var(--font-plum);
+    color: beige;
+    padding: 5px;
+    height: 15%;
+}
+
+@media screen and (max-width: 900px){
+    .portfolio_field{
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
 
@@ -86,10 +158,30 @@
 
 .icon{
     font-size: 3rem;
-     cursor:pointer;
+    cursor:pointer;
 }
 
 .icon:hover{
     transition: 0.4s ease;
     color: var(--font-plum);
+}
+
+
+@media screen and (max-width: 800px){
+
+    .flexContainer{
+        flex-direction: column;
+        margin: 0px 5px;
+        
+    }
+
+    .flexContainer div{
+        margin: 30px 0px;
+        width: 100%;
+    }
+
+
+    .icon{
+        font-size: 2.5rem;
+    }
 }
