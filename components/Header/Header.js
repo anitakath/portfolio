@@ -2,7 +2,6 @@ import { useEffect, useState} from 'react'
 import { useCallback } from 'react'
 import Image from 'next/image'
 import { Link } from 'react-scroll'
-
 //REDUX
 import { useDispatch, useSelector } from 'react-redux'
 import { setLanguage } from '@/store/languageSlice'
@@ -142,25 +141,53 @@ const Header = () =>{
         {isVisible && (
           <div className={styles.menuContainer}>
             <ul>
-              <li> {aboutMe} </li>
-              <li> PORTFOLIO </li>
-              <li>{contact}</li>
+              <li>
+                <Link to="aboutMe" smooth={true} duration={500}>
+                  {aboutMe}
+                </Link>
+              </li>
+              <li>
+                <Link to="portfolio" smooth={true} duration={500}>
+                  PORTFOLIO
+                </Link>
+              </li>
+              <li>
+                <Link to="contact" smooth={true} duration={500}>
+                  {contact}
+                </Link>
+              </li>
             </ul>
           </div>
         )}
 
         {isVisible && (
           <div className={styles.mobileMenuContainer}>
-            <button className={styles.menu_button} onClick={openMobileMenuHandler}> menu </button>
+            <button
+              className={styles.menu_button}
+              onClick={openMobileMenuHandler}
+            >
+              menu
+            </button>
             {showMobileMenu && (
               <div className={styles.mobileMenu}>
                 <ul>
-                  <li> {aboutMe} </li>
-                  <li> PORTFOLIO </li>
-                  <li>{contact}</li>
+                  <li>
+                    <Link to="aboutMe" smooth={true} duration={500}>
+                      {aboutMe}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="portfolio" smooth={true} duration={500}>
+                      PORTFOLIO
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="contact" smooth={true} duration={500}>
+                      {contact}
+                    </Link>
+                  </li>
                 </ul>
               </div>
-          
             )}
           </div>
         )}
