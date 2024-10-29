@@ -2,8 +2,10 @@
 //STYLES 
 import styles from '../../styles/Main/Main.module.css'
 import { FaPhone, FaEnvelope, FaInstagram, FaTiktok } from "react-icons/fa";
-
+//REDUX
+import { useSelector } from 'react-redux';
 import Link from 'next/link';
+import { current } from '@reduxjs/toolkit';
 
 const Contact = () =>{
 
@@ -16,9 +18,24 @@ const Contact = () =>{
     window.location.href = "tel:1234567890"; // Ersetze 1234567890 durch deine Telefonnummer
   };
 
+  const currentLanguage = useSelector(
+    (state) => state.language.currentLanguage
+  );
+
+  let title = ""
+
+  if(currentLanguage === "GERMAN"){
+    title = "KONTAKTIERE MICH"
+  } else if ( currentLanguage === "ENGLISH"){
+    title = "CONTACT ME"
+  } else if ( currentLanguage === "SPANISH"){
+    title = "CONTÁCTAME / PÓNGASE EN CONTACTO CONMIGO";
+  }
+
 
   return (
     <div className="sub_container" id="contact">
+      <h1 className={styles.contact_title}> {title} </h1>
       <div className={styles.flexContainer}>
         <div>
           <FaPhone className={styles.icon} onClick={handlePhoneClick} />

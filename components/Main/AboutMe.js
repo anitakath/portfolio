@@ -149,10 +149,20 @@ const AboutMe = () => {
   }, [selectedTopicId]);
 
 
+  let title = "";
+
+  if (currentLanguage === "GERMAN") {
+    title = "ÜBER MICH";
+  } else if (currentLanguage === "ENGLISH") {
+    title = "ABOUT ME";
+  } else if (currentLanguage === "SPANISH") {
+    title = "SOBRE MI";
+  }
 
 
   return (
     <div id="aboutMe" className="sub_container">
+      <h1 className={styles.aboutme_title}> {title} </h1>
       <div className={styles.aboutmeContainer}>
         {modalIsOpen && programming && (
           <ProgrammingModal

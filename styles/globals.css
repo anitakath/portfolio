@@ -6,7 +6,7 @@
   --foreground-dark: #F3F3F4;
   --background-dark: #274156;
   --background-light: #1C6E8C;
-  --foreground-light: #ECEFF8;
+  --foreground-light: rgba(136, 54, 119, 0.2);
   --font-light: #E1E5EE;
   --font-dark: #605856;
   --font-plum: #883677;

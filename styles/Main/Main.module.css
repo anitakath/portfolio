@@ -68,7 +68,7 @@
     letter-spacing: 1.5px;
 }
 
-.portfolio_field {
+.portfolio_field{
     width: 95%;
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
@@ -98,12 +98,15 @@
 .description {
     width: 100%;
     height: 100%; 
-    border: 2px solid var(--font-plum);
-    padding: 5px;
+    padding: 20px;
     border-radius: 2px;
     display: flex;
+    text-align: center;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
+    background: var(--foreground-light);
+    color: var(--font-plum);
+    font-size: 1.2rem;
 }
 
 .item_title{
@@ -136,7 +139,7 @@
 
 .flexContainer{
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -150,6 +153,16 @@
     align-items: center;
     height:100px;
     margin: 0 10px;
+}
+
+.contact_title, .aboutme_title{
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    letter-spacing: 1.5px;
+    margin: 10px 0;
 }
 
 .flexContainer p{
