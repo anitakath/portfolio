@@ -7,75 +7,53 @@ import { useDispatch, useSelector } from 'react-redux'
 import { setLanguage } from '@/store/languageSlice'
 //STYLES + FONT AWESOME
 import styles from '../../styles/Header/Header.module.css'
-import { FaChevronUp } from "react-icons/fa";
+import { FaChevronUp, FaBars } from "react-icons/fa";
+
+const languageMap = {
+  GERMAN: { aboutMe: "ÜBER MICH", contact: "KONTAKT" },
+  ENGLISH: { aboutMe: "ABOUT ME", contact: "CONTACT" },
+  SPANISH: { aboutMe: "SOBRE MI", contact: "CONTACTO" },
+};
 
 const Header = () =>{
   const dispatch = useDispatch()
   const currentLanguage = useSelector((state) => state.language.currentLanguage)
-  const [aboutMe, setAboutMe] = useState('ÜBER MICH')
-  const [contact, setContact] = useState('KONTAKT')
 
- 
-  useEffect(()=>{
-    if (currentLanguage === "ENGLISH") {
-      setAboutMe("ABOUT ME");
-      setContact("CONTACT");
-    } else if (currentLanguage === "GERMAN") {
-      setAboutMe("ÜBER MICH");
-      setContact("KONTAKT");
-    } else if (currentLanguage === "SPANISH") {
-      setAboutMe("SOBRE MI");
-      setContact("CONTACTO");
-    }
-    
-  }, [])
+  const [aboutMe, setAboutMe] = useState(
+    languageMap[currentLanguage]?.aboutMe || "ÜBER MICH"
+  );
+  const [contact, setContact] = useState(
+    languageMap[currentLanguage]?.contact || "KONTAKT"
+  );
 
-  const selectLanguageHandler = (language) =>{
+   const updateLanguage = (language) => {
+     dispatch(setLanguage(language));
+     setAboutMe(languageMap[language].aboutMe);
+     setContact(languageMap[language].contact);
+   };
 
-    if(language === 'GERMAN'){
-      dispatch(setLanguage("GERMAN"));
-      setAboutMe("ÜBER MICH");
-      setContact("KONTAKT");
-    } else if(language === 'ENGLISH'){
-      dispatch(setLanguage("ENGLISH")); 
-      setAboutMe("ABOUT ME")
-      setContact("CONTACT");
-    } else if(language === 'SPANISH'){ 
-      dispatch(setLanguage("SPANISH"));
-      setAboutMe("SOBRE MI")
-      setContact("CONTACTO");
-    }
-  }
+
 
   const [isVisible, setIsVisible] = useState(false);
   const [scrollY, setScrollY] = useState(0);
 
-    
-    const onScroll = useCallback((event) => {
-      const { pageYOffset, scrollY } = window;
-     
-      setScrollY(window.pageYOffset);
-    }, []);
+  const onScroll = useCallback(() => {
+   setScrollY(window.pageYOffset);
+   setIsVisible(window.pageYOffset >= 150);
+  }, []);
 
-    useEffect(() => {
-      //add eventlistener to window
-      window.addEventListener("scroll", onScroll, { passive: true });
-      // remove event on unmount to prevent a memory leak with the cleanup
-      return () => {
-        window.removeEventListener("scroll", onScroll, { passive: true });
-      };
-    }, []);
+  useEffect(() => {
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [onScroll]);
 
 
-    useEffect(()=>{
-       if (scrollY >= 150) {
-         setIsVisible(true);
-       } else if ( scrollY <= 150){
-         setIsVisible(false)
-       }
-    }, [scrollY])
 
-  const [showMobileMenu, setShowMobileMenu] = useState(false)
+
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+
+
+
 
   const openMobileMenuHandler = () =>{
 
@@ -127,17 +105,12 @@ const Header = () =>{
         </div>
 
         <div className={styles.language}>
-          <div>
-            <button onClick={() => selectLanguageHandler("GERMAN")}>🇩🇪</button>
-          </div>
-          <div>
-            <button onClick={() => selectLanguageHandler("ENGLISH")}>🇬🇧</button>
-          </div>
-          <div>
-            <button onClick={() => selectLanguageHandler("SPANISH")}>🇪🇸</button>
-          </div>
+          {Object.keys(languageMap).map((lang) => (
+            <button key={lang} onClick={() => updateLanguage(lang)}>
+              {lang === "GERMAN" ? "🇩🇪" : lang === "ENGLISH" ? "🇬🇧" : "🇪🇸"}
+            </button>
+          ))}
         </div>
-
         {isVisible && (
           <div className={styles.menuContainer}>
             <ul>
@@ -161,12 +134,22 @@ const Header = () =>{
         )}
 
         {isVisible && (
-          <div className={styles.mobileMenuContainer}>
+          <div
+            className={`${
+              showMobileMenu
+                ? styles.mobileMenuContainer_open
+                : styles.mobileMenuContainer_closed
+            }`}
+          >
             <button
               className={styles.menu_button}
               onClick={openMobileMenuHandler}
             >
-              menu
+              <FaBars
+                className={`${
+                  showMobileMenu ? styles.menu_icon_up : styles.menu_icon_closed
+                }`}
+              />
             </button>
             {showMobileMenu && (
               <div className={styles.mobileMenu}>
@@ -199,6 +182,7 @@ const Header = () =>{
           height={1400}
           width={1400}
           className={styles.portrait}
+          alt={"a portrait of me"}
         />
       </div>
     </div>

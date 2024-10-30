@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import styles from "../../styles/Main/Main.module.css";
+import Image from "next/image";
+
 
 const Portfolio = () => {
   const currentLanguage = useSelector(
@@ -56,6 +58,16 @@ const Portfolio = () => {
                   <h1 className={styles.item_title}>{item.title}</h1>
                   <div className={styles.item_image}>
                     {/* render image here  */}
+                    {item.image && (
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        layout="responsive"
+                        width={1} 
+                        height={1} 
+                        className={styles.portfolio_image}
+                      />
+                    )}
                   </div>
                   <p className={styles.item_subtitle}>{item.subtitle}</p>
                 </>

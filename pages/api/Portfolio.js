@@ -20,7 +20,7 @@ export default function handler(req, res) {
             description:
               "based on Next.js, users can log in using supabase auth and record their sporting progress. The website supports users in analyzing their development and the function is to be added later as part of the development of a community.",
             subtitle: "blalalal",
-            image: "",
+            image: "/images/sports_diary.jpg",
           },
           {
             title: "Online Shop",
@@ -34,7 +34,7 @@ export default function handler(req, res) {
             description:
               "based on Next.js, users can log in using supabase auth and record their sporting progress. The website supports users in analyzing their development and the function is to be added later as part of the development of a community.",
             subtitle: "blalalal",
-            image: "",
+            image: "/images/sports_diary.jpg",
           },
         ],
       },
@@ -54,7 +54,7 @@ export default function handler(req, res) {
             description:
               "Basado en Next.js, el usuario puede iniciar sesión utilizando supabase auth y registrar su progreso deportivo. El sitio web ayuda al usuario a analizar su evolución y la función se añadirá más adelante como parte del desarrollo de una comunidad.",
             subtitle: " blalalal",
-            image: "",
+            image: "/images/sports_diary.jpg",
           },
           {
             title: "Online Shop",
@@ -68,7 +68,7 @@ export default function handler(req, res) {
             description:
               "Basado en Next.js, el usuario puede iniciar sesión utilizando supabase auth y registrar su progreso deportivo. El sitio web ayuda al usuario a analizar su evolución y la función se añadirá más adelante como parte del desarrollo de una comunidad.",
             subtitle: " blalalal",
-            image: "",
+            image: "/images/sports_diary.jpg",
           },
         ],
       },
@@ -88,7 +88,7 @@ export default function handler(req, res) {
             description:
               "basierend auf Next.js kann der User sich mithilfe von supabase auth einloggen und seinen sportlichen Fortschritt festhalten. Die Website unterstützt den User bei der Analyse seiner Entwicklung und später soll die Funktion im Aufbau einer Community hinzugefügt werden.",
             subtitle: "blablblblb",
-            image: "",
+            image: "/images/sports_diary.jpg",
           },
           {
             title: "Online Shop",
@@ -102,7 +102,7 @@ export default function handler(req, res) {
             description:
               "basierend auf Next.js kann der User sich mithilfe von supabase auth einloggen und seinen sportlichen Fortschritt festhalten. Die Website unterstützt den User bei der Analyse seiner Entwicklung und später soll die Funktion im Aufbau einer Community hinzugefügt werden.",
             subtitle: "blablblblb",
-            image: "",
+            image: "/images/sports_diary.jpg",
           },
         ],
       },

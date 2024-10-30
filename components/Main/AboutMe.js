@@ -1,14 +1,9 @@
 import {useState, useEffect} from 'react'
-
 //STYLES
 import styles from '../../styles/Main/Main.module.css'
 import styless from '../../styles/Modals/Modal.module.css'
-
-
 //REDUX
 import { useDispatch, useSelector } from 'react-redux'
-import { changeLanguage } from '@/store/languageSlice';
-
 //MODAL
 import ProgrammingModal from '../aboutme_modals/Programming_modal';
 import Profile from '../Modals/Profile';
@@ -18,15 +13,12 @@ import OtherModal from '../aboutme_modals/Others_modal';
 const AboutMe = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const currentLanguage = useSelector((state) => state.language.currentLanguage)
- 
-
-
   const [aboutMeData, setAboutMeData] = useState([])
-   const [selectedTopicId, setSelectedTopicId] = useState("");
-   const [selectedTopic, setSelectedTopic] = useState({
-     title: "",
-     description: "",
-   });
+  const [selectedTopicId, setSelectedTopicId] = useState("");
+  const [selectedTopic, setSelectedTopic] = useState({
+    title: "",
+    description: "",
+  });
 
    
   useEffect(() => {
@@ -45,7 +37,6 @@ const AboutMe = () => {
         };
 
         fetchData();
-        console.log("english");
     } else if (currentLanguage === "GERMAN") {
         const fetchData = async () => {
           try {
@@ -81,17 +72,6 @@ const AboutMe = () => {
   }, [currentLanguage]);
 
 
-
-
-  console.log(aboutMeData);
-
-
-
-
-
-
-
-
   
 
   const openModal = (topic) => {
@@ -109,20 +89,10 @@ const AboutMe = () => {
     setModalIsOpen(true);
   };
 
-  console.log(selectedTopic)
-
   
-
-
   const closeModal = () => {
     setModalIsOpen(false);
   };
-
-
-
-
-
-
 
 
 
