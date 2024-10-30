@@ -29,7 +29,6 @@
     justify-content: center;
     color: var(--font-dark);
     font-size: 1.5rem;
-
 }
 .aboutmeContainer div button{
     width: 100%;
@@ -101,19 +100,59 @@
     padding: 20px;
     border-radius: 2px;
     display: flex;
+    flex-direction: column;
     text-align: center;
     align-items: center;
     justify-content: center;
     background: var(--foreground-light);
+    overflow: scroll;
+    
+}
+
+.description p{
     color: var(--font-plum);
     font-size: 1.2rem;
 }
 
+.link_div{
+    position: relative;
+    top: 10px;
+    margin: 5px 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project_link{
+    margin: 0px 4px;
+    font-size: 1.1rem;
+}
+
+.span{
+    position: relative;
+    top: 1px;
+}
+
+.project_link:hover{
+    color:var(--font-plum);
+}
+
+.portfolio_icon{
+    border: 2px solid orange;
+}
+
+
 .item_title{
     border-bottom: 2px solid var(--font-plum);
     height: 10%;
-    padding: 5px;
+    padding: 0px 5px;
+    font-size: 1.4rem;
+    position: relative;
+    bottom: 5px;
 }
+
+
 
 .item_image{
     height: 75%;

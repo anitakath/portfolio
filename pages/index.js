@@ -10,10 +10,8 @@ import Header from '@/components/Header/Header'
 import Main from '@/components/Main/Main'
 
 export default function Home() {
-
   const [isVisible, setIsVisible] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-
 
   const openMobileMenuHandler = () => {
     setShowMobileMenu(!showMobileMenu);
@@ -31,7 +29,6 @@ export default function Home() {
         setIsVisible={setIsVisible}
       />
       <Main
-     
         isVisible={isVisible}
         setIsVisible={setIsVisible}
       />
