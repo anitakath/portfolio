@@ -4,16 +4,18 @@ import AboutMe from './AboutMe.js'
 import Portfolio from './Portfolio.js';
 import Contact from './Contact.js';
 
-const Main = () =>{
-
-
-    return(
-        <div className='container_main'>
-           <AboutMe/>
-           <Portfolio/>
-           <Contact/>
-        </div>
-    )
-}
+const Main = ({  isVisible, setIsVisible }) => {
+  return (
+    <div className="container_main">
+      <AboutMe
+       
+        isVisible={setIsVisible}
+        setIsVisible={setIsVisible}
+      />
+      <Portfolio />
+      <Contact />
+    </div>
+  );
+};
 
 export default Main;

@@ -15,7 +15,7 @@ const languageMap = {
   SPANISH: { aboutMe: "SOBRE MI", contact: "CONTACTO" },
 };
 
-const Header = () =>{
+const Header = ({showMobileMenu, setShowMobileMenu, openMobileMenuHandler, isVisible, setIsVisible}) =>{
   const dispatch = useDispatch()
   const currentLanguage = useSelector((state) => state.language.currentLanguage)
 
@@ -34,7 +34,7 @@ const Header = () =>{
 
 
 
-  const [isVisible, setIsVisible] = useState(false);
+  //const [isVisible, setIsVisible] = useState(false);
   const [scrollY, setScrollY] = useState(0);
 
   const onScroll = useCallback(() => {
@@ -50,15 +50,16 @@ const Header = () =>{
 
 
 
-  const [showMobileMenu, setShowMobileMenu] = useState(false);
+  //const [showMobileMenu, setShowMobileMenu] = useState(false);
 
 
 
 
+  /*
   const openMobileMenuHandler = () =>{
 
     setShowMobileMenu(!showMobileMenu)
-  }
+  }*/
 
 
 
