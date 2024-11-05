@@ -1,0 +1,25 @@
+
+
+.table_div{
+    width: 100%;
+    display: flex;
+
+    align-items: center;
+}
+
+
+.table_title{
+    font-weight: bolder;
+    margin: 10px 0px;
+    border-bottom: 1px solid var(--font-plum);
+
+}
+
+.table_table{
+    padding: 5px;
+    display: flex;
+}
+
+.table_item{
+    margin-right: 20px;
+}

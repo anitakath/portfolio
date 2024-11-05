@@ -46,14 +46,22 @@ const Contact = () =>{
           <p> wagner.annekathrin@gmx.de</p>
         </div>
         <div>
-          <Link href="https://www.instagram.com/ankaath/">
+          <Link
+            href="https://www.instagram.com/ankaath/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FaInstagram className={styles.icon} />
           </Link>
 
           <p> ankaath </p>
         </div>
         <div>
-          <Link href="https://www.tiktok.com/@ankaathh" passHref>
+          <Link
+            href="https://www.tiktok.com/@ankaathh"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FaTiktok className={styles.icon} style={{ cursor: "pointer" }} />
           </Link>
 

@@ -20,13 +20,68 @@ export default function handler (req, res){
         id: 3,
         title: "Berufliche Laufbahn",
         description:
-          "Mein beruflicher Werdegang ist geprägt von vielfältigen Erfahrungen und einer stetigen Weiterentwicklung. Während meiner Schulzeit habe ich verschiedene Tätigkeiten ausgeübt, darunter begann es für ca 3 Jahre mit dem Austragen von Zeitungen. Es folgte das Kellnern in einer Eisdiele, da ich merkte, dass ich mehr mit Menschen zu tun haben wollte, sowie die Arbeit im Transportdienst eines Krankenhauses während der Sommerferien. Zusätzlich habe ich auf freiwilliger Basis Nachhilfeunterricht für Grundschüler in einer Gemeinschaftsunterkunft gegeben. Nach meinem Schulabschluss absolvierte ich von 2016 bis 2019 eine Ausbildung zur examinierten Gesundheits- und Krankenpflegerin am städtischen Klinikum Lüneburg. Diese Zeit war extrem prägent und lehrreich. Im Anschluss wechselte ich zum UKE, wo ich im Verlauf meine Weiterbildung zur Hygienementorin abschloss. In dieser Position war ich maßgeblich an der Kontrolle und Optimierung von Hygienestandards auf den Stationen beteiligt und habe Mitarbeiter im Bereich der Hygiene geschult. Auch habe ich, wenn auch nicht offiziell als weitergebildete Praxisanleiterin, des Öfteren Praktikanten und Auszubildende an die Hand genommen und mit ihnen gemeinsam den Pflegealltag gemeistert. Parallel zu meiner beruflichen Tätigkeit habe ich auf autodidaktischer Weised angefangen mir die Programmierung beizubringen, was meine Fähigkeiten und Interessen erweitert hat. Diese breite Palette an Erfahrungen hat mich dazu motiviert, nun den Schritt zu einem Jobwechsel zu gehen. Meine bisherige Laufbahn hat mir gezeigt, dass ich vielseitig einsetzbar bin und mich schnell in neue Aufgabenbereiche einarbeiten kann. Ich bin bereit für neue Herausforderungen und freue mich darauf, mein Wissen und meine Fähigkeiten in einem neuen beruflichen Umfeld einzubringen.",
+          "2019 habe ich meine Ausbildung in der Gesundheits- und Krankenpflege am Städtischen Klinikum Lüneburg erfolgreich abgeschlossen. Nach meinem Wechsel zum Universitätsklinikum Hamburg Eppendorf war ich am Aufbau der Psychosomatischen Station beteiligt und entdeckte dabei meine Freude am Organisieren und projektbasierten Arbeiten. Zu meinen Aufgaben gehörte es, die Station mit medizinischen und pflegerischen Arbeitsmitteln auszustatten sowie die Einführung der elektronischen Patientenakte zu begleiten und anzupassen, was mein Interesse an der Programmierung weckte. Neben der ganzheitlichen Patientenbetreuung absolvierte ich Fortbildungen, die es mir ermöglichten, an Schulen zu unterrichten sowie angehende Hygienementoren des Krankenhauses zu schulen und zu prüfen. Zudem begleitete ich Kollegen auf Station in Fragen zur Krankenhaushygiene. Diese Erfahrungen haben mir gezeigt, dass mir auch das Präsentieren und Schulen von relevanten Themen viel Freude bereitet.",
+        table: [
+          { description: "Medizinisches und pflegerisches Fachwissen " },
+          { description: "Verantwortungsübernahme " },
+          { description: "Kommunikationsstärke " },
+          {
+            description:
+              "Konzentriertes Arbeiten im multiprofessionellen Team und in Notfällen ",
+          },
+          { description: "Zeit- und Materialmanagement " },
+          { description: "Kunden- und Patientenorientierung " },
+          { description: "Problem- und Lösungsorientierung " },
+        ],
+        subdescription:
+          "Mit dem Ziel eines Quereinstiegs in die Programmierung strebe ich danach, meine erworbenen Soft Skills – insbesondere Teamarbeit, Problemlösungsfähigkeiten und Kommunikationsstärke – in diesem neuen Bereich einzusetzen. Ich bin motiviert, meine analytischen Fähigkeiten weiterzuentwickeln und innovative Lösungen zu finden.",
       },
       {
         id: 4,
         title: "Programmierkenntnisse",
         description:
-          "angefangen mit HTML, CSS, JavaScript, ging ich relativ schnell über zu React, Next.js und nun React-Native. Auch der Umgang mit den unterschiedlichsten Styling-Bibliotheken und Frameworks (SASS, Tailwind, ...) und Node.js bin ich vertraut.",
+          "Ich begann mit HTML, CSS und JavaScript und ging relativ schnell über zu React, Next.js sowie React Native. Auch der Umgang mit den unterschiedlichsten Styling-Bibliotheken und Frameworks (SASS, Tailwind usw.) sowie Node.js ist mir vertraut.",
+        table: [
+          {
+            category: "Frontend-Technologien",
+            items: [
+              "HTML",
+              "CSS",
+              "JavaScript",
+              "jQuery",
+              "React",
+              "Next.js",
+              "React Native",
+              "WordPress",
+            ],
+          },
+          {
+            category: "Build-Tools & Paketmanager",
+            items: ["Webpack", "Babel", "npm / Yarn"],
+          },
+          {
+            category: "CSS-Präprozessoren & Frameworks",
+            items: ["Bootstrap", "Material-UI"],
+          },
+          { category: "State Management", items: ["Redux", "MobX"] },
+          { category: "Testing", items: ["React Testing Library", "Cypress"] },
+          {
+            category: "Backend-Technologien (in Entwicklung)",
+            items: ["Node.js", "Express.js", "Firebase", "Supabase", "Heroku"],
+          },
+          {
+            category: "Datenbanken",
+            items: ["MongoDB (NoSQL)", "PostgreSQL (relational)"],
+          },
+          { category: "Cloud-Dienste", items: ["Cloudinary"] },
+          {
+            category: "Projektmanagement-Tools",
+            items: ["Jira", "Miro", "Confluence"],
+          },
+          { category: "API-Kenntnisse", items: ["RESTful APIs", "GraphQL"] },
+        ],
+        subdescription:
+          "Ich sehe mich hauptsächlich als Frontend-Entwicklerin und Projektmanagerin, und bin motiviert, meine Kenntnisse im Backend weiter auszubauen, um ein umfassenderes Verständnis der gesamten Webentwicklung zu erlangen.",
       },
       {
         id: 5,

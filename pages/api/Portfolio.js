@@ -26,7 +26,15 @@ export default function handler(req, res) {
             github_repo: "https://github.com/anitakath/dashboard",
             netlify: "https://sports-diary.netlify.app",
           },
-         
+          {
+            title: "Best Friend App (BFA)",
+            description:
+              "a fun project that I developed with and for my best friend! We now have our own app, created with Expo CLI (React Native), which we can use to invite each other to events. Be it a concert, a restaurant visit or just a pyjama party ",
+            subtitle: " blablabla",
+            image: "",
+            github_repo: "",
+            netlify: "",
+          },
         ],
       },
       {
@@ -51,7 +59,15 @@ export default function handler(req, res) {
             github_repo: "https://github.com/anitakath/dashboard",
             netlify: "https://sports-diary.netlify.app",
           },
-         
+          {
+            title: "Best Friend App (BFA)",
+            description:
+              " ¡un divertido proyecto que he desarrollado con y para mi mejor amiga! Ahora tenemos nuestra propia aplicación, creada con Expo CLI (React Native), que podemos utilizar para invitarnos mutuamente a eventos. Ya sea un concierto, una visita a un restaurante o simplemente una fiesta de pijamas. ",
+            subtitle: " blablabla",
+            image: "",
+            github_repo: "",
+            netlify: "",
+          },
         ],
       },
       {
@@ -64,7 +80,7 @@ export default function handler(req, res) {
               "erstellt mit Next.js werden mithilfe von getStaticProps (SEO!) Daten aus einer supabase table gefetcht und angezeigt. Der User kann Produkte auf seine Wunschliste, oder in seinen Warenkorb legen",
             subtitle: "blablabla",
             image: "/images/onlineshop.jpg",
-            github_repo: "",
+            github_repo: "https://github.com/anitakath/onlineshop",
             netlify: "",
           },
           {
@@ -76,7 +92,15 @@ export default function handler(req, res) {
             github_repo: "https://github.com/anitakath/dashboard",
             netlify: "https://sports-diary.netlify.app",
           },
-          
+          {
+            title: "Best Friend App (BFA)",
+            description:
+              " ein Spaßprojekt, das ich mit und für meine beste Freundin entwickelt habe! Wir haben nun unsere eigene App, erstellt mit Expo CLI (React Native), über die wir uns zu Events einladen können. Seien es Konzert -, oder Restaurantbesuche, oder einfach nur eine Pyjamaparty",
+            subtitle: " blablabla",
+            image: "",
+            github_repo: "",
+            netlify: "",
+          },
         ],
       },
     ];
