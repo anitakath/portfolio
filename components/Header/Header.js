@@ -16,7 +16,6 @@ const languageMap = {
 const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, isVisible, setIsVisible }) => {
     const dispatch = useDispatch();
     const currentLanguage = useSelector((state) => state.language.currentLanguage);
-
     const [aboutMe, setAboutMe] = useState(languageMap[currentLanguage]?.aboutMe || "ÜBER MICH");
     const [contact, setContact] = useState(languageMap[currentLanguage]?.contact || "KONTAKT");
     const [isLanguageVisible, setIsLanguageVisible] = useState(false);
@@ -60,12 +59,13 @@ const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, isVi
         display: 'flex',
         width: '100vw',
         height: scrollY >= 150 ? '13vh' : '20vh',
-        justifyContent: 'space-between',
+
         alignItems: 'center',
         position: 'fixed',
         transition: '0.2s ease-in',
         backgroundColor: 'var(--foreground-dark)',
-        opacity: scrollY >= 150 ? "0.7" : "1"
+        opacity: scrollY >= 150 ? "0.7" : "1",
+        zIndex: "1",
     };
 
     const upContainer = {

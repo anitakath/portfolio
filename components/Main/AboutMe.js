@@ -18,7 +18,7 @@ const languageMap = {
   SPANISH: { title: "SOBRE MI", api: "/api/AboutMeData_es" },
 };
 
-const AboutMe = ({  setIsVisible, isVisible }) => {
+const AboutMe = ({  setIsVisible, isVisible, setIsHeaderVisible}) => {
 
   const [isModalOpen, setIsModalOpen] = useState(null)
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -51,6 +51,7 @@ const AboutMe = ({  setIsVisible, isVisible }) => {
 
   const openModal = (topic) => {
     console.log(topic)
+    setIsHeaderVisible(false)
 
     if(topic === 1){
        setIsModalOpen("profile")
@@ -80,7 +81,8 @@ const AboutMe = ({  setIsVisible, isVisible }) => {
 
   const closeModal = () => {
     setModalIsOpen(false);
-    setIsVisible(true)
+    setIsVisible(true);
+    setIsHeaderVisible(true)
   };
 
 
@@ -93,9 +95,6 @@ const AboutMe = ({  setIsVisible, isVisible }) => {
   } else if (currentLanguage === "SPANISH") {
     title = "SOBRE MI";
   }
-
-  console.log(selectedTopicId);
-  console.log(aboutMeData);
 
 
 
