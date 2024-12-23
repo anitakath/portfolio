@@ -35,6 +35,15 @@ export default function handler(req, res) {
             github_repo: "",
             netlify: "",
           },
+          {
+            title: "Midwives website",
+            description:
+              "I developed a project in which I used Next.js to create a website for a midwife. On this platform, interested parties can view the midwife's career and activities. They also have the opportunity to send their contact details to the midwife using a form integrated with Formspree. After submitting the form, the midwife receives the contact details directly by email.",
+            subtitle: " blablabla",
+            image: "/images/Hebamme.jpg",
+            github_repo: "",
+            netlify: "",
+          },
         ],
       },
       {
@@ -68,6 +77,15 @@ export default function handler(req, res) {
             github_repo: "",
             netlify: "",
           },
+          {
+            title: "Página web de matronas",
+            description:
+            "He desarrollado un proyecto en el que he utilizado Next.js para crear un sitio web para una comadrona. En esta plataforma, las personas interesadas pueden ver la trayectoria profesional y las actividades de la matrona. También tienen la oportunidad de enviar sus datos de contacto a la matrona mediante un formulario integrado con Formspree. Tras enviar el formulario, la matrona recibe los datos de contacto directamente por correo electrónico. Traducción realizada con la versión gratuita del traductor DeepL.com",
+            subtitle: " blablabla",
+            image: "/images/Hebamme.jpg",
+            github_repo: "",
+            netlify: "",
+          },
         ],
       },
       {
@@ -98,6 +116,15 @@ export default function handler(req, res) {
               " ein Spaßprojekt, das ich mit und für meine beste Freundin entwickelt habe! Wir haben nun unsere eigene App, erstellt mit Expo CLI (React Native), über die wir uns zu Events einladen können. Seien es Konzert -, oder Restaurantbesuche, oder einfach nur eine Pyjamaparty",
             subtitle: " blablabla",
             image: "",
+            github_repo: "",
+            netlify: "",
+          },
+          {
+            title: "Hebammen Website",
+            description:
+              "Ich habe ein Projekt entwickelt, bei dem ich mit Next.js eine Website für eine Hebamme erstellt habe. Auf dieser Plattform können Interessierte den Werdegang und die Tätigkeiten der Hebamme einsehen. Zudem haben sie die Möglichkeit, ihre Kontaktdaten über ein Formular, das mit Formspree integriert ist, an die Hebamme zu senden. Nach dem Absenden des Formulars erhält die Hebamme die Kontaktdaten direkt per E-Mail.",
+            subtitle: " blablabla",
+            image: "/images/Hebamme.jpg",
             github_repo: "",
             netlify: "",
           },

@@ -1,4 +1,9 @@
 
+.header_space{
+    height: 20vh;
+    width: 100vw;
+}
+
 .header_row{
     display: flex;
     width: 100vw;
@@ -6,42 +11,25 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
+    position: fixed;
+    transition: 0.2s ease-in;
+    background-color: var(--foreground-dark);
+    background-color: red;
+    z-index: 10000;
 }
 
-.upContainer{
-    position: fixed;
-    left: 20px;
-    top: 55px;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bolder;
-    background: rgba(255,255,255, 0.5);
-    box-shadow: 0px 0px 50px lightgrey;
-}
 
-.menuContainer{
-    position: fixed;
-    background: rgba(255,255,255, 0.5);
-    padding: 10px;
-    right: 20px;
-    top: 55px;
-    width: 200px;
-    display: flex;
-    justify-content: center;
-    box-shadow: 0px 0px 50px lightgrey;
-}
+
+
 
 .mobileMenuContainer{
     display: none;
+
 }
 
 
 .menuContainer ul li{
     margin: 3px 0px;
-    /*text-align: center;*/
 }
 
 .menuContainer ul li:hover{
@@ -59,11 +47,6 @@
     align-items: center;
 }
 
-.upContainer:hover{
-    transition: 0.1s ease;
-    border-radius: 50%;
-}
-
 .up:hover{
     transition: 0.2s ease;
     font-size: 1.7rem;
@@ -77,43 +60,36 @@
     align-items: center;
     margin-left: 40px;
     position: relative;
-    left: 50px;
+    left: 100px;
 
 }
 
 .title_container h1{
-    height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
-     position: relative;
+    font-size: 1.2rem;
+    position: relative;
+    top: 6px;
 }
 
 .title_container h3{
     text-align: center;
-    height: 5vh;
-     position: relative;
-
- 
-}
-
-.first_row div{
-    padding: 5px;
-}
-
-.language{
-    margin-right: 40px;
+    position: relative;
+    position: relative;
+    top: 6px;
+    font-size: 0.7rem;
 }
 
 
-.language div{
-    width: 60px;
-}
+
+
 
 
 .navigationContainer{
     display: flex;
+    position: relative;
+    left: 40px; 
 }
 
 .navigationContainer div{
@@ -129,28 +105,21 @@
 }
 
 .navigationContainer ul li{
-   font-size: 1.2rem;
-    letter-spacing: 1px;
+   font-size: 1rem;
+   letter-spacing: 1px;
+   margin: 0px 20px;
 }
 
 .navigationContainer ul li:hover{
     cursor: pointer;
     transition: 0.4s ease;
     color: var(--font-plum);
-   
 }
 
 
 
-.language{
-    width: 7%;
-    display: flex;
-    justify-content: center;
-
-}
-
-.language button{
-    margin: 0 4px;
+.language_btn{
+    margin: 0 10px;
     flex-grow: 1;
     font-size: 1.54rem;
     cursor: pointer;
@@ -174,22 +143,6 @@
 }
 
 
-@media screen and (max-width: 1200px){
-    .title_container h1{
-
-        font-size: 1.5rem;
-    }
-
-    .title_container h3{
-      
-    }
-
-    .navigationContainer ul li{
-        font-size: 1.1rem;
-    }
-
-}
-
 
 @media screen and (max-width: 1200px){
 
@@ -197,22 +150,20 @@
         flex-direction: column;
     }
 
+  
+
     .title_container{
-        left: -20px;
-        width: 100%;
-        top: 30px;
+        left: 0;
+        top: 0px;
     }
 
 
     .title_container h1{
         width: 300px;
-        height: 6vh;
-        font-size: 1.5rem;
     }
 
     .title_container h3{
         width: 300px;
-        font-size: 1.2rem;
     }
 
     .navigationContainer{
@@ -220,150 +171,45 @@
         width: 100%;
         display: flex;
         justify-content: center;
+        left: 0;
     }
 
-    .language{
-        position: absolute;
-        right: 5px;
-        top: 20px;
-    }
-
-    .upContainer, .menuContainer{
-        top: 18px;
-    }
 
     
 }
 
-@media screen and (max-width: 600px){
+.mobileLanguageButton{
+    display: none;
+}
 
-    .title_container{
-        height: 5vh;
-        top: 60px;
 
+@media screen and (max-width: 900px){
+    .mobileLanguageButton{
+        display: inline-block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
     }
 
-    .title_container h1{
-        font-size: 1rem;
-        width: 200px;
-
-    }
-
-    .title_container h3{
-        font-size: 0.8rem;
-   
+    .mobileLanguageButton:hover{
+        color: var(--font-plum);
     }
 
  
+}
+
+
+@media screen and (max-width: 600px){
+
+    .title_container{
+        top: 10px;
+    }
+
+    .language_btn{
+        font-size: 1.3rem;
+    }
 
     .navigationContainer{
-        align-items: start;
-        height:5vh;
-    }
-
-    .navigationContainer div{
-        width: 100px;
-    }
-
-    .navigationContainer ul li{
-        font-size: 0.8rem;
-    }
-    .language{
-        top: 10px;
-    }
-
-    .language div button{
-        width: 30px;
-        margin: 0;
-        font-size: 0.9rem;
-    }
-
-    .upContainer{
-        width: 35px;
-        height: 35px;
-        top: 10px;
-    }
-
-    .menuContainer{
-        display: none;
-    }
-
-    .mobileMenuContainer{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: fixed;
-        background: rgba(255,255,255, 0.5);
-        padding: 5px 10px;
-        right: 20px;
-        top: 10px;
-        z-index: 10000;
-        display: flex;
-        justify-content: center;
-       
-        box-shadow: 0px 0px 50px lightgrey;
-    }
-
-    .mobileMenuContainer_open {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: fixed;
-        background: rgba(255, 255, 255, 0.5);
-        padding: 5px 10px;
-        right: 20px;
-        top: 10px;
-        z-index: 10000;
-        box-shadow: 0px 0px 50px lightgrey;
-    }
-
-    .mobileMenuContainer_closed {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: fixed;
-        background: rgba(255, 255, 255, 0.5);
-        padding: 5px 10px;
-        right: 20px;
-        top: 10px;
-        z-index: 10000;
-        box-shadow: 0px 0px 50px lightgrey;
-        width: 35px;
-        height: 35px;
-    }
-
-    .mobileMenu ul li{
-        font-size: 0.9rem;
-        margin: 5px 0px;
-    }
-    .menu_button{
-        color: var(--font-plum);
-        margin: 5px 0px;
-        padding: 2px;
-        width: 75%;
-        cursor: pointer;
-        width: 35px;
-        height: 35px;
-        display: flex;
-        justify-content: center;
         align-items: center;
     }
-
-    .menu_icon_up{
-        font-size: 1.2rem;
-    }
-
-    .mobileMenu{
-        width: 200px;
-        display: flex;
-        justify-content: center;
-        border-top: 1px solid var(--font-plum);
-        padding: 5px 0px;
-    }
-
-   
-
 }
