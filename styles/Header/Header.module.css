@@ -1,15 +1,27 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Meow+Script&family=Parisienne&family=Playwrite+IN:wght@100..400&family=Scheherazade+New:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+
 .header_space{
-    height: 20vh;
+    height: 10vh;
     width: 100vw;
+    position: relative;
 }
 
+
+.title_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 50px;
+    width: 30%;
+}
 
 
 .mobileMenuContainer{
     display: none;
 }
-
 
 
 .up{
@@ -27,43 +39,30 @@
     font-size: 1.7rem;
 }
 
-.title_container{
-    height: 20vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-left: 40px;
-    position: relative;
-    left: 100px;
-    width: 30%;
 
-}
 
 .title_container h1{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
     position: relative;
-    top: 6px;
+    top: 2px;
 }
 
 .title_container h3{
     text-align: center;
     position: relative;
     position: relative;
-    top: 6px;
-    font-size: 0.7rem;
+    top: 2px;
+    font-size: 0.9rem;
 }
 
 
 .navigationContainer{
     display: flex;
-    position: relative;
-    left: 100px; 
-    width: 30%;
-    
+    justify-content: center;
+    width: 80%;
 }
 
 
@@ -72,9 +71,9 @@
 }
 
 .navigationContainer ul li{
-   font-size: 1rem;
+   font-size: 0.9rem;
    letter-spacing: 1px;
-   margin: 0px 20px;
+   margin: 0px 40px;
 }
 
 .navigationContainer ul li:hover{
@@ -88,28 +87,140 @@
 .language_btn{
     margin: 0 10px;
     flex-grow: 1;
-    font-size: 1.54rem;
+    font-size: 1.5rem;
     cursor: pointer;
 }
 
+
 .headerImage_row{
-    border-top: 2px solid var(--foreground-light);
     width: 100%;
-    height: 79vh;
+    height: 80vh;
     display: flex;
-    justify-content: center;
     align-items: center;
     font-size: 20px;
     overflow: hidden;
+    position: relative;
+}
+
+
+
+
+
+
+.innerContextContainer{
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.subTitle{
+    font-family: 'Playwrite India', cursive;
+    color: var(--font-plum);
+    font-size: 2rem;
+}
+
+.description{
+    width: 400px;
+    color: var(--font-plum);
+    font-family: 'Source Serif 4', cursive;
+    font-size: 1.3rem;
+    margin-top: 30px;
+    
+}
+
+.skillsContainer {
+    display: flex;
+    justify-content: space-around; 
+    align-items: center;
+    padding: 20px; 
+    /*background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); */
+}
+
+.skillsDiv {
+    width: 80px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    height: 50px;
+}
+
+.skillsDiv:hover {
+    transform: scale(1.05); 
+    cursor: pointer;
+}
+
+.backgroundCircle {
+    position: absolute;
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--font-plum-light) 0%, rgba(255, 255, 255, 0) 70%); 
+    opacity: 0; 
+    transition: opacity 0.8s ease; 
+    z-index: -1; 
+}
+
+.skillsDiv:hover .backgroundCircle {
+    opacity: 1; 
 }
 
 .portrait{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    position: absolute;
+    right: 0px;
+    background-color: linear-gradient(to right,  rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+}
+
+.gradientOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; 
+    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    z-index: 500;  
 }
 
 
+
+.andContainer{
+    color: var(--font-plum-light);
+    position: absolute;
+    top:50px;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 7rem;
+    z-index: -10; 
+    animation: fadeIn 4s ease forwards;
+}
+
+
+.hidden {
+    opacity: 0; 
+}
+
+.visible {
+    opacity: 1; 
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/*
 
 @media screen and (max-width: 1200px){
 
@@ -187,4 +298,4 @@
         font-size: 0.8rem;
         margin: 0px 10px;
     }
-}
+}*/

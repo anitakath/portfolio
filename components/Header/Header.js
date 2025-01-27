@@ -6,29 +6,55 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setLanguage } from '@/store/languageSlice'; // STYLES + FONT AWESOME
 import styles from '../../styles/Header/Header.module.css';
 import { FaChevronUp, FaGlobe } from "react-icons/fa";
-
+import ScrollIndicator from './ScrollIndicator';
+import MenuButton from '../UI/MenuButton';
 const languageMap = {
-    GERMAN: { aboutMe: "ÜBER MICH", contact: "KONTAKT" },
-    ENGLISH: { aboutMe: "ABOUT ME", contact: "CONTACT" },
-    SPANISH: { aboutMe: "SOBRE MI", contact: "CONTACTO" },
+    GERMAN: { 
+        aboutMe: "ÜBER MICH", 
+        contact: "KONTAKT",
+        headerInformation: {
+            subTitle: "Ich pflege, tanze und erschaffe",
+            description: "Ich erstelle moderne, dynamische und benutzerfreundliche Webanwendungen für jeden Bedarf"
+        }
+    },
+    ENGLISH: { 
+        aboutMe: "ABOUT ME", 
+        contact: "CONTACT",
+        headerInformation: {
+            subTitle: "I care, dance, and create",
+            description: "I craft modern, dynamic and user-friendly web applications for every need"
+        } 
+    },
+    SPANISH: { 
+        aboutMe: "SOBRE MI", 
+        contact: "CONTACTO",
+        headerInformation: {
+            subTitle: "Cuido, bailo y creo",
+            description: "Creo aplicaciones web modernas, dinámicas y fáciles de usar para cada necesidad"
+        }
+    },
 };
 
-const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, isVisible, setIsVisible }) => {
+const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, }) => {
     const dispatch = useDispatch();
     const currentLanguage = useSelector((state) => state.language.currentLanguage);
     const [aboutMe, setAboutMe] = useState(languageMap[currentLanguage]?.aboutMe || "ÜBER MICH");
     const [contact, setContact] = useState(languageMap[currentLanguage]?.contact || "KONTAKT");
     const [isLanguageVisible, setIsLanguageVisible] = useState(false);
-
     const toggleLanguageVisibility = () => {
         setIsLanguageVisible((prev) => !prev);
     };
-
+    //const [headerInformation, setHeaderInformation] = useState({subTitle: "Ich pflege, tanze und erschaffe", description: "Ich erstelle moderne, dynamische und benutzerfreundliche Webanwendungen für jeden Bedarf"})
+    const [headerInformation, setHeaderInformation] = useState(languageMap[currentLanguage]?.headerInformation || languageMap.DEUTSCH.headerInformation);
+    const [isHovered, setIsHovered] = useState(false);
     const updateLanguage = (language) => {
+
         dispatch(setLanguage(language));
         setAboutMe(languageMap[language].aboutMe);
         setContact(languageMap[language].contact);
-        setIsLanguageVisible(false); // Schließe das Sprachmenü nach Auswahl
+        setHeaderInformation(languageMap[language].headerInformation);
+
+        setIsLanguageVisible(false); 
     };
 
     const [scrollY, setScrollY] = useState(0);
@@ -55,23 +81,22 @@ const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, isVi
         };
     }, [onScroll]);
 
+    
     const headerRowStyle = {
         display: 'flex',
         width: '100vw',
-        height: scrollY >= 150 ? '13vh' : '20vh',
-
+        height: scrollY >= 150 ? '7vh' : '10vh',
         alignItems: 'center',
         position: 'fixed',
         transition: '0.2s ease-in',
-        backgroundColor: 'var(--foreground-dark)',
         opacity: scrollY >= 150 ? "0.7" : "1",
-        zIndex: "1",
+        zIndex: "1000",
     };
 
     const upContainer = {
         position: "fixed",
-        left: "20px",
-        top: scrollY >= 150 ? "20px" : (windowWidth <= 600 ? "0px" : "50px"),
+        left: "10px",
+        top: scrollY >= 150 ? "0px" : (windowWidth <= 600 ? "5px" : "14px"),
         width: "50px",
         height: "50px",
         display: "flex",
@@ -80,15 +105,14 @@ const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, isVi
         fontWeight: "bolder",
     };
 
-    // Styles für die Sprache
     const languageStyle = {
-        width: "7%",
+        width: "10%",
         display: isLanguageVisible || windowWidth >= 900 ? "flex" : "none",
         justifyContent: "center",
-        margin: "0px 40px",
-        position:  'absolute',
-        top: windowWidth >= 900 ? '55px' : (windowWidth <= 600 ? '0px' : '50px'), 
-        right: "5px", 
+        position: "absolute",
+        right: "15px",
+        backgroundColor: "rgba(255,255,255, 0.8)",
+        top: scrollY >= 150 ? '50px' : (windowWidth <= 600 ? '50px' : '80px'),
     };
 
     const mobileLanguageButtonStyle = {
@@ -99,8 +123,49 @@ const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, isVi
       opacity: isLanguageVisible || windowWidth >= 900 ? '0.3' : '1'
    };
 
+
+   const [isVisible, setIsVisible] = useState(false);
+
+   const handleScroll = () => {
+       const headerElement = document.getElementById('header');
+       if (headerElement) {
+           const rect = headerElement.getBoundingClientRect();
+           if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+               setIsVisible(true);
+               window.removeEventListener('scroll', handleScroll); // Entferne Event Listener nach dem ersten Trigger
+           }
+       }
+   };
+
+   useEffect(() => {
+        // Überprüfe Sichtbarkeit beim ersten Rendern
+        handleScroll();
+
+        // Füge Event Listener für Scrollen hinzu
+        window.addEventListener('scroll', handleScroll);
+
+        // Bereinige den Event Listener bei Unmount
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const skills = [
+        { name: "HTML", logo: "/images/skills/html-icon.png" },
+        { name: "CSS", logo: "/images/skills/css-icon.png" }, // Ersetze durch den tatsächlichen Pfad oder URL zum CSS-Logo
+        { name: "JavaScript", logo: "/images/skills/js-icon.png" }, // Ersetze durch den tatsächlichen Pfad oder URL zum JavaScript-Logo
+        { name: "React", logo: "images/skills/react-icon.png" }, // Ersetze durch den tatsächlichen Pfad oder URL zum React-Logo
+        { name: "Next.js", logo: "images/skills/react-icon.png" }, // Ersetze durch den tatsächlichen Pfad oder URL zum Next.js-Logo
+        { name: "Node.js", logo: "images/skills/node-icon.png" }, // Ersetze durch den tatsächlichen Pfad oder URL zum Node.js-Logo
+        { name: "Redux", logo: "images/skills/redux-icon.png"}, // Ersetze durch den tatsächlichen Pfad oder URL zum Redux-Logo
+        { name: "MongoDB", logo: "images/skills/mongoDB-icon.png" }, // Ersetze durch den tatsächlichen Pfad oder URL zum MongoDB-Logo
+        { name: "PostgreSQL", logo: "images/skills/postgresql-icon.png" } // Ersetze durch den tatsächlichen Pfad oder URL zum PostgreSQL-Logo
+    ];
+
+
    return (
-       <div id="header">
+       <div id="header" className='h-screen relative'>
+        <ScrollIndicator />
            <div className={styles.header_space}>
                <div className={styles.header_row} style={headerRowStyle}>
                    <div className={styles.title_container}>
@@ -119,15 +184,19 @@ const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, isVi
                            <li><Link to="contact" smooth={true} duration={500}>{contact}</Link></li>
                        </ul>
                    </div>
+                  
+                   <MenuButton isHovered={isHovered} setIsHovered={setIsHovered}/>
 
                    {/* Sprachumschaltung */}
-                   <div style={languageStyle}>
-                       {Object.keys(languageMap).map((lang) => (
-                           <button key={lang} onClick={() => updateLanguage(lang)} className={styles.language_btn}>
-                               {lang === "GERMAN" ? "🇩🇪" : lang === "ENGLISH" ? "🇬🇧" : "🇪🇸"}
-                           </button>
-                       ))}
-                   </div>
+                   {isHovered && (
+                     <div style={languageStyle}>
+                     {Object.keys(languageMap).map((lang) => (
+                         <button key={lang} onClick={() => updateLanguage(lang)} className={styles.language_btn}>
+                             {lang === "GERMAN" ? "🇩🇪" : lang === "ENGLISH" ? "🇬🇧" : "🇪🇸"}
+                         </button>
+                     ))}
+                    </div>
+                   )}
 
                    {/* Globus Button */}
                    <button onClick={toggleLanguageVisibility} style={mobileLanguageButtonStyle}>
@@ -136,11 +205,35 @@ const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, isVi
                </div>
            </div>
 
+
+
            {/* Header-Bild */}
            <div className={styles.headerImage_row}>
                <Image src="/images/portrait_example.jpg" height={1400} width={1400} className={styles.portrait} alt={"a portrait of me"} />
+               <div className={styles.gradientOverlay}></div> 
+               <div className={styles.innerContextContainer}>
+
+                <div className='p-12 w-6/12 mt-10 relative top-10 left-4'>
+                    <h2 className={styles.subTitle}> {headerInformation.subTitle} </h2>
+                    {/* CREATE DYNAMIC &  !!*/}
+                    <div className={`${styles.andContainer} ${isVisible ? styles.visible : styles.hidden}`}>
+                        & 
+                    </div>
+                    <h1 className={styles.description}> {headerInformation.description}</h1>
+                </div>
+               
+               </div>
            </div>
-       </div>
+        <div className={`h-14 flex  mt-2 overflow-hidden ${styles.skillsContainer}`}> 
+            {skills.map(({ name, logo }) => (
+                <div key={name} className={styles.skillsDiv}>
+                    <div className={styles.backgroundCircle}></div> 
+                    <img src={logo} alt={name} className='h-full' />
+                    {/*<span>{name}</span>*/}
+                </div>
+            ))}
+    </div>
+    </div>
    );
 };
 

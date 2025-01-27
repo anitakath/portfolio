@@ -45,7 +45,6 @@ const Portfolio = () => {
     setActiveItemIndex(activeItemIndex === index ? null : index);
   };
 
-  console.log(portfolioData)
 
   return (
     <div className="sub_container" id="portfolio">
