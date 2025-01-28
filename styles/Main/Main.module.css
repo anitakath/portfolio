@@ -9,36 +9,81 @@
 
 /* -------------------- #1: ABOUT ME -------------------- */
 
-
-.aboutmeContainer{
+.aboutmeContainer {
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 
-
-.aboutmeContainer div{
-    margin: 20px 0;
-    height: 100px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--font-dark);
+.card {
+    position: relative;
+    width: 50%;
+    height: 50vh;
+    perspective: 1000px; 
+    margin: 0;
+    border: 1px solid white;
     font-size: 1.5rem;
-}
-.aboutmeContainer div button{
-    width: 100%;
-    padding: 10px;
-    height: 100px;
-    transition: 0.4s ease;
+    cursor: pointer;
+    padding: 1px;
+    
 }
 
-.aboutmeContainer div button:hover{
-    color: var(--font-plum);
-    background: rgba(255,255,255,0.5);
+.cardFront,
+.cardBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.cardTitle{
+    font-size: 1rem;
+    transition: 0.4s ease;
+    z-index: 1000;
+    background-color: rgba(255,255,255, 0.2);
+    box-shadow: 0px 0px 1.5px white;
+    padding: 10px 5px;
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 10px;
+}
+
+.cardTitle:hover{
+    background-color: rgba(255,255,255, 0.4);
+    color:var(--font-plum);
+    letter-spacing: 1px;
+    font-size: 1.04rem;
+}
+
+
+.cardFront {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardImage{
+    position: absolute;
+    z-index: -10;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cardBack {
+    transform: rotateY(180deg); /* Rückseite umdrehen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.card.flipped .cardFront {
+   transform: rotateY(180deg); /* Umklappen */
 }
 
 
@@ -50,7 +95,6 @@
     width: 100%;
     min-height: 100vh;
     max-height: 150vh;
-    background: url('/images/kugel.jpg');
     object-fit: cover;
     display: flex;
     flex-direction: column;
@@ -58,39 +102,38 @@
     overflow: scroll;
 }
 
-.portfolio_title{
-    color: white;
-    font-size: 1.5rem;
-    margin: 30px 0;
-    letter-spacing: 1.5px;
-}
 
 .portfolio_field{
-    width: 95%;
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: repeat(1, 1fr); 
     gap: 16px;
     overflow: scroll; 
     padding-bottom: 16px;
-    padding: 5px 10px;
+    padding: 5px;
 }
 
 .portfolio_item{
   background-color: #f0f0f0;
   border: 1px solid #ccc;
-  padding: 20px;
-  height: 400px;
-  box-shadow: 2px 0px 30px lightgrey;
+  height: 50vh;
+  box-shadow: 1px 1px 2px lightgrey;
   border-radius: 2px;
   overflow: scroll;
   cursor: pointer;
   transition: 0.2s ease;
+  display: flex;
+  position: relative;
+  
+}
+
+.portfolio_item_imageDiv, .portfolio_item_description{
+    width: 100%;
+
 }
 
 .portfolio_item:hover{
-    transform: scale(1.01);
-    box-shadow: 2px 2px 2px grey;
-    
+    box-shadow: 0px 1px 2px grey;
 }
 
 .description {
@@ -103,7 +146,7 @@
     text-align: center;
     align-items: center;
     justify-content: center;
-    background: var(--foreground-light);
+    background: var(--font-plum-light);
     overflow: scroll;
     
 }
@@ -137,10 +180,35 @@
     color:var(--font-plum);
 }
 
-.portfolio_icon{
-    border: 2px solid orange;
+
+
+.item_image_skillsDiv{
+    padding: 4px;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: white;
 }
 
+.skill{
+    height: 60px;
+    margin: 0px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.skillIcon{
+    width: 34x;
+    height: 34px;
+}
+
+.skillIconDescription{
+    font-size: 0.7rem;
+}
 
 .item_title{
     border-bottom: 2px solid var(--font-plum);
@@ -149,20 +217,25 @@
     font-size: 1.4rem;
     position: relative;
     bottom: 5px;
+    margin-top: 15px;
+    margin-bottom: 5px;
 }
 
-
-
-.item_image{
-    height: 75%;
-    overflow: scroll;
-}
-
-.portfolio_image{
+.portfolio_imageDiv{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
+.item_image{
+    height: 85%;
+    overflow: scroll;
+    display: flex;
+    align-items: center;
+
+}
+
+
 
 .item_subtitle{
     background: var(--font-plum);
@@ -200,13 +273,14 @@
 }
 
 .contact_title, .aboutme_title{
-    height: 10vh;
+    height: 7vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items:end;
     font-size: 1.5rem;
     letter-spacing: 1.5px;
-    margin: 10px 0;
+    margin: 0;
+    margin-top: 10px;
 }
 
 .flexContainer p{

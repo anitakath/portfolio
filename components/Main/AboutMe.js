@@ -1,14 +1,10 @@
 import { useState, useEffect } from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
 //STYLES
 import styles from "../../styles/Main/Main.module.css";
-
 //REDUX
 import { useSelector } from "react-redux";
-//MODAL
-import ProgrammingModal from "../aboutme_modals/Programming_modal";
-import Profile from "../Modals/Profile";
-
-import ProfessionalModal from "../aboutme_modals/Professional_modal";
 
 
 
@@ -18,19 +14,14 @@ const languageMap = {
   SPANISH: { title: "SOBRE MI", api: "/api/AboutMeData_es" },
 };
 
-const AboutMe = ({  setIsVisible, isVisible, setIsHeaderVisible}) => {
-
-  const [isModalOpen, setIsModalOpen] = useState(null)
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  const currentLanguage = useSelector(
-    (state) => state.language.currentLanguage
-  );
+const AboutMe = ({  setIsVisible }) => {
+  const currentLanguage = useSelector((state) => state.language.currentLanguage);
   const [aboutMeData, setAboutMeData] = useState([]);
-  const [selectedTopicId, setSelectedTopicId] = useState("");
-  const [selectedTopic, setSelectedTopic] = useState({
+  const [selectedData, setSelectedData] = useState({
     title: "",
     description: "",
   });
+  const [flippedIndex, setFlippedIndex] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -49,42 +40,21 @@ const AboutMe = ({  setIsVisible, isVisible, setIsHeaderVisible}) => {
 
 
 
-  const openModal = (topic) => {
-    console.log(topic)
-    setIsHeaderVisible(false)
-
-    if(topic === 1){
-       setIsModalOpen("profile")
-    } else if(topic === 2){
-       setIsModalOpen("school")
-    } else if(topic === 3){
-       setIsModalOpen("career")
-    } else if(topic === 4){
-       setIsModalOpen("programming")
-    } else if(topic === 5){
-       setIsModalOpen("hobbies")
-    } else if(topic === 6){
-       setIsModalOpen("future")
+  const flipCard = (topic) => {
+    if (flippedIndex === topic) {
+      setFlippedIndex(null);
+    } else {
+      setFlippedIndex(topic);
+      setIsVisible(false);
     }
 
-
-    setModalIsOpen(true);
     setIsVisible(false)
     const completeTopic = aboutMeData.filter((item) => {
       return item.id === topic;
     });
 
-    setSelectedTopic(completeTopic);
-    setSelectedTopicId(topic);
-    setModalIsOpen(true);
+    setSelectedData(completeTopic);
   };
-
-  const closeModal = () => {
-    setModalIsOpen(false);
-    setIsVisible(true);
-    setIsHeaderVisible(true)
-  };
-
 
   let title = "";
 
@@ -100,43 +70,37 @@ const AboutMe = ({  setIsVisible, isVisible, setIsHeaderVisible}) => {
 
   return (
     <div id="aboutMe" className="sub_container">
-      <h1 className={styles.aboutme_title}> {title} </h1>
       <div className={styles.aboutmeContainer}>
-        {modalIsOpen && isModalOpen === "profile" && (
-          <Profile
-            modalIsOpen={modalIsOpen}
-            closeModal={closeModal}
-            onRequestClose={closeModal}
-            selectedTopicTitle={selectedTopicId}
-            selectedTopic={selectedTopic}
-          />
-        )}
-
-        {modalIsOpen && isModalOpen === "career" && (
-          <ProfessionalModal
-            modalIsOpen={modalIsOpen}
-            closeModal={closeModal}
-            onRequestClose={closeModal}
-            selectedTopicTitle={selectedTopicId}
-            aboutMeData={aboutMeData[2]}
-          />
-        )}
-
-        {modalIsOpen && isModalOpen === "programming" && (
-          <ProgrammingModal
-            modalIsOpen={modalIsOpen}
-            closeModal={closeModal}
-            onRequestClose={closeModal}
-            selectedTopicTitle={selectedTopicId}
-            aboutMeData={aboutMeData[3]}
-          />
-        )}
 
         {aboutMeData.map((data) => (
-          <div key={data.title}>
-            <button onClick={() => openModal(data.id)}>{data.title}</button>
-          </div>
-        ))}
+          <motion.div 
+              key={data.title} 
+              className={styles.card}
+              onClick={() => flipCard(data.id)}
+              initial={{ rotateY: 0 }}
+              animate={{ rotateY: flippedIndex === data.id ? 180 : 0 }}
+              transition={{ duration: 0.6 }}
+          >
+             {/* Front side of the card */}
+            <motion.div className={styles.cardFront}>  
+            {flippedIndex !== data.id && (
+              <h1 className={styles.cardTitle}>{data.title} </h1>
+            )} {/* Show title only if not flipped */} 
+            <Image src={data.imagePath} width={800}  height={800} className={styles.cardImage}/> 
+            </motion.div> 
+
+            {/* Back side of the card */}
+            <motion.div className={styles.cardBack}> 
+              {flippedIndex === data.id && (
+                  <div className="flex-col overflow-scroll items-center justify-center w-full h-full p-4 bg-white">
+              
+                  
+                    <p className="text-xs"> {selectedData[0].description}</p>
+                  </div>
+              )}
+            </motion.div> 
+          </motion.div>
+      ))}
       </div>
     </div>
   );

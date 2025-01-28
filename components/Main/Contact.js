@@ -35,7 +35,6 @@ const Contact = () =>{
 
   return (
     <div className="sub_container" id="contact">
-      <h1 className={styles.contact_title}> {title} </h1>
       <div className={styles.flexContainer}>
         <div>
           <FaPhone className={styles.icon} onClick={handlePhoneClick} />

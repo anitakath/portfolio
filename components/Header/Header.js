@@ -6,8 +6,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setLanguage } from '@/store/languageSlice'; // STYLES + FONT AWESOME
 import styles from '../../styles/Header/Header.module.css';
 import { FaChevronUp, FaGlobe } from "react-icons/fa";
+import { motion } from 'framer-motion';
+//COMPONENTS
 import ScrollIndicator from './ScrollIndicator';
 import MenuButton from '../UI/MenuButton';
+import useSkills from '@/custom-hooks/useSkills';
+
 const languageMap = {
     GERMAN: { 
         aboutMe: "ÜBER MICH", 
@@ -56,9 +60,9 @@ const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, }) =
 
         setIsLanguageVisible(false); 
     };
-
     const [scrollY, setScrollY] = useState(0);
     const [windowWidth, setWindowWidth] = useState(0);
+    const {skills} =useSkills();
 
     const onScroll = useCallback(() => {
         setScrollY(window.pageYOffset);
@@ -90,7 +94,7 @@ const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, }) =
         position: 'fixed',
         transition: '0.2s ease-in',
         opacity: scrollY >= 150 ? "0.7" : "1",
-        zIndex: "1000",
+        zIndex: "10000",
     };
 
     const upContainer = {
@@ -105,15 +109,6 @@ const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, }) =
         fontWeight: "bolder",
     };
 
-    const languageStyle = {
-        width: "10%",
-        display: isLanguageVisible || windowWidth >= 900 ? "flex" : "none",
-        justifyContent: "center",
-        position: "absolute",
-        right: "15px",
-        backgroundColor: "rgba(255,255,255, 0.8)",
-        top: scrollY >= 150 ? '50px' : (windowWidth <= 600 ? '50px' : '80px'),
-    };
 
     const mobileLanguageButtonStyle = {
       display: windowWidth < 900 ? (isLanguageVisible ? 'none' : 'inline-block') : 'none', 
@@ -150,18 +145,8 @@ const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, }) =
         };
     }, []);
 
-    const skills = [
-        { name: "HTML", logo: "/images/skills/html-icon.png" },
-        { name: "CSS", logo: "/images/skills/css-icon.png" }, // Ersetze durch den tatsächlichen Pfad oder URL zum CSS-Logo
-        { name: "JavaScript", logo: "/images/skills/js-icon.png" }, // Ersetze durch den tatsächlichen Pfad oder URL zum JavaScript-Logo
-        { name: "React", logo: "images/skills/react-icon.png" }, // Ersetze durch den tatsächlichen Pfad oder URL zum React-Logo
-        { name: "Next.js", logo: "images/skills/react-icon.png" }, // Ersetze durch den tatsächlichen Pfad oder URL zum Next.js-Logo
-        { name: "Node.js", logo: "images/skills/node-icon.png" }, // Ersetze durch den tatsächlichen Pfad oder URL zum Node.js-Logo
-        { name: "Redux", logo: "images/skills/redux-icon.png"}, // Ersetze durch den tatsächlichen Pfad oder URL zum Redux-Logo
-        { name: "MongoDB", logo: "images/skills/mongoDB-icon.png" }, // Ersetze durch den tatsächlichen Pfad oder URL zum MongoDB-Logo
-        { name: "PostgreSQL", logo: "images/skills/postgresql-icon.png" } // Ersetze durch den tatsächlichen Pfad oder URL zum PostgreSQL-Logo
-    ];
 
+    
 
    return (
        <div id="header" className='h-screen relative'>
@@ -186,16 +171,21 @@ const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, }) =
                    </div>
                   
                    <MenuButton isHovered={isHovered} setIsHovered={setIsHovered}/>
-
+                 
                    {/* Sprachumschaltung */}
                    {isHovered && (
-                     <div style={languageStyle}>
-                     {Object.keys(languageMap).map((lang) => (
-                         <button key={lang} onClick={() => updateLanguage(lang)} className={styles.language_btn}>
-                             {lang === "GERMAN" ? "🇩🇪" : lang === "ENGLISH" ? "🇬🇧" : "🇪🇸"}
-                         </button>
-                     ))}
-                    </div>
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: isHovered ? 1 : 0 }}
+                        transition={{ duration: 0.5 }} 
+                        style={{ position: 'absolute', right: '15px', top:'65px', backgroundColor: 'white' }}
+                    >
+                        {Object.keys(languageMap).map((lang) => (
+                            <button key={lang} onClick={() => updateLanguage(lang)} className={styles.language_btn}>
+                                {lang === "GERMAN" ? "🇩🇪" : lang === "ENGLISH" ? "🇬🇧" : "🇪🇸"}
+                            </button>
+                        ))}
+                        </motion.div>
                    )}
 
                    {/* Globus Button */}

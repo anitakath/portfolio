@@ -1,13 +1,36 @@
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
 import Image from 'next/image';
 
 const MenuButton = ({isHovered, setIsHovered}) => {
-    
+    const [hoverTimeout, setHoverTimeout] = useState(null);
+
+
+    const handleMouseEnter = () => {
+      if (hoverTimeout) {
+        clearTimeout(hoverTimeout); 
+      }
+      setIsHovered(true);
+    };
+
+    const handleMouseLeave = () => {
+        const timeout = setTimeout(() => {
+          setIsHovered(false);
+        }, 5000);
+        setHoverTimeout(timeout);
+    };
+
+    useEffect(() => {
+        return () => {
+          if (hoverTimeout) {
+            clearTimeout(hoverTimeout);
+          } 
+        };
+      }, [hoverTimeout]);
 
     return (
         <button 
-            onMouseEnter={() => setIsHovered(true)} 
-            onMouseLeave={() => setIsHovered(false)} 
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave} 
             style={{ border: 'none', background: 'transparent', cursor: 'pointer', marginRight: '30px' }}
         >
             {isHovered ? (

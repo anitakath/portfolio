@@ -12,26 +12,17 @@ export default function handler(req, res) {
       },
       {
         id: 2,
-        title: "School career",
+        title: "Education and Career",
         description: "some english shit.",
       },
+    
       {
         id: 3,
-        title: "Professional career",
-        description: "some english shit.",
-      },
-      {
-        id: 4,
         title: "Programming skills",
         description: "some english shit.",
       },
       {
-        id: 5,
-        title: "Hobbies",
-        description: "some english shit. ",
-      },
-      {
-        id: 6,
+        id: 4,
         title: "Future plans",
         description: "some english shit.",
       },
