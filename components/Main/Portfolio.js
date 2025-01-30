@@ -37,6 +37,12 @@ const Portfolio = () => {
   };
 
 
+  const messages = {
+    ENGLISH: "Password required!",
+    GERMAN: "Passwort erforderlich!",
+    SPANISH: "¡Se requiere contraseña!"
+  };
+
   return (
     <div className="sub_container" id="portfolio">
       <div className={styles.portfolio_container}>
@@ -50,7 +56,9 @@ const Portfolio = () => {
               onClick={() => handleItemClick(index)}
             >
               {item.password && (
-                 <p className="absolute top-0 right-0 text-red-500 my-2 mx-4" style={{ backgroundColor: "rgba(255,255,255, 0.4)", padding: "2px 5px", borderRadius: "2px"}} > password required!</p>
+                 <p className="absolute top-0 right-0 text-red-500 my-2 mx-4" style={{ backgroundColor: "rgba(255,255,255, 0.4)", padding: "2px 5px", borderRadius: "2px"}}>
+                 {messages[currentLanguage] || messages.ENGLISH} {/* Fallback auf Englisch */}
+               </p>
               )}
              
 
