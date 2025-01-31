@@ -50,3 +50,9 @@
   padding: 0;
   padding-top: 7vh;
 }
+
+@media screen and (max-width: 800px){
+  .sub_container{
+  padding-top: 10vh;
+  }
+}

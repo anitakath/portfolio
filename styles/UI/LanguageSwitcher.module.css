@@ -1,3 +1,8 @@
+
+.menuButton{
+    display: flex;
+}
+
 .languageContainer {
     width: 10%;
     display: flex;
@@ -10,6 +15,7 @@
     /*opacity: 0; */
     /*transition: opacity 0.5s ease, transform 0.5s ease; */
 }
+
 /*
 .fadeIn{
     animation: fadeIn 4s ease forwards;
@@ -27,4 +33,29 @@
     flex-grow: 1;
     font-size: 1.5rem;
     cursor: pointer;
+}
+
+
+@media screen and (max-width: 800px){
+    .menuButton{
+        position: absolute;
+        right: 0;
+        bottom: 0px;
+        right: -5px;
+    }
+
+    .menuIcon{
+        width: 25px;
+        height: 25px;
+    }
+}
+
+
+@media screen and (max-width: 700px){
+
+    .menuIcon{
+        width: 20px;
+        height: 20px;
+        margin-bottom: 3px;
+    }
 }

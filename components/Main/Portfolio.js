@@ -6,6 +6,8 @@ import Link from "next/link";
 //FONT AWESOME
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FaGithub} from "react-icons/fa";
+import { faUpRightAndDownLeftFromCenter } from "@fortawesome/free-solid-svg-icons";
+import { faDownLeftAndUpRightToCenter } from "@fortawesome/free-solid-svg-icons";
 import { faN } from "@fortawesome/free-solid-svg-icons";
 //CUSTOM HOOKS
 import useSkills from "@/custom-hooks/useSkills";
@@ -48,11 +50,17 @@ const Portfolio = () => {
               <h2 className={styles.item_title}>{item.title}</h2>
 
               <button 
-                  className={styles.item_toggleButton} 
-                  onClick={() => handleToggle(item.id)} 
-                >
-                  {hideProjectIds.includes(item.id) ? "OPEN" : "CLOSE"}
-                </button> 
+                className={styles.item_toggleButton} 
+                onClick={() => handleToggle(item.id)} 
+              >
+                {hideProjectIds.includes(item.id) ? (
+                   <FontAwesomeIcon icon={faUpRightAndDownLeftFromCenter} />
+                )
+                   : (
+                   <FontAwesomeIcon icon={faDownLeftAndUpRightToCenter} />
+                )}
+               
+              </button> 
 
 
               {/* Zeige das Portfolio-Item nur an, wenn es nicht in hideProjectIds enthalten ist */}

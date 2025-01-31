@@ -149,7 +149,7 @@ const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, }) =
     
 
    return (
-       <div id="header" className='h-screen relative'>
+       <div id="header" className='h-screen  w-full relative'>
         <ScrollIndicator />
            <div className={styles.header_space}>
                <div className={styles.header_row} style={headerRowStyle}>
@@ -157,11 +157,13 @@ const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, }) =
                        <h1> ANNE-KATHRIN WAGNER </h1>
                        <h3> NOT ANNA </h3>
                    </div>
-                   <div style={upContainer}>
+                   {/*
+                   <div style={upContainer} className={styles.upContainer}>
                        <Link to="header" smooth={true} duration={500} className={styles.up}>
                            <FaChevronUp />
                        </Link>
                    </div>
+                   */}
                    <div className={styles.navigationContainer}>
                        <ul>
                            <li><Link to="aboutMe" smooth={true} duration={500}>{aboutMe}</Link></li>
@@ -187,11 +189,6 @@ const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, }) =
                         ))}
                         </motion.div>
                    )}
-
-                   {/* Globus Button */}
-                   <button onClick={toggleLanguageVisibility} style={mobileLanguageButtonStyle}>
-                       <FaGlobe />
-                   </button>
                </div>
            </div>
 
