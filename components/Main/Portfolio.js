@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import styles from "../../styles/Main/Main.module.css";
+import styles from "./Portfolio.module.css";
 import Image from "next/image";
 import Link from "next/link";
 //FONT AWESOME
@@ -41,6 +41,8 @@ const Portfolio = () => {
     SPANISH: "¡Se requiere contraseña!"
   };
 
+  console.log(portfolioData)
+
   return (
     <div className="sub_container" id="portfolio">
       <div className={styles.portfolio_container}>
@@ -72,11 +74,21 @@ const Portfolio = () => {
                     </p>
                   )}
                   <div className={styles.portfolio_item_imageDiv}>
-                    <div className={styles.item_image}>
-                      {item.image && (
-                        <Image src={item.image} alt={item.title} layout="responsive" width={600} height={600} className={styles.portfolio_image} />
-                      )}
+                    
+                    <div className={styles.item_imageDiv}>
+                    {item.images && item.images.map((image, index) => (
+                      <Image 
+                        key={index} // Verwende den Index als Schlüssel (oder eine eindeutige ID, wenn verfügbar)
+                        src={image} 
+                        alt={`${item.title} image ${index + 1}`} // Alternativtext für jedes Bild
+                        layout="responsive" 
+                        width={600} 
+                        height={600} 
+                        className={styles.portfolio_image} 
+                      />
+                    ))}
                     </div>
+
                     <div className={styles.item_image_skillsDiv}>
                       {item.skills && item.skills.map((skillName, skillIndex) => {
                         const skillObject = skills.find(skill => skill.name === skillName.name);
