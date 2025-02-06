@@ -26,7 +26,7 @@
 
 .portfolio_item{
   background-color: white;
-  height: 60vh;
+  height: 90vh;
   border-radius: 2px;
   overflow: scroll;
   transition: 0.2s ease;
@@ -50,7 +50,8 @@
 
 
 .portfolio_image{
-    /*border: 2px solid yellow;*/
+    border-bottom: 1px solid var(--font-plum);
+    margin: 2px 0px;
 }
 
 
