@@ -67,7 +67,6 @@ const AboutMe = ({  setIsVisible }) => {
   }
 
 
-
   return (
     <div id="aboutMe" className="sub_container">
       <div className={styles.aboutmeContainer}>
@@ -86,7 +85,7 @@ const AboutMe = ({  setIsVisible }) => {
             {flippedIndex !== data.id && (
               <h1 className={styles.cardTitle}>{data.title} </h1>
             )} {/* Show title only if not flipped */} 
-            <Image src={data.imagePath} width={800}  height={800} className={styles.cardImage}/> 
+            <Image src={data.imagePath} width={800}  height={800} className={styles.cardImage} alt="sample images from pexel"/> 
             </motion.div> 
 
             {/* Back side of the card */}
