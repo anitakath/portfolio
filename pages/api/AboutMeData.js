@@ -8,7 +8,12 @@ export default function handler (req, res){
       {
         id: 1,
         title: "Kurzer Steckbrief",
-        description: " in der Kürze liegt die Würze",
+        description:"Ich bin eine erfolgreich ausgebildete examinierte Gesundheits- und Krankenpflegerin mit einer Leidenschaft für Technologie und Sport. Als kreativer Kopf teste ich gerne verschiedene Applikationen und programmiere eigene Lösungen, um innovative Anwendungen zu entwickeln, die mir helfen, meinen (sportlichen) Alltag besser zu strukturieren. Neben meiner Begeisterung für Sport und Programmierung interessiere ich mich fürs Reisen und lerne aktiv Spanisch. Ich lese gerne Sachbücher – aktuell vertiefe ich mich in Women Living Deliciously von Florence Given und um mental wie körperlich abzuschalten, besuche ich gerne Thermen, Spas und Massagen oder backe Kuchen und Torten. Außerdem schaue ich leidenschaftlich gern Live-Sportevents und unterstütze diverse Teams, wie z.B. den Adendorfer Eishockey Club.",
+        descriptionTable: [
+          {listItem: null,
+            listItemDescription: null,
+          }
+        ],
         imagePath: "/images/about-me-section/pexels-minan1398-681637.jpg"
       },
       {
@@ -71,7 +76,41 @@ export default function handler (req, res){
         title: "Zukunftspläne",
         imagePath: "/images/about-me-section/pexels-pixabay-355952.jpg",
         description:
-          "in der Zukufnt möchte ich einen doppelten Axel im Eiskunstlauf springen und die Bielmann-Piroutte drehen können. generell möchte ich mehr tanzen, meinen Körper flexibel und in Balance halten. Zudem ist mir stetige geistliche Entwicklung wichtig. ich möchte in einem jungen, dynamischen Team wirken, dabei auf Augenhöhe arbeiten und sich gegenseitig pushen. Ich möchte meine bisher erworbenen Fähigkeiten zeigen können und dabei die meiner Mitmenschen kennenlernen und übernehmen dürfen. Ich möchte vielfältig lernen und arbeiten. Gerne mehr reisen, in den Kontakt mit unterschiedlichen Kulturen treten und mein Spanisch weiter verbessern, gern offen dafür als nächstes Französisch zu lernen ",
+          "in der Zukunft möchte ich einen doppelten Axel im Eiskunstlauf springen und die Bielmann-Piroutte drehen können. generell möchte ich mehr tanzen, meinen Körper flexibel und in Balance halten. Zudem ist mir stetige geistliche Entwicklung wichtig. ich möchte in einem jungen, dynamischen Team wirken, dabei auf Augenhöhe arbeiten und sich gegenseitig pushen. Ich möchte meine bisher erworbenen Fähigkeiten zeigen können und dabei die meiner Mitmenschen kennenlernen und übernehmen dürfen. Ich möchte vielfältig lernen und arbeiten. Gerne mehr reisen, in den Kontakt mit unterschiedlichen Kulturen treten und mein Spanisch weiter verbessern, gern offen dafür als nächstes Französisch zu lernen ",
+        descriptionTable:[
+          { listItem: "Porgrammier-, und Projektmanagementkentnisse vertiefen und ausbauen",
+            listItemDescription: "Ich plane, meine Programmierkenntnisse kontinuierlich durch Onlinekurse und Bootcamps zu erweitern. Zudem möchte ich stets über aktuelle Trends und Technologien in der Informatik informiert bleiben."
+          },
+          { listItem: "Zertifizierungen",
+            listItemDescription: "Ich beabsichtige, relevante Zertifizierungen im Bereich Softwareentwicklung und Projektmanagement (z.B. Scrum Master, PMP) zu erwerben, um meine Fachkompetenz zu untermauern und meine beruflichen Qualifikationen zu stärken."
+          },
+          { listItem: "Praktische Erfahrungen sammeln",
+            listItemDescription: "Ich strebe danach, praktische Erfahrungen in realen Projekten zu sammeln, um mein Wissen anzuwenden und weiterzuentwickeln."
+          },
+          { listItem: "Netzwerk aufbauen",
+            listItemDescription:"Der Aufbau eines professionellen Netzwerks ist mir wichtig. Ich möchte Kontakte zu Fachleuten knüpfen, um von deren Erfahrungen zu lernen und mögliche Kooperationen zu fördern."
+          },
+          { listItem: "Projekte realisieren",
+            listItemDescription:"Ich plane, eigene Projekte umzusetzen, um meine Fähigkeiten in der Softwareentwicklung und im Projektmanagement praktisch anzuwenden."
+          },
+          {
+            listItem: "Interdisziplinäre Ansätze nutzen",
+            listItemDescription: "Durch meine Erfahrung in der Gesundheits- und Krankenpflege sowie im Sportbereich möchte ich innovative Lösungen im Gesundheitswesen entwickeln. Dabei beabsichtige ich, moderne IT-Technologien gezielt einzusetzen."
+          },
+          {
+            listItem: "Soft Skills weiterentwickeln",
+            listItemDescription: "Ich werde weiterhin an meinen kommunikativen Fähigkeiten arbeiten, um als Projektmanagerin effektiv mit verschiedenen Stakeholdern zusammenzuarbeiten und die Teamdynamik zu fördern."
+          },
+          { listItem:" Sportliche Disziplin übertragen ",
+            listItemDescription:"Die Disziplin und das Engagement, die ich im Sport (z.B. Pole Dance und Eiskunstlauf) entwickelt habe, möchte ich auch in meiner neuen Karriere als Programmiererin oder Projektmanagerin einbringen."
+          },
+          {listItem: "Ausbildung zur Pole Dance Trainerin",
+            listItemDescription: "Im März 2025 werde ich eine Ausbildung zur Pole Dance Trainerin absolvieren. Diese Erfahrung wird mir helfen, meine Fähigkeiten im Umgang mit Gruppen zu stärken und komplexe Inhalte verständlich zu vermitteln."
+          },
+          {listItem: "Eigene Projekte weiterentwickeln",
+            listItemDescription: "Ich möchte mich aktiv der stetigen Weiterentwicklung meiner bereits bestehenden Projekte widmen. Dies umfasst die Optimierung bestehender Funktionen sowie die Implementierung neuer Ideen, um die Qualität und Benutzerfreundlichkeit kontinuierlich zu verbessern."
+          }
+        ]
       },
     ];
 

@@ -1,0 +1,145 @@
+.aboutmeContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.card {
+    position: relative;
+    width: 50%;
+    height: 50vh;
+    perspective: 1000px; 
+    margin: 0;
+    border: 1px solid white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 1px;
+}
+
+.cardFront,
+.cardBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+.cardTitle{
+    font-size: 1rem;
+    transition: 0.4s ease;
+    z-index: 1000;
+    background-color: rgba(255,255,255, 0.2);
+    box-shadow: 0px 0px 1.5px white;
+    padding: 10px 5px;
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 10px;
+}
+
+.cardTitle:hover{
+    background-color: rgba(255,255,255, 0.4);
+    color:var(--font-plum);
+    letter-spacing: 1px;
+    font-size: 1.04rem;
+}
+
+
+.cardFront {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardImage{
+    position: absolute;
+    z-index: -10;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cardBack {
+    transform: rotateY(180deg); /* Rückseite umdrehen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.card.flipped .cardFront {
+   transform: rotateY(180deg); /* Umklappen */
+}
+
+
+
+.listItem{
+    font-size: 1rem;
+    display: flex; 
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    margin: 20px 0px;
+
+}
+
+.listItemButton{
+    padding: 5px;
+    z-index: 100000;
+    transition: 0.2s ease-in-out;
+    width: 90%;
+    display: flex;
+    justify-content: start;
+}
+
+.listItemButton span{
+    border:2px solid red;
+}
+
+.listItemButton:hover{
+    color: var(--font-plum);
+    /*background: var(--font-plum-opacity)*/
+}
+
+.listItemDescription{
+    font-size: 0.9rem;
+    margin-top: 10px;
+    padding: 0px 10px;
+}
+
+.description{
+    font-size: 1rem;
+    padding: 10px;
+}
+
+@media screen and (max-width: 900px){
+
+    .item_title{
+        height: 50px;
+    }
+    .portfolio_item{
+        flex-direction: column;
+        margin-bottom: 40px;
+        padding-top: 40px;
+        height: 100vh;
+    }
+    
+
+    .password{
+        top: 0px;
+    }
+}
+
+@media screen and (max-width: 700px){
+  
+
+    .password{
+       font-size: 0.8rem;
+    }
+}
+
+
+

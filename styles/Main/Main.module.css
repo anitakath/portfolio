@@ -8,7 +8,7 @@
 
 
 /* -------------------- #1: ABOUT ME -------------------- */
-
+/*
 .aboutmeContainer {
     width: 100%;
     display: flex;
@@ -75,7 +75,7 @@
 }
 
 .cardBack {
-    transform: rotateY(180deg); /* Rückseite umdrehen */
+    transform: rotateY(180deg); 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -83,7 +83,7 @@
 
 
 .card.flipped .cardFront {
-   transform: rotateY(180deg); /* Umklappen */
+   transform: rotateY(180deg); 
 }
 
 
@@ -115,7 +115,7 @@
     .password{
        font-size: 0.8rem;
     }
-}
+}*/
 
 /* -------------------- #3: CONTACT -------------------- */
 
