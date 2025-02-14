@@ -14,7 +14,14 @@ export default function handler(req, res) {
       {
         id: 2,
         title: "Education and Career",
-        description: "some english shit.",
+        educationsTable: [
+          { name: "Care Certificate", educationsZertificatePath: " " , description: ""},
+          { name: "Care Reference", educationsZertificatePath: " ", description: "" },
+          { name: "Hygiene Mentor Certificate", educationsZertificatePath: " ", description: "" },
+          { name: "Udemy Certificate in Next.js", educationsZertificatePath: " ", description: "" },
+          { name: "School Certificate", educationsZertificatePath: " ", description: "" },
+      ],
+        description: null,
         imagePath: "/images/about-me-section/pexels-pixabay-433333.jpg",
       },
     

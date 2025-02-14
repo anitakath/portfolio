@@ -5,6 +5,7 @@
     justify-content: center;
     align-items: center;
 }
+
 .card {
     position: relative;
     width: 50%;
@@ -14,7 +15,6 @@
     border: 1px solid white;
     font-size: 1.5rem;
     cursor: pointer;
-    padding: 1px;
 }
 
 .cardFront,
@@ -69,11 +69,14 @@
     justify-content: center;
 }
 
+.table{
+    font-size: 1rem;
+}
+
 
 .card.flipped .cardFront {
    transform: rotateY(180deg); /* Umklappen */
 }
-
 
 
 .listItem{
@@ -83,7 +86,6 @@
     justify-content: start;
     align-items: start;
     margin: 20px 0px;
-
 }
 
 .listItemButton{
@@ -95,19 +97,21 @@
     justify-content: start;
 }
 
-.listItemButton span{
-    border:2px solid red;
-}
 
 .listItemButton:hover{
     color: var(--font-plum);
-    /*background: var(--font-plum-opacity)*/
 }
 
 .listItemDescription{
     font-size: 0.9rem;
     margin-top: 10px;
     padding: 0px 10px;
+}
+
+.categoryDescription{
+    font-size: 0.9rem;
+    padding: 2px 10px;
+
 }
 
 .description{

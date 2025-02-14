@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import styles from "./AboutMe.module.css";
 //REDUX
 import { useSelector } from "react-redux";
+//COMPONENTS
+import Education from "./AboutMe/Education";
 
 
 
@@ -19,6 +21,8 @@ const AboutMe = ({ setIsVisible }) => {
   const [selectedData, setSelectedData] = useState({ title: "", description: "" });
   const [flippedIndex, setFlippedIndex] = useState(null);
   const [visibleDescriptions, setVisibleDescriptions] = useState({});
+  const [visibleSkills, setVisibleSkills] = useState({});
+
 
   useEffect(() => {
       const fetchData = async () => {
@@ -34,6 +38,7 @@ const AboutMe = ({ setIsVisible }) => {
       fetchData();
   }, [currentLanguage]);
 
+
   const flipCard = (topic) => {
       if (flippedIndex === topic) {
           setFlippedIndex(null);
@@ -44,15 +49,24 @@ const AboutMe = ({ setIsVisible }) => {
       setIsVisible(false);
       const completeTopic = aboutMeData.filter((item) => item.id === topic);
       setSelectedData(completeTopic);
-  };
+   };
 
   const toggleDescription = (event, itemId) => {
-      event.stopPropagation(); // Verhindert das Auslösen des Click-Events für die Karte
-      setVisibleDescriptions((prev) => ({
-          ...prev,
-          [itemId]: !prev[itemId],
-      }));
+    event.stopPropagation();
+    setVisibleDescriptions((prev) => ({
+      ...prev,
+      [itemId]: !prev[itemId],
+    }));
   };
+
+  const toggleSkills = (event, category) => {
+    event.stopPropagation(); 
+    setVisibleSkills((prev) => ({
+      ...prev,
+      [category]: !prev[category],
+    }));
+  };
+
 
   let title = "";
   if (currentLanguage === "GERMAN") {
@@ -62,6 +76,8 @@ const AboutMe = ({ setIsVisible }) => {
   } else if (currentLanguage === "SPANISH") {
       title = "SOBRE MI";
   }
+
+  console.log(aboutMeData)
 
   return (
       <div id="aboutMe" className="sub_container">
@@ -79,8 +95,38 @@ const AboutMe = ({ setIsVisible }) => {
                       <motion.div className={styles.cardBack}>
                           {flippedIndex === data.id && (
                               <div className="flex-col overflow-scroll items-center justify-center w-full h-full pl-1 bg-white">
+                               
+                               {data.skillsTable && (
+                                   <ul className={styles.table}>
+                                   {data.skillsTable.map((skillCategory) => (
+                                     <li key={skillCategory.category} className="m-2 mb-4">
+                                       <button
+                                         className={styles.listItemButton}
+                                         onClick={(event) => toggleSkills(event, skillCategory.category)}
+                                         style={{ border: 'none', padding: 0, cursor: 'pointer' }}
+                                       >
+                                         <strong>{skillCategory.category}</strong>
+                                       </button>
+                                       {visibleSkills[skillCategory.category] && (
+                                         <ul className="mt-2">
+                                           {skillCategory.items.map((item, itemIndex) => (
+                                             <li key={itemIndex} className={styles.categoryDescription}>{item}</li>
+                                           ))}
+                                         </ul>
+                                       )}
+                                     </li>
+                                   ))}
+                                 </ul>
+                               )}
+
                                 {data.description && (
                                   <p className={styles.description}>{data.description}</p>
+                                )}
+
+
+                                {data.educationsTable && (
+                                  <Education data={data} />
+
                                 )}
                     
     

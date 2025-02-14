@@ -1,0 +1,71 @@
+
+.modalBackdrop {
+    position: absolute;
+    z-index: 1000000;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalContent {
+    width: 90%;
+    height: 90%;
+    background-color: white;
+    padding: 10px;
+    max-width: 600px; 
+    position: relative;
+    font-size: 1rem;
+    overflow: scroll;
+    box-shadow: 0px 0px 180px grey;
+}
+
+.imageDiv{
+    height: 100%;
+    overflow: scroll;
+    position: relative;
+}
+
+
+
+.closeButton, .downloadButton{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    font-size: 1rem;
+    background-color: rgba(255,255,255, 0.9);
+    border: 2px solid white;
+    transition: 0.2s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.downloadButton{
+    left: 0;
+    top: 0;
+}
+
+.icon{
+    z-index: 10000;
+}
+
+.closeButton:hover, .downloadButton:hover{
+    background-color: var(--font-plum);
+    color: white;
+    border: 2px solid var(--font-plum)
+
+}
+
+.image{
+    width: 100%;
+    
+    object-fit: cover;
+}
+

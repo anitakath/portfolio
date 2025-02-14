@@ -14,7 +14,14 @@ export default function handler(req, res) {
       {
         id: 2,
         title: "Educación y Carrera",
-        description: "algo en español.",
+        educationsTable: [
+          { name: "Certificado de Cuidado", educationsZertificatePath: " ", description: "" },
+          { name: "Certificado de Cuidado Profesional", educationsZertificatePath: " " , description: ""},
+          { name: "Certificado de Mentora en Higiene", educationsZertificatePath: " ", description: "" },
+          { name: "Certificado de Udemy en Next.js", educationsZertificatePath: " ", description: "" },
+          { name: "Certificado Escolar", educationsZertificatePath: " ", description: ""},
+      ],
+        description: null,
         imagePath: "/images/about-me-section/pexels-pixabay-433333.jpg",
       },
     
