@@ -138,7 +138,7 @@ const AboutMe = ({ setIsVisible }) => {
                                       onClick={(event) => toggleDescription(event, item.listItem)} // Event übergeben
                                       style={{ border: 'none', padding: 0, cursor: 'pointer' }}
                                     >
-                                      <strong className="px-2">{item.listItem}</strong>
+                                      <strong className="px-2  text-start ">{item.listItem}</strong>
                                     </button>
                                     {visibleDescriptions[item.listItem] && (
                                       <span className={styles.listItemDescription}>{item.listItemDescription}</span>

@@ -5,12 +5,13 @@ import { Link } from 'react-scroll'; // REDUX
 import { useDispatch, useSelector } from 'react-redux';
 import { setLanguage } from '@/store/languageSlice'; // STYLES + FONT AWESOME
 import styles from '../../styles/Header/Header.module.css';
-import { FaChevronUp, FaGlobe } from "react-icons/fa";
 import { motion } from 'framer-motion';
 //COMPONENTS
 import ScrollIndicator from './ScrollIndicator';
 import MenuButton from '../UI/MenuButton';
 import useSkills from '@/custom-hooks/useSkills';
+//CUSTOM HOOK
+import useNavigation from '@/custom-hooks/useNavigation';
 
 const languageMap = {
     GERMAN: { 
@@ -41,6 +42,8 @@ const languageMap = {
 
 const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, }) => {
     const dispatch = useDispatch();
+    const [currentSubtitleIndex, setCurrentSubtitleIndex] = useState(0);
+    const subtitles = ["NOT ANNA", "ANUSHKA", "ANITA"];
     const currentLanguage = useSelector((state) => state.language.currentLanguage);
     const [aboutMe, setAboutMe] = useState(languageMap[currentLanguage]?.aboutMe || "ÜBER MICH");
     const [contact, setContact] = useState(languageMap[currentLanguage]?.contact || "KONTAKT");
@@ -84,6 +87,15 @@ const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, }) =
             window.removeEventListener("resize", handleResize);
         };
     }, [onScroll]);
+
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setCurrentSubtitleIndex((prevIndex) => (prevIndex + 1) % subtitles.length);
+        }, 3000); // Wechselt alle 3 Sekunden
+
+        return () => clearInterval(intervalId); // Bereinige den Interval beim Unmount
+    }, []);
 
     
     const headerRowStyle = {
@@ -155,15 +167,9 @@ const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, }) =
                <div className={styles.header_row} style={headerRowStyle}>
                    <div className={styles.title_container}>
                        <h1> ANNE-KATHRIN WAGNER </h1>
-                       <h3> NOT ANNA </h3>
+                       <h3>{subtitles[currentSubtitleIndex]}</h3>
                    </div>
-                   {/*
-                   <div style={upContainer} className={styles.upContainer}>
-                       <Link to="header" smooth={true} duration={500} className={styles.up}>
-                           <FaChevronUp />
-                       </Link>
-                   </div>
-                   */}
+                
                    <div className={styles.navigationContainer}>
                        <ul>
                            <li><Link to="aboutMe" smooth={true} duration={500}>{aboutMe}</Link></li>

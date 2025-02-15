@@ -8,7 +8,7 @@ export default function handler(req, res) {
       {
         id: 1,
         title: "Perfil corto",
-        description: " algo en española.",
+        description: " Soy una enfermera diplomada con formación superior y apasionada de la tecnología y el deporte. Como mente creativa, me gusta probar diferentes aplicaciones y programar mis propias soluciones para desarrollar aplicaciones innovadoras que me ayuden a estructurar mejor mi vida (deportiva) cotidiana. Además de mi entusiasmo por el deporte y la programación, me interesa viajar y estoy aprendiendo español activamente. Me gusta leer libros de no ficción -actualmente estoy inmersa en Women Living Deliciously de Florence Given- y para desconectar mental y físicamente, me gusta visitar baños termales, balnearios y masajes o hacer pasteles y tartas. También me apasiona ver acontecimientos deportivos en directo y apoyar a varios equipos, como el Club de Hockey sobre Hielo de Adendorf",
         imagePath: "/images/about-me-section/pexels-minan1398-681637.jpg"
       },
       {
@@ -28,7 +28,66 @@ export default function handler(req, res) {
       {
         id: 3,
         title: "Conocimientos de programación",
-        description: "alguna mierda española.",
+        description: null,
+        skillsTable: [
+          {
+              category: "Tecnologías Frontend",
+              items: [
+                  "HTML",
+                  "CSS",
+                  "JavaScript",
+                  "jQuery",
+                  "React",
+                  "Next.js",
+                  "React Native",
+                  "WordPress",
+                  "TypeScript"
+              ],
+          },
+          {
+              category: "Herramientas de Construcción y Gestores de Paquetes",
+              items: ["Webpack", "Babel", "npm / yarn"],
+          },
+          {
+              category: "Preprocesadores y Frameworks CSS",
+              items: ["Bootstrap", "Material-UI", "SASS/SCSS"],
+          },
+          {
+              category: "Gestión del Estado",
+              items: ["Redux", "MobX"]
+          },
+          {
+              category: "Pruebas",
+              items: ["React Testing Library", "Cypress", "Jest"]
+          },
+          {
+              category: 'Tecnologías Backend (en desarrollo)',
+              items: ["Node.js", 'Express.js', 'Firebase', 'Supabase', 'Heroku'],
+          },
+          {
+              category: 'Bases de Datos',
+              items: ['MongoDB (NoSQL)', 'PostgreSQL (relacional)'],
+          },
+          {
+            category:'Servicios en la Nube',
+            items:['Cloudinary']
+        },
+        {
+            category:'Herramientas de Gestión de Proyectos',
+            items:['Jira', 'Miro', 'Confluence', 'Microsoft Project'],
+        },
+        {
+            category:'Conocimientos de API',
+            items:['RESTful APIs', 'GraphQL']
+        },
+        {
+            category:'Optimización del Rendimiento',
+            items:[
+                'Carga Perezosa',
+                'División de Código'
+            ]
+        }
+      ],
         imagePath: "/images/about-me-section/pexels-negativespace-169573.jpg",
       },
      
@@ -36,7 +95,49 @@ export default function handler(req, res) {
         id: 4,
         title: "Planes de futuro",
         imagePath: "/images/about-me-section/pexels-pixabay-355952.jpg",
-        description: " alguna mierda española. ",
+        description: null,
+        descriptionTable: [
+          {
+              listItem: "Profundizar y ampliar conocimientos en programación y gestión de proyectos",
+              listItemDescription: "Planeo mejorar continuamente mis habilidades de programación a través de cursos en línea y bootcamps. Además, quiero mantenerme informado sobre las tendencias y tecnologías actuales en informática."
+          },
+          {
+              listItem: "Certificaciones",
+              listItemDescription: "Tengo la intención de adquirir certificaciones relevantes en desarrollo de software y gestión de proyectos (por ejemplo, Scrum Master, PMP) para respaldar mi experiencia y fortalecer mis calificaciones profesionales."
+          },
+          {
+              listItem: "Ganar experiencia práctica",
+              listItemDescription: "Aspiro a obtener experiencia práctica en proyectos reales para aplicar y desarrollar aún más mis conocimientos."
+          },
+          {
+              listItem: "Construir una red",
+              listItemDescription: "Construir una red profesional es importante para mí. Quiero conectar con profesionales para aprender de sus experiencias y promover posibles colaboraciones."
+          },
+          {
+              listItem: "Realizar proyectos",
+              listItemDescription: "Planeo implementar mis propios proyectos para aplicar prácticamente mis habilidades en desarrollo de software y gestión de proyectos."
+          },
+          {
+              listItem: "Utilizar enfoques interdisciplinarios",
+              listItemDescription: "A través de mi experiencia en el cuidado de la salud y el deporte, pretendo desarrollar soluciones innovadoras en el ámbito sanitario. Tengo la intención de utilizar estratégicamente tecnologías modernas de TI."
+          },
+          {
+              listItem: "Desarrollar habilidades blandas",
+              listItemDescription: "Seguiré trabajando en mis habilidades comunicativas para colaborar eficazmente con diversas partes interesadas como gerente de proyectos y fomentar la dinámica del equipo."
+          },
+          {
+            listItem:"Transferir disciplina deportiva ",
+            listItemDescription:"La disciplina y el compromiso que he desarrollado en el deporte (por ejemplo, pole dance y patinaje artístico) son cualidades que quiero llevar a mi nueva carrera como programadora o gerente de proyectos."
+        },
+        {
+            listItem:"Formación como instructora de pole dance",
+            listItemDescription:"En marzo de 2025 completaré la formación como instructora de pole dance. Esta experiencia me ayudará a fortalecer mis habilidades en la gestión de grupos y transmitir contenido complejo de manera clara."
+        },
+        {
+            listItem:"Desarrollar más mis propios proyectos",
+            listItemDescription:"Quiero centrarme activamente en el desarrollo continuo de mis proyectos existentes. Esto incluye optimizar funciones existentes e implementar nuevas ideas para mejorar continuamente la calidad y la facilidad de uso."
+        }
+      ],
       },
     ];
 
