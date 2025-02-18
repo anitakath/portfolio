@@ -22,27 +22,27 @@ export default function handler (req, res){
         educationsTable:[
           {
             name: "Pflegeurkunde",
-            educationsZertificatePath: " ",
+            educationsCertificatePath: "/images/education/pflege-urkunde.jpg",
             description:" erhalten am ... "
           },
           {
             name: " Pflegezeugnis",
-            educationsZertificatePath: " ",
+            educationsCertificatePath: "/images/education/pflege-zeugnis.jpg",
             description: "sowohl der praktische als auch der theoretische Teil wurden mit der Note 2 absolviert"
           },
           {
             name: "Zertifikat Hygienementorin",
-            educationsZertificatePath: " ",
+            educationsCertificatePath: "/images/education/hygienementorin.jpg",
             description: ""
           },
           {
             name: "Udemy Zertifikat Next.js",
-            educationsZertificatePath: " ",
+            educationsCertificatePath: "",
             description: ""
           },
           {
             name: "Schulzeugnis",
-            educationsZertificatePath: " ",
+            educationsCertificatePath: "",
             description: ""
           },
         ],

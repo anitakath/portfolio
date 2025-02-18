@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import styles from './Education.module.css';
-import Link from 'next/link';
 import Image from 'next/image';
 import { useSelector } from 'react-redux';
 //COMPONENTS
@@ -21,17 +20,21 @@ const Education = ({ data }) => {
 
     let downloadText= "";
     let enlargeText = "";
+    let noFileInfo = ""
 
 
     if (currentLanguage === "GERMAN") {
         downloadText = "Datei herunterladen",
         enlargeText = "Datei vergößern"
+        noFileInfo = "bisher noch keine Datei hinterlegt..."
     } else if (currentLanguage === "ENGLISH") {
         downloadText = "Download file";
         enlargeText = "Enlarge file";
+        noFileInfo = "no file stored yet..."
     } else if (currentLanguage === "SPANISH") {
         downloadText = "Descargar archivo";
         enlargeText = "Ampliar archivo";
+        noFileInfo = "ningún archivo almacenado todavía.."
     }
 
     // Handler zum Öffnen des Modals
@@ -58,41 +61,51 @@ const Education = ({ data }) => {
                         {openItems === education.name && (
                             <div className={styles.detailsContainer}>
                                
-                               {/* <p>Zertifikatspfad: {education.educationsZertificatePath || "Kein Zertifikatspfad verfügbar"}</p>*/}
-                                {/* Füge hier weitere Details hinzu, falls vorhanden */}
+                          
                                 <div className='w-full flex items-center'>
-                                    <Image
-                                            src="/images/portfolio/aec/example.jpg"
+
+                                    {education.educationsCertificatePath && (
+                                        <div className='flex w-full'>
+                                            <Image 
+                                            src={education.educationsCertificatePath}
                                             width={200}
                                             height={200}
-                                            alt={`Zertifikat für ${education.name}`}
                                             className={styles.certificateImage}
-                                            onError={(e) => {
-                                                e.target.onerror = null; 
-                                                e.target.src='/path/to/default/image.jpg'; // Optional: Fallback image
-                                            }}
-                                    />
-                                    <div
-                                        className={styles.downloadLinkDiv}
-                                    >
-                                        <p className={styles.downloadLinkDivDescription}> {education.description}</p>
-                                        <button
-                                            className={styles.downloadLink}
-                                            /*href={`images/education/Zertifikat-${education.name}.jpg`} */
-                                            download
-                                        >
-                                            {downloadText}
-                                        </button>
+                                        
+                                            />
 
-                                        <button 
-                                            className={styles.downloadLink} 
-                                            onClick={(event) => handleEnlargeClick(event)}
-                                        >
-                                            {enlargeText}
-                                        </button>
-                                      
-                                    </div>
+                                            <div
+                                                className={styles.downloadLinkDiv}
+                                            >
+                                                <p className={styles.downloadLinkDivDescription}> {education.description}</p>
+                                                <button
+                                                    className={styles.downloadLink}
+                                                    /*href={`images/education/Zertifikat-${education.name}.jpg`} */
+                                                    download
+                                                    >
+                                                    {downloadText}
+                                                </button>
+
+                                                <button 
+                                                    className={styles.downloadLink} 
+                                                    onClick={(event) => handleEnlargeClick(event)}
+                                                >
+                                                    {enlargeText}
+                                                </button>
+                                            
+                                            </div>
                                    
+                                        </div>
+                                    )}
+
+
+                                    {!education.educationsCertificatePath && (
+                                        <p className={styles.noFileInfo}> 
+                                            {noFileInfo} 
+                                        </p>
+                                    ) 
+                                    }
+
                                     
                                 </div>
                                 
@@ -105,7 +118,11 @@ const Education = ({ data }) => {
 
              {/* EducationsModal */}
              {isModalOpen && (
-                <EducationsModal onClose={closeModal} openItems={openItems} educationsTable={educationsTable}/>
+                <EducationsModal 
+                    onClose={closeModal} 
+                    openItems={openItems} 
+                    educationsTable={educationsTable}
+                />
             )}
         </div>
     );

@@ -10,6 +10,7 @@ const EducationsModal = ({ openItems, educationsTable, onClose }) => {
 
     const selectedEducation = educationsTable.find(item => item.name === openItems); 
 
+    console.log(selectedEducation)
     return ( 
         <div className={styles.modalBackdrop} onClick={onClose}> 
             <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}> 
@@ -22,7 +23,7 @@ const EducationsModal = ({ openItems, educationsTable, onClose }) => {
                             <Image src="/images/icons8-download-50.png" width={22} height={30}/>
                     
                         </button> 
-                        <Image src="/images/portfolio/aec/example.jpg" width={500} height={200} fetchPriority='high' className={styles.image} /> 
+                        <Image src={selectedEducation.educationsCertificatePath} width={500} height={200} fetchPriority='high' className={styles.image} /> 
                     </div> 
                 ) : ( 
                     <h1>Keine Informationen verfügbar</h1> 

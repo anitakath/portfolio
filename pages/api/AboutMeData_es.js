@@ -15,9 +15,9 @@ export default function handler(req, res) {
         id: 2,
         title: "Educación y Carrera",
         educationsTable: [
-          { name: "Certificado de Cuidado", educationsZertificatePath: " ", description: "" },
-          { name: "Certificado de Cuidado Profesional", educationsZertificatePath: " " , description: ""},
-          { name: "Certificado de Mentora en Higiene", educationsZertificatePath: " ", description: "" },
+          { name: "Certificado de Cuidado", educationsCertificatePath: "/images/education/pflege-urkunde.jpg", description: "" },
+          { name: "Certificado de Cuidado Profesional", educationsCertificatePath: "/images/education/pflege-zeugnis.jpg" , description: ""},
+          { name: "Certificado de Mentora en Higiene", educationsCertificatePath: "/images/education/hygienementorin.jpg", description: "" },
           { name: "Certificado de Udemy en Next.js", educationsZertificatePath: " ", description: "" },
           { name: "Certificado Escolar", educationsZertificatePath: " ", description: ""},
       ],
