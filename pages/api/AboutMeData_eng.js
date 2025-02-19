@@ -15,10 +15,40 @@ export default function handler(req, res) {
         id: 2,
         title: "Education and Career",
         educationsTable: [
-          { name: "Care Certificate", educationsCertificatePath: "/images/education/pflege-urkunde.jpg" , description: ""},
-          { name: "Care Reference", educationsCertificatePath: "/images/education/pflege-zeugnis.jpg", description: "" },
-          { name: "Hygiene Mentor Certificate", educationsCertificatePath: "/images/education/hygienementorin.jpg", description: "" },
-          { name: "Udemy Certificate in Next.js", educationsZertificatePath: " ", description: "" },
+          {
+            name: "Udemy: Next.js 15 & React - The Complete Guide",
+            subTitle: "by Maximilian Schwarzmüller",
+            educationsCertificatePath: "",
+            educationsPlatformPath: "https://www.udemy.com/course/nextjs-react-the-complete-guide/?couponCode=KEEPLEARNING",
+            description: "hier habe ich folgendes gelernt :)"
+          },
+          {
+            name: "Udemy: React Complete Guide 2025 (incl. Next.js, Redux)",
+            subTitle: "by Maximilian Schwarzmüller",
+            educationsCertificatePath: "",
+            educationsPlatformPath: "https://www.udemy.com/course/react-the-complete-guide-incl-redux/?couponCode=KEEPLEARNING",
+            description: "hier habe ich folgendes gelernt :)"
+          },
+          {
+            name: "Project Management Complete Course",
+            subTitle: "by Benjamin Schollän and Tobias Becker",
+            educationsCertificatePath: "",
+            educationsPlatformPath: "https://www.udemy.com/course/projektmanagement-komplettkurs/?couponCode=KEEPLEARNING",
+            description: "hier habe ich folgendes gelernt :)"
+          },
+          { 
+            name: "Care Certificate", 
+            educationsCertificatePath: "/images/education/pflege-urkunde.jpg" , 
+            description: "I received my nursing certificate in October 2019 after completing my training in healthcare and nursing. It was presented to me by the employees of the Municipal Hospital and the DRK Augusta Schwesternschaft in Lüneburg."},
+          { 
+            name: "Care Reference", 
+            educationsCertificatePath: "/images/education/pflege-zeugnis.jpg", 
+            description: "In addition to my general nursing certificate, I also received my nursing certificate with grades in October 2019. Both the practical and theoretical parts of my exams were graded 2." },
+          { 
+            name: "Hygiene Mentor Certificate", 
+            educationsCertificatePath: "/images/education/hygienementorin.jpg", 
+            description: "In July 2021, I completed my training to become a hygiene mentor. This qualification enables me to conduct regular training and presentations for colleagues in a clinical context and to monitor and develop the hygiene processes on the ward." },
+          
           { name: "School Certificate", educationsZertificatePath: " ", description: "" },
         ],
         description: null,

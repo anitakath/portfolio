@@ -77,7 +77,7 @@ const AboutMe = ({ setIsVisible }) => {
       title = "SOBRE MI";
   }
 
-  console.log(aboutMeData)
+
 
   return (
       <div id="aboutMe" className="sub_container">

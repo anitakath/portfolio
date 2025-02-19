@@ -21,25 +21,42 @@ export default function handler (req, res){
         title: "Bildung und Karriere",
         educationsTable:[
           {
-            name: "Pflegeurkunde",
-            educationsCertificatePath: "/images/education/pflege-urkunde.jpg",
-            description:" erhalten am ... "
+            name:"Udemy: Next.js 15 & React - The Complete Guide",
+            subTitle: "by Maximilian Schwarzmüller",
+            educationsCertificatePath: "",
+            educationsPlatformPath: "https://www.udemy.com/course/nextjs-react-the-complete-guide/?couponCode=KEEPLEARNING",
+            description: "hier habe ich folgendes gelernt ... :)"
           },
           {
-            name: " Pflegezeugnis",
+            name: "Udemy: React Complete Guide 2025 (incl. Next.js, Redux)",
+            subTitle: "by Maximilian Schwarzmüller",
+            educationsCertificatePath: "",
+            educationsPlatformPath: "https://www.udemy.com/course/react-the-complete-guide-incl-redux/?couponCode=KEEPLEARNING",
+            description: "hier habe ich folgendes gelernt :)"
+          },
+          {
+            name: "Projektmanagement Komplettkurs",
+            subTitle: "von Benjamin Schollän und Tobias Becker",
+            educationsCertificatePath: "",
+            educationsPlatformPath: "https://www.udemy.com/course/projektmanagement-komplettkurs/?couponCode=KEEPLEARNING",
+            description: "hier habe ich folgendes gelernt :)"
+          },
+          {
+            name: "Pflegeurkunde",
+            educationsCertificatePath: "/images/education/pflege-urkunde.jpg",
+            description:"Meine Pflegeurkunde habe ich im Oktober 2019 nach bestandener Ausbildung in der Gesundheits- und Krankenpflege erhalten. Übergeben wurde sie mir durch die Mitarbeiter des Städtischen Klinikums und die DRK Augusta Schwesternschaft in Lüneburg."
+          },
+          {
+            name: "Pflegezeugnis",
             educationsCertificatePath: "/images/education/pflege-zeugnis.jpg",
-            description: "sowohl der praktische als auch der theoretische Teil wurden mit der Note 2 absolviert"
+            description: "neben meiner Pflegeurkunde habe ich im Oktober 2019 auch mein Pflegezeugnis erhalten. Sowohl der praktische als auch die theoretischen Teile meiner Prüfungen wurden mit der Note 2 benotet."
           },
           {
             name: "Zertifikat Hygienementorin",
             educationsCertificatePath: "/images/education/hygienementorin.jpg",
-            description: ""
+            description: "Im Juli 2021 habe ich meine Fortbildung zur Hygienementorin abgeschlossen. Diese Qualifikation ermöglicht es mir, regelmäßige Schulungen und Präsentationen für Kolleg:innen im klinischen Kontext durchzuführen sowie die Hygieneprozesse auf der Station zu überwachen und weiterzuentwickeln."
           },
-          {
-            name: "Udemy Zertifikat Next.js",
-            educationsCertificatePath: "",
-            description: ""
-          },
+        
           {
             name: "Schulzeugnis",
             educationsCertificatePath: "",

@@ -19,10 +19,6 @@ export default function Home({initialData}) {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [isHeaderVisible, setIsHeaderVisible] = useState(true)
 
-  const currentLanguage = useSelector((state) => state.language)
-
-  console.log(currentLanguage)
-
   const openMobileMenuHandler = () => {
     setShowMobileMenu(!showMobileMenu);
   };

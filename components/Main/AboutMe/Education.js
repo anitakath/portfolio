@@ -2,6 +2,8 @@ import { useState } from 'react';
 import styles from './Education.module.css';
 import Image from 'next/image';
 import { useSelector } from 'react-redux';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
 //COMPONENTS
 import EducationsModal from '@/components/UI/Modals/EducationsModal';
 
@@ -48,6 +50,8 @@ const Education = ({ data }) => {
         setIsModalOpen(false);
     };
 
+    console.log(educationsTable)
+
 
     return (
         <div className={styles.container}>
@@ -56,60 +60,70 @@ const Education = ({ data }) => {
                     <li key={education.name} className={styles.listItem}>
                         <button className={styles.itemButton} onClick={(event) => toggleEducation(event, education.name)}>
                             <strong>{education.name}</strong>
+                            {education.subTitle && (
+                                 <span className={styles.titleSpan}> {education.subTitle} </span>
+                            )}
+                           
                         </button>
                         {/* Check if the current education is the selected one */}
                         {openItems === education.name && (
-                            <div className={styles.detailsContainer}>
-                               
-                          
-                                <div className='w-full flex items-center'>
+                           
+                           <motion.div 
+                           className={styles.detailsContainer}
+                           initial={{ opacity: 0, height: 0 }} 
+                           animate={{ opacity: 1, height: 'auto' }} 
+                           exit={{ opacity: 0, height: 0 }} 
+                           transition={{ duration: 0.3 }} 
+                       >
+                           <div className='w-full flex items-center justify-center'>
+                            
+                               {education.educationsCertificatePath && (
+                                   <div className={styles.detailsDiv}>
+                                       <Image 
+                                           src={education.educationsCertificatePath}
+                                           width={200}
+                                           height={200}
+                                           className={styles.certificateImage}
+                                       />
+                                       <div className={styles.downloadLinkDiv}>
+                                           <p className={styles.downloadLinkDivDescription}> {education.description}</p>
+                                           <button
+                                               className={styles.downloadLink}
+                                               download
+                                           >
+                                               {downloadText}
+                                           </button>
 
-                                    {education.educationsCertificatePath && (
-                                        <div className='flex w-full'>
-                                            <Image 
-                                            src={education.educationsCertificatePath}
-                                            width={200}
-                                            height={200}
-                                            className={styles.certificateImage}
-                                        
-                                            />
-
-                                            <div
-                                                className={styles.downloadLinkDiv}
-                                            >
-                                                <p className={styles.downloadLinkDivDescription}> {education.description}</p>
-                                                <button
-                                                    className={styles.downloadLink}
-                                                    /*href={`images/education/Zertifikat-${education.name}.jpg`} */
-                                                    download
-                                                    >
-                                                    {downloadText}
-                                                </button>
-
-                                                <button 
-                                                    className={styles.downloadLink} 
-                                                    onClick={(event) => handleEnlargeClick(event)}
-                                                >
-                                                    {enlargeText}
-                                                </button>
-                                            
-                                            </div>
-                                   
-                                        </div>
-                                    )}
-
-
-                                    {!education.educationsCertificatePath && (
-                                        <p className={styles.noFileInfo}> 
-                                            {noFileInfo} 
-                                        </p>
-                                    ) 
-                                    }
-
-                                    
+                                           <button 
+                                               className={styles.downloadLink} 
+                                               onClick={(event) => handleEnlargeClick(event)}
+                                           >
+                                               {enlargeText}
+                                           </button>
+                                       </div>
+                                   </div>
+                               )}
+                               {!education.educationsCertificatePath && (
+                                <div className='w-full relative flex-col justify-center items-center'>
+                                   <p className={styles.noFileInfo}> {noFileInfo} </p>
+                                  
                                 </div>
-                                
-                            </div>
+                               )}
+
+                                {education.educationsPlatformPath && (
+                                    <Link href={education.educationsPlatformPath} target="_blank" rel="noopener noreferrer" className={styles.link}>
+                                        <img 
+                                            src="/gifs/icons8-link.gif" 
+                                            alt="Udemy Link" 
+                                            style={{ width: '20px', height: '20px' }} 
+                                            className={styles.linkGif}
+                                        />
+                                        <span> udemy </span>
+                                    </Link>
+                                )}
+
+                           </div>
+                       </motion.div>
                         )}
                     </li>
                 ))}

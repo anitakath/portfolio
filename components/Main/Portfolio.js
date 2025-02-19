@@ -126,7 +126,7 @@ const Portfolio = () => {
                       <div className={styles.link_div}>
                         <FontAwesomeIcon icon={faN} />
                         <Link href={item.netlify_path} className={styles.project_link} target="_blank" rel="noopener noreferrer">
-                          <span className={styles.span}>Netlify</span>
+                          <span className={styles.span}>etlify</span>
                         </Link>
                       </div>
                      
