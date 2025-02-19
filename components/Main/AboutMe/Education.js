@@ -87,12 +87,12 @@ const Education = ({ data }) => {
                                        />
                                        <div className={styles.downloadLinkDiv}>
                                            <p className={styles.downloadLinkDivDescription}> {education.description}</p>
-                                           <button
+                                           {/*<button
                                                className={styles.downloadLink}
                                                download
                                            >
                                                {downloadText}
-                                           </button>
+                                           </button> */}
 
                                            <button 
                                                className={styles.downloadLink} 
