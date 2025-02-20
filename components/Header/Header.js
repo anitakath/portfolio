@@ -206,7 +206,7 @@ const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, }) =
                <div className={styles.gradientOverlay}></div> 
                <div className={styles.innerContextContainer}>
 
-                <div className='p-12 w-6/12 mt-10 relative top-10 left-4'>
+                <div className='md:p-12 md:w-6/12 mt-10 relative top-10 left-4'>
                     <h2 className={styles.subTitle}> {headerInformation.subTitle} </h2>
                     {/* CREATE DYNAMIC &  !!*/}
                     <div className={`${styles.andContainer} ${isVisible ? styles.visible : styles.hidden}`}>

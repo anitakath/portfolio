@@ -124,6 +124,7 @@
     font-size: 20px;
     overflow: hidden;
     position: relative;
+
 }
 
 
@@ -132,12 +133,30 @@
     width: 100%;
     height: 100%;
     z-index: 1000;
+
+
 }
 
 .subTitle{
     font-family: 'Playwrite India', cursive;
     color: var(--font-plum);
     font-size: 2rem;
+    width: 100%;
+}
+
+
+.andContainer{
+    color: var(--font-plum-light);
+    position: absolute;
+    top:50px;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 7rem;
+    z-index: -10; 
+    animation: fadeIn 4s ease forwards;
 }
 
 .description{
@@ -146,7 +165,6 @@
     font-family: 'Source Serif 4', cursive;
     font-size: 1.3rem;
     margin-top: 30px;
-    
 }
 
 .skillsContainer{
@@ -154,6 +172,8 @@
     justify-content: space-around; 
     align-items: center;
     padding: 20px; 
+    overflow-x: scroll;
+    flex-wrap: wrap;
     /*background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px; 
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); */
@@ -172,6 +192,7 @@
     transform: scale(1.05); 
     cursor: pointer;
 }
+/*
 
 .backgroundCircle {
     position: absolute;
@@ -182,7 +203,9 @@
     opacity: 0; 
     transition: opacity 0.8s ease; 
     z-index: -1; 
-}
+
+    border:2px solid purple;
+}*/
 
 .skillsDiv:hover .backgroundCircle {
     opacity: 1; 
@@ -204,31 +227,16 @@
     right: 0;
     bottom: 0; 
     background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-    z-index: 500;  
+    z-index: 500; 
 }
 
 
 
-.andContainer{
-    color: var(--font-plum-light);
-    position: absolute;
-    top:50px;
-    width: 5rem;
-    height: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 7rem;
-    z-index: -10; 
-    animation: fadeIn 4s ease forwards;
-}
-
-
-.hidden {
+.hidden{
     opacity: 0; 
 }
 
-.visible {
+.visible{
     opacity: 1; 
 }
 
@@ -290,6 +298,17 @@
     }
 }
 
+@media screen and (max-width: 980px){
+
+    .andContainer{
+        top: 50px;
+    }
+
+    .subTitle{
+        width: 400px;
+    }
+}
+
 
 @media screen and (max-width: 900px){
 
@@ -304,6 +323,7 @@
     .mobileLanguageButton:hover{
         color: var(--font-plum);
     }
+
 
  
 }
@@ -349,7 +369,23 @@
     }
 
 
+    .skillsContainer{
+        padding: 0;
+        flex-direction: column;
+    }
+
+    .gradientOverlay{
+        background-color: transparent;
+        padding: 0;
+    }
+
  
+}
+
+@media screen and (max-width: 770px){
+    .andContainer{
+        top: 5px;
+    }
 }
 
 
@@ -364,6 +400,14 @@
     .navigationContainer{
         align-items: center;
     }
+
+
+    
+    .description{
+        width: 200px;
+    }
+
+ 
 }
 
 
@@ -371,5 +415,19 @@
     .navigationContainer ul li{
         font-size: 0.8rem;
         margin: 0px 10px;
+    }
+
+    .subTitle{
+        width: 300px;
+        font-size: 1.5rem;
+    }
+
+    .description{
+        font-size: 1.2rem;
+    }
+
+    .andContainer{
+        top: 0px;
+        font-size: 6rem;
     }
 }
