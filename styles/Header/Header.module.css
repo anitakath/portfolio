@@ -13,8 +13,6 @@
 .upContainer{
     position: absolute;
     border: 2px solid green;
-
-
     left: -20px;
     top:0;
 }
@@ -29,7 +27,6 @@
 
 .up:hover{
     transition: 0.2s ease;
-
 }
 
 
@@ -42,6 +39,8 @@
     position: relative;
     left: 50px;
     width: 30%;
+    margin-bottom: 10px;
+    padding-bottom: 2px;
 }
 
 
@@ -168,44 +167,30 @@
 }
 
 .skillsContainer{
+    width: 100%;
     display: flex;
-    justify-content: space-around; 
+    justify-content: start; 
     align-items: center;
-    padding: 20px; 
+    padding: 0; 
+    margin: 0;
     overflow-x: scroll;
-    flex-wrap: wrap;
-    /*background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px; 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); */
 }
 
 .skillsDiv {
-    width: 80px; 
+    width:200px; 
+    margin: 0px 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
     height: 50px;
+    
 }
 
 .skillsDiv:hover {
     transform: scale(1.05); 
     cursor: pointer;
 }
-/*
-
-.backgroundCircle {
-    position: absolute;
-    width: 50px; 
-    height: 50px; 
-    border-radius: 50%;
-    background: radial-gradient(circle, var(--font-plum-light) 0%, rgba(255, 255, 255, 0) 70%); 
-    opacity: 0; 
-    transition: opacity 0.8s ease; 
-    z-index: -1; 
-
-    border:2px solid purple;
-}*/
 
 .skillsDiv:hover .backgroundCircle {
     opacity: 1; 
@@ -296,6 +281,10 @@
     .navigationContainer ul li{
         font-size: 0.8rem;
     }
+
+    .skillsDiv{
+        width: 80px;
+    }
 }
 
 @media screen and (max-width: 980px){
@@ -369,11 +358,6 @@
     }
 
 
-    .skillsContainer{
-        padding: 0;
-        flex-direction: column;
-    }
-
     .gradientOverlay{
         background-color: transparent;
         padding: 0;
@@ -392,6 +376,29 @@
 @media screen and (max-width: 600px){
 
 
+    .header_space{
+        height: 12vh;
+    }
+
+    .title_container{
+        margin:0;
+        justify-content: start;
+    }
+
+    .navigationContainer{
+        height: 100px;
+        margin-top:10px;
+    }
+
+    .navigationContainer ul li{
+        font-size: 0.9rem;
+        margin: 2px 20px;
+    }
+    .header_row{
+
+        height: 15vh;
+    }
+
 
     .language_btn{
         font-size: 1.3rem;
@@ -399,6 +406,7 @@
 
     .navigationContainer{
         align-items: center;
+        /*border: 2px solid gold;*/
     }
 
 
@@ -407,11 +415,44 @@
         width: 200px;
     }
 
+
  
 }
 
 
+@media screen and (max-width: 500px){
+    .skillsDiv{
+        height: 40px;
+    }
+
+
+    .header_space{
+        height: 14vh;
+    }
+
+    .title_container{
+        margin-top:10px;
+    }
+
+    .navigationContainer{
+        margin-top: 15px;
+    }
+   
+
+    .navigationContainer ul li{
+        font-size: 1rem;
+        margin: 0px 10px;
+    }
+
+  
+}
+
 @media screen and (max-width: 400px){
+
+    .header_spac{
+
+        border: 2px solid green;
+    }
     .navigationContainer ul li{
         font-size: 0.8rem;
         margin: 0px 10px;
@@ -430,4 +471,12 @@
         top: 0px;
         font-size: 6rem;
     }
+
+    
+    .skillsDiv{
+        height: 35px;
+        width: 40px;
+    }
+
+    
 }

@@ -1,0 +1,27 @@
+.container {
+    overflow: hidden; /* Verhindert das Überlaufen des Inhalts */
+    position: relative;
+  }
+  
+  .slider {
+    display: flex; /* Flexbox für horizontale Anordnung */
+    transition: transform 0.5s ease-in-out; /* Sanfte Übergänge */
+  }
+  
+  .skillsDiv {
+    min-width: 200px; /* Mindestbreite für jedes Skill-Element */
+    margin: 0 10px; /* Abstand zwischen den Elementen */
+  }
+  
+  .backgroundCircle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.2); /* Leicht transparenter Hintergrund */
+  }
+  
+  /* Optional - Stil für das Bild */
+  .skillsDiv img {
+    max-width: 100%; /* Bild passt sich der Breite des Containers an */
+  }

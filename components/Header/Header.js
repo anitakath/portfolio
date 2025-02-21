@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef} from 'react';
 import { useCallback } from 'react';
 import Image from 'next/image';
 import { Link } from 'react-scroll'; // REDUX
@@ -10,6 +10,7 @@ import { motion } from 'framer-motion';
 import ScrollIndicator from './ScrollIndicator';
 import MenuButton from '../UI/MenuButton';
 import useSkills from '@/custom-hooks/useSkills';
+import SkillsSlider from './SkillsSlider';
 //CUSTOM HOOK
 import useNavigation from '@/custom-hooks/useNavigation';
 
@@ -65,6 +66,7 @@ const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, }) =
     };
     const [scrollY, setScrollY] = useState(0);
     const [windowWidth, setWindowWidth] = useState(0);
+    const [slideDirection, setSlideDirection] = useState('right');
     const {skills} =useSkills();
 
     const onScroll = useCallback(() => {
@@ -160,10 +162,31 @@ const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, }) =
 
     
 
+
+
+    useEffect(() => {
+        let intervalId;
+
+        if (windowWidth <= 1000) {
+            const slideSkills = () => {
+                setSlideDirection(prevDirection => (prevDirection === 'right' ? 'left' : 'right'));
+            };
+
+            intervalId = setInterval(slideSkills, 3000); // Ändere alle 3 Sekunden
+        }
+
+        return () => clearInterval(intervalId);
+    }, [windowWidth]);
+    
+
+
+
+    
+
    return (
-       <div id="header" className='h-screen  w-full relative'>
+       <div id="header" className='h-screen overflow-hidden  w-full relative'>
         <ScrollIndicator />
-           <div className={styles.header_space}>
+        <div className={styles.header_space}>
                <div className={styles.header_row} style={headerRowStyle}>
                    <div className={styles.title_container}>
                        <h1> ANNE-KATHRIN WAGNER </h1>
@@ -196,12 +219,12 @@ const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, }) =
                         </motion.div>
                    )}
                </div>
-           </div>
+        </div>
 
 
 
            {/* Header-Bild */}
-           <div className={styles.headerImage_row}>
+        <div className={styles.headerImage_row}>
                <Image src="/images/portrait_example.jpg" height={1400} width={1400} className={styles.portrait} alt={"a portrait of me"} />
                <div className={styles.gradientOverlay}></div> 
                <div className={styles.innerContextContainer}>
@@ -216,16 +239,38 @@ const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, }) =
                 </div>
                
                </div>
-           </div>
-        <div className={`h-14 flex  mt-2 overflow-hidden ${styles.skillsContainer}`}> 
-            {skills.map(({ name, logo }) => (
-                <div key={name} className={styles.skillsDiv}>
-                    <div className={styles.backgroundCircle}></div> 
-                    <img src={logo} alt={name} className='h-full' />
-                    {/*<span>{name}</span>*/}
-                </div>
-            ))}
-    </div>
+        </div>
+
+
+        {/*}
+        <SkillsSlider 
+            windowWidth={windowWidth} 
+            skills={skills} 
+            slideDirection={slideDirection}
+        /> */}
+        <div className={`  ${styles.skillsContainer}`}> 
+            {windowWidth <= 1000 ? (
+                skills.map(({ name, logo }) => (
+                    <motion.div 
+                        key={name} 
+                        className={styles.skillsDiv} 
+                        initial={{ x: slideDirection === 'right' ? '100%' : '-100%' }} 
+                        animate={{ x: slideDirection === 'right' ? '-100%' : '100%' }} 
+                        transition={{ duration: 10 }}
+                    >
+                        <div className={styles.backgroundCircle}></div>
+                        <img src={logo} alt={name} className='h-full' />
+                    </motion.div>
+                ))
+            ) : (
+                skills.map(({ name, logo }) => (
+                    <div key={name} className={styles.skillsDiv}>
+                        <div className={styles.backgroundCircle}></div>
+                        <img src={logo} alt={name} className='h-full' />
+                    </div>
+                ))
+            )}
+        </div>
     </div>
    );
 };

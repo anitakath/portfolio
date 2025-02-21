@@ -33,7 +33,7 @@ const MenuButton = ({isHovered, setIsHovered}) => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave} 
             className={styles.menuButton}
-            style={{ border: 'none', background: 'transparent', cursor: 'pointer', marginRight: '30px' }}
+            style={{  background: 'transparent', cursor: 'pointer', marginRight: '30px' }}
         >
             {isHovered ? (
                 <Image src="/images/button-icons/icons8-close-50.png" width={30} height={30} alt="Close Menu" className={styles.menuIcon}/>
