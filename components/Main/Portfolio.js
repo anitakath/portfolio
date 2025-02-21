@@ -87,8 +87,9 @@ const Portfolio = () => {
                           src={image} 
                           alt={`${item.title} image ${index + 1}`} // Alternativtext für jedes Bild
                           layout="responsive" 
-                          width={600} 
-                          height={600} 
+                          width={800} 
+                          height={800} 
+                          className={styles.image}
                           
                         />
                       ))}
