@@ -1,11 +1,13 @@
 .container {
     overflow: hidden; /* Verhindert das Überlaufen des Inhalts */
     position: relative;
+
   }
   
   .slider {
     display: flex; /* Flexbox für horizontale Anordnung */
     transition: transform 0.5s ease-in-out; /* Sanfte Übergänge */
+    
   }
   
   .skillsDiv {

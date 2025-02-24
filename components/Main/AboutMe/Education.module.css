@@ -57,6 +57,8 @@
 }
 
 .downloadLinkDiv{
+
+    padding: 10px;
     font-size: 1.3rem;
     width: 80%;
     display: flex;
@@ -65,7 +67,7 @@
     margin-left: 10px;
 }
 
-.downloadLinkDivDescription{
+.description{
     width: 100%;
     max-height: 160px;
     font-size: 1rem;
@@ -76,26 +78,26 @@
 
 
 
-.downloadLink{  
+.enlargeLink{  
     transition: 0.2s ease-in-out;
-    margin: 2px 0px;
+    margin: 5px 0px;
     font-size: 1rem;
+    border-bottom: 1px solid black;
 }
 
-.downloadLink:hover{
+.enlargeLink:hover{
     color: var(--font-plum);
 }
 
 
 .certificateImage{
-    margin-top: 10px;
     width: 150px;
     height: 200px;
     object-fit: cover;
+    box-shadow: 1px 2px 5px grey;
 }
 
 .noFileInfo{
-    
     height: 100%;
     font-size: 1rem;
     display: flex;
@@ -105,18 +107,21 @@
 .link{
     margin: 10px 2px;
     font-size: 1rem;
-    width: 100%;
     padding: 2px;
+   /* width: 20%;*/
     margin-right: 50px;
     display: flex;
     justify-content: end;
     align-items: center;
     transition: 0.2s ease-in-out;
+    position: absolute;
+    top: -7px;
+    right: -10px;
 }
 
 .link:hover{
     color: var(--font-plum);
-    letter-spacing: 0.5px;
+    font-weight: bolder;
 }
 .linkGif{
    position: relative;

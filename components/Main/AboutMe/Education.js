@@ -50,8 +50,6 @@ const Education = ({ data }) => {
         setIsModalOpen(false);
     };
 
-    console.log(educationsTable)
-
 
     return (
         <div className={styles.container}>
@@ -75,7 +73,7 @@ const Education = ({ data }) => {
                            exit={{ opacity: 0, height: 0 }} 
                            transition={{ duration: 0.3 }} 
                        >
-                           <div className='w-full flex items-center justify-center'>
+                           <div className='w-full relative flex items-center justify-center'>
                             
                                {education.educationsCertificatePath && (
                                    <div className={styles.detailsDiv}>
@@ -84,9 +82,10 @@ const Education = ({ data }) => {
                                            width={200}
                                            height={200}
                                            className={styles.certificateImage}
+                                           alt="educations details infos"
                                        />
                                        <div className={styles.downloadLinkDiv}>
-                                           <p className={styles.downloadLinkDivDescription}> {education.description}</p>
+                                           <p className={styles.description}> {education.description}</p>
                                            {/*<button
                                                className={styles.downloadLink}
                                                download
@@ -95,7 +94,7 @@ const Education = ({ data }) => {
                                            </button> */}
 
                                            <button 
-                                               className={styles.downloadLink} 
+                                               className={styles.enlargeLink} 
                                                onClick={(event) => handleEnlargeClick(event)}
                                            >
                                                {enlargeText}

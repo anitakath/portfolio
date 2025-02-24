@@ -37,7 +37,7 @@ export default function handler (req, res){
           {
             name: "Projektmanagement Komplettkurs",
             subTitle: "von Benjamin Schollän und Tobias Becker",
-            educationsCertificatePath: "",
+            educationsCertificatePath: "/images/education/UC-eeb37b8e-91f3-4750-ae17-7365a6a8204f.jpg",
             educationsPlatformPath: "https://www.udemy.com/course/projektmanagement-komplettkurs/?couponCode=KEEPLEARNING",
             description: "hier habe ich folgendes gelernt :)"
           },
@@ -56,7 +56,12 @@ export default function handler (req, res){
             educationsCertificatePath: "/images/education/hygienementorin.jpg",
             description: "Im Juli 2021 habe ich meine Fortbildung zur Hygienementorin abgeschlossen. Diese Qualifikation ermöglicht es mir, regelmäßige Schulungen und Präsentationen für Kolleg:innen im klinischen Kontext durchzuführen sowie die Hygieneprozesse auf der Station zu überwachen und weiterzuentwickeln."
           },
-        
+          /*
+          {
+            name: "UKE Abschlusszeugnis",
+            educationsCertificatePath: "/images/education/hygienementorin.jpg",
+            description: ""
+          }, */
           {
             name: "Schulzeugnis",
             educationsCertificatePath: "",

@@ -32,7 +32,7 @@ export default function handler(req, res) {
           {
             name: "Curso completo de gestión de proyectos",
             subTitle: "por Benjamin Schollän and Tobias Becker",
-            educationsCertificatePath: "",
+            educationsCertificatePath: "/images/education/UC-eeb37b8e-91f3-4750-ae17-7365a6a8204f.jpg",
             educationsPlatformPath: "https://www.udemy.com/course/projektmanagement-komplettkurs/?couponCode=KEEPLEARNING",
             description: "hier habe ich folgendes gelernt :)"
           },
