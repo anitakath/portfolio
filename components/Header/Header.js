@@ -184,7 +184,7 @@ const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, }) =
     
 
    return (
-       <div id="header" className='h-screen overflow-hidden  w-full relative'>
+       <div id="header" className='h-screen overflow-hidden w-full relative'>
         <ScrollIndicator />
         <div className={styles.header_space}>
                <div className={styles.header_row} style={headerRowStyle}>
@@ -225,7 +225,7 @@ const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, }) =
 
            {/* Header-Bild */}
         <div className={styles.headerImage_row}>
-               <Image src="/images/portrait_example.jpg" height={1400} width={1400} className={styles.portrait} alt={"a portrait of me"} />
+               <Image src="/images/Anne-Kathrin.jpg" height={1400} width={1400} className={styles.portrait} alt={"a portrait of me"} />
                <div className={styles.gradientOverlay}></div> 
                <div className={styles.innerContextContainer}>
 
@@ -242,12 +242,13 @@ const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, }) =
         </div>
 
 
-        {/*}
-        <SkillsSlider 
-            windowWidth={windowWidth} 
-            skills={skills} 
-            slideDirection={slideDirection}
-        /> */}
+        {/*
+            <SkillsSlider 
+                windowWidth={windowWidth} 
+                skills={skills} 
+                slideDirection={slideDirection}
+            /> 
+        */}
         <div className={`  ${styles.skillsContainer}`}> 
             {windowWidth <= 1000 ? (
                 skills.map(({ name, logo }) => (

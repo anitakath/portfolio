@@ -24,6 +24,7 @@
 }
 
 
+
 .cardTitle{
     font-size: 1rem;
     transition: 0.2s ease;
@@ -37,6 +38,7 @@
     justify-content: center;
     align-items: center;
     margin: 0px 10px;
+    cursor: pointer;
 }
 
 .cardTitle:hover{
@@ -51,6 +53,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 
 .cardImage{
@@ -66,6 +69,32 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+
+
+
+.toggleSkillGroupButton{
+    width: 100%;
+    position: relative;
+    left: -1px;
+    text-align: start;
+    margin-top: 15px;
+    padding: 0px 10px;
+    font-size: 1rem;
+    font-weight: bolder;
+    transition: 0.4s ease-in-out;
+    height: 30px;
+   
+}
+
+.toggleSkillGroupButton:hover{
+    color: var(--font-plum);
+    
+}
+
+.toggleSkillGroupButtonActive{
+    color: var(--font-plum);
 }
 
 .table{
@@ -85,6 +114,7 @@
     justify-content: start;
     align-items: start;
     margin: 20px 0px;
+
 }
 
 .listItemButton{
@@ -113,10 +143,12 @@
 
 }
 
+
 .description{
     font-size: 1rem;
     padding: 10px;
     text-align: justify;
+    margin: 0px 10px;
 }
 
 
@@ -125,6 +157,18 @@
         width: 100%;
         height: 500px;
     }
+/*
+    .toggleSkillGroupButton{
+        height: 234px;
+    }
+
+    .toggleSkillGroupButtonActive{
+        height: 50px;
+        margin: 0;
+        margin-top: 10px;
+        background-color: var(--font-plum);
+        color: beige;
+    }*/
 }
 
 @media screen and (max-width: 900px){
@@ -138,12 +182,27 @@
         padding-top: 40px;
         height: 100vh;
     }
-    
 
     .password{
         top: 0px;
     }
 
+}
+
+@media screen and (max-width: 700px){
+    .toggleSkillGroupButton{
+        text-align: center;
+        height: 314px;
+    }
+
+    .toggleSkillGroupButtonActive{
+        height: 50px;
+        margin: 0;
+        margin-top: 10px;
+        background-color: var(--font-plum);
+        color: beige;
+    
+    }
 }
 
 @media screen and (max-width: 700px){

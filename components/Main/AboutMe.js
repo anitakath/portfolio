@@ -21,6 +21,7 @@ const AboutMe = ({ setIsVisible }) => {
   const [selectedData, setSelectedData] = useState({ title: "", description: "" });
   const [flippedIndex, setFlippedIndex] = useState(null);
   const [visibleDescriptions, setVisibleDescriptions] = useState({});
+  const [visibleSkillGroups, setVisibleSkillGroups] = useState({});
   const [visibleSkills, setVisibleSkills] = useState({});
 
 
@@ -59,6 +60,18 @@ const AboutMe = ({ setIsVisible }) => {
     }));
   };
 
+  const toggleSkillsGroups = (event, category, groupTitle) => {
+
+    console.log(groupTitle)
+
+    event.stopPropagation();
+    // Toggle der Sichtbarkeit für die spezifische Skill-Gruppe
+    setVisibleSkillGroups((prev) => ({
+        ...prev,
+        [groupTitle]: !prev[groupTitle],
+    }));
+  };
+
   const toggleSkills = (event, category) => {
     event.stopPropagation(); 
     setVisibleSkills((prev) => ({
@@ -78,6 +91,7 @@ const AboutMe = ({ setIsVisible }) => {
   }
 
 
+  console.log(visibleSkillGroups)
 
   return (
       <div id="aboutMe" className="sub_container">
@@ -94,8 +108,46 @@ const AboutMe = ({ setIsVisible }) => {
                       {/* Back side of the card */}
                       <motion.div className={styles.cardBack}>
                           {flippedIndex === data.id && (
-                              <div className="flex-col overflow-scroll items-center justify-center w-full h-full pl-1 bg-white">
+                              <div className="flex-col overflow-scroll items-center justify-center w-full h-full pl-1 bg-purple-100">
                                
+                                {data.skillstable && data.skillstable.map((skillGroup) => (
+                                  <div>
+                                  <div key={skillGroup.title}>
+                                    <button 
+                                      onClick={(event) => toggleSkillsGroups(event, null, skillGroup.title)}
+                                      className={`${styles.toggleSkillGroupButton} ${visibleSkillGroups[skillGroup.title] ? styles.toggleSkillGroupButtonActive : ''}`}
+                                    > 
+                                      {skillGroup.title} 
+                                    </button>
+                                    
+                                    {visibleSkillGroups[skillGroup.title] && skillGroup.table.length > 0 && (
+                                      <ul className={styles.table}>
+                                      
+                                        {skillGroup.table.map((skillCategory) => (
+                                          <li key={skillCategory.category} className="m-2 mb-4">
+                                            <button
+                                              className={styles.listItemButton}
+                                              onClick={(event) => toggleSkills(event, skillCategory.category)}
+                                              style={{ border: 'none', padding: 0, cursor: 'pointer' }}
+                                            >
+                                            {skillCategory.category}
+                                            </button>
+                                            {visibleSkills[skillCategory.category] && (
+                                              <ul className="mt-2">
+                                                {skillCategory.items.map((item, itemIndex) => (
+                                                  <li key={itemIndex} className={styles.categoryDescription}>{item}</li>
+                                                ))}
+                                              </ul>
+                                            )}
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    )}
+                                  </div>
+                                  </div>
+                                ))}
+                       
+                               {/*
                                {data.skillsTable && (
                                    <ul className={styles.table}>
                                    {data.skillsTable.map((skillCategory) => (
@@ -117,16 +169,19 @@ const AboutMe = ({ setIsVisible }) => {
                                      </li>
                                    ))}
                                  </ul>
-                               )}
+                               )}*/}
 
                                 {data.description && (
-                                  <p className={styles.description}>{data.description}</p>
+                                  <div >
+                                    <p className={styles.description}>{data.description}</p>
+                                  </div>
                                 )}
 
 
                                 {data.educationsTable && (
-                                  <Education data={data} />
-
+                                  <div>
+                                    <Education data={data} />
+                                  </div>
                                 )}
                     
     

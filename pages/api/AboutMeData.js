@@ -8,7 +8,7 @@ export default function handler (req, res){
       {
         id: 1,
         title: "Kurzer Steckbrief",
-        description:"Ich bin eine erfolgreich ausgebildete examinierte Gesundheits- und Krankenpflegerin mit einer Leidenschaft für Technologie und Sport. Als kreativer Kopf teste ich gerne verschiedene Applikationen und programmiere eigene Lösungen, um innovative Anwendungen zu entwickeln, die mir helfen, meinen (sportlichen) Alltag besser zu strukturieren. Neben meiner Begeisterung für Sport und Programmierung interessiere ich mich fürs Reisen und lerne aktiv Spanisch. Ich lese gerne Sachbücher – aktuell vertiefe ich mich in Women Living Deliciously von Florence Given und um mental wie körperlich abzuschalten, besuche ich gerne Thermen, Spas und Massagen oder backe Kuchen und Torten. Außerdem schaue ich leidenschaftlich gern Live-Sportevents und unterstütze diverse Teams, wie z.B. den Adendorfer Eishockey Club.",
+        description:"Ich bin eine erfolgreich ausgebildete examinierte Gesundheits- und Krankenpflegerin mit einer Leidenschaft für Technologie und Sport. Als kreativer Kopf teste ich gerne verschiedene Applikationen und programmiere meine eigenen kleinen Lösungen, die mir beispielsweise dabei helfen, meinen (sportlichen) Alltag besser zu strukturieren. In meinem Portfolio weiter unten ist hierfür als Beispiel mein Sporttagebuch aufgeführt. Neben meiner Begeisterung für Sport und Programmierung interessiere ich mich fürs Reisen und lerne aktiv Spanisch. Ich lese gerne Sachbücher – aktuell vertiefe ich mich in 'Women Living Deliciously' von Florence Given. Um mental wie körperlich abzuschalten, besuche ich gerne Thermen, Spas und Massagen oder backe Kuchen und Torten. Außerdem schaue ich leidenschaftlich gern Live-Sportevents und unterstütze diverse Teams, wie z.B. den Adendorfer Eishockey Club.",
         descriptionTable: [
           {listItem: null,
             listItemDescription: null,
@@ -23,7 +23,7 @@ export default function handler (req, res){
           {
             name:"Udemy: Next.js 15 & React - The Complete Guide",
             subTitle: "by Maximilian Schwarzmüller",
-            educationsCertificatePath: "",
+            educationsCertificatePath: "/images/education/nextjs.jpg",
             educationsPlatformPath: "https://www.udemy.com/course/nextjs-react-the-complete-guide/?couponCode=KEEPLEARNING",
             description: "hier habe ich folgendes gelernt ... :)"
           },
@@ -35,7 +35,7 @@ export default function handler (req, res){
             description: "hier habe ich folgendes gelernt :)"
           },
           {
-            name: "Projektmanagement Komplettkurs",
+            name: "Udemy: Projektmanagement Komplettkurs",
             subTitle: "von Benjamin Schollän und Tobias Becker",
             educationsCertificatePath: "/images/education/UC-eeb37b8e-91f3-4750-ae17-7365a6a8204f.jpg",
             educationsPlatformPath: "https://www.udemy.com/course/projektmanagement-komplettkurs/?couponCode=KEEPLEARNING",
@@ -74,9 +74,107 @@ export default function handler (req, res){
       },
       {
         id: 3,
-        title: "Programmierkenntnisse",
+        title: "Programmier-, und Projektmanagementkentnisse",
         imagePath: "/images/about-me-section/pexels-negativespace-169573.jpg",
         description: null,
+        skillstable: [
+          {
+            title: "Programmierung",
+            table: [
+              {
+                category: "Frontend-Technologien",
+                items: [
+                  "HTML",
+                  "CSS",
+                  "JavaScript",
+                  "jQuery",
+                  "React",
+                  "Next.js",
+                  "React Native",
+                  "WordPress",
+                  "TypeScript"
+                ],
+              },
+              {
+                category: "Build-Tools & Paketmanager",
+                items: ["Webpack", "Babel", "npm / yarn"],
+              },
+              {
+                category: "CSS-Präprozessoren & Frameworks",
+                items: ["Bootstrap", "Material-UI", "SASS/SCSS"],
+              },
+              { category: "State Management", items: ["Redux", "MobX"] },
+              { category: "Testing", items: ["React Testing Library", "Cypress", "Jest"] },
+              {
+                category: "Backend-Technologien (in Entwicklung)",
+                items: ["Node.js", "Express.js", "Firebase", "Supabase", "Heroku"],
+              },
+              {
+                category: "Datenbanken",
+                items: ["MongoDB (NoSQL)", "PostgreSQL (relational)"],
+              },
+              { category: "Cloud-Dienste", items: ["Cloudinary"] },
+              {
+                category: "Projektmanagement-Tools",
+                items: ["Jira", "Miro", "Confluence", "Microsoft Project"],
+              },
+              { category: "API-Kenntnisse", items: ["RESTful APIs", "GraphQL"] },
+              {
+                category: "Performance-Optimierung",
+                items: [
+                  "Lazy Loading",
+                  "Code Splitting"
+                ]
+              },
+              {
+                category: "Accessibility (a11y)",
+                items: [
+                  // Spezifische Kenntnisse und Tools für Barrierefreiheit
+                  "ARIA (Accessible Rich Internet Applications)",
+                  "WCAG (Web Content Accessibility Guidelines)",
+                  "Screen Reader Kompatibilität",
+                  "Keyboard-Navigation",
+                  "Farbenblindheitstests",
+           
+                ]
+              },
+              {
+                category: 'Version Control',
+                items: ['Git', 'GitHub'] 
+              },
+              {
+                category: 'Responsive Design',
+                items: [
+                  'Mobile First Ansätze',
+                  'Flexbox',
+                  'Grid Layout'
+                ] 
+              },
+
+            ]
+          },
+          {
+            title: "Projektmanagement",
+            table: [
+             
+              {
+                category: 'Tools',
+                items: ['Jira', 'Miro', 'Asana', 'Trello', 'Microsoft Project']
+              },
+              {
+                category: 'Methoden',
+                items: ['Agile', 'Scrum', 'Kanban', 'Wasserfall']
+              },
+              {
+                category: 'Soft Skills',
+                items: ['Kommunikation', 'Teamarbeit', 'Problemlösung', 'Zeitmanagement']
+              }
+
+
+            ]
+          }
+
+        ],
         skillsTable: [
           {
             category: "Frontend-Technologien",

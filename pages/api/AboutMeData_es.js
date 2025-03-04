@@ -8,7 +8,7 @@ export default function handler(req, res) {
       {
         id: 1,
         title: "Perfil corto",
-        description: " Soy una enfermera diplomada con formación superior y apasionada de la tecnología y el deporte. Como mente creativa, me gusta probar diferentes aplicaciones y programar mis propias soluciones para desarrollar aplicaciones innovadoras que me ayuden a estructurar mejor mi vida (deportiva) cotidiana. Además de mi entusiasmo por el deporte y la programación, me interesa viajar y estoy aprendiendo español activamente. Me gusta leer libros de no ficción -actualmente estoy inmersa en Women Living Deliciously de Florence Given- y para desconectar mental y físicamente, me gusta visitar baños termales, balnearios y masajes o hacer pasteles y tartas. También me apasiona ver acontecimientos deportivos en directo y apoyar a varios equipos, como el Club de Hockey sobre Hielo de Adendorf",
+        description: "Soy una profesional de la salud y enfermería certificada con una pasión por la tecnología y el deporte. Como persona creativa, disfruto probando diversas aplicaciones y programando mis propias pequeñas soluciones que me ayudan a estructurar mejor mi vida diaria (atlética). Un ejemplo de esto es mi diario deportivo, que está listado en mi portafolio más abajo. Además de mi entusiasmo por el deporte y la programación, me interesa viajar y estoy aprendiendo español activamente. Me gusta leer libros de no ficción; actualmente estoy profundizando en 'Women Living Deliciously' de Florence Given. Para desconectar mental y físicamente, me gusta visitar termas, spas y recibir masajes o hornear pasteles y tartas. Además, soy apasionada de ver eventos deportivos en vivo y apoyo a varios equipos, como el Adendorfer Eishockey Club",
         imagePath: "/images/about-me-section/pexels-minan1398-681637.jpg"
       },
       {
@@ -18,7 +18,7 @@ export default function handler(req, res) {
           {
             name:"Udemy: Next.js 15 & React - The Complete Guide",
             subTitle: "de Maximilian Schwarzmüller",
-            educationsCertificatePath: "",
+            educationsCertificatePath:"/images/education/nextjs.jpg",
             educationsPlatformPath: "https://www.udemy.com/course/nextjs-react-the-complete-guide/?couponCode=KEEPLEARNING",
             description: "hier habe ich folgendes gelernt :)"
           },
@@ -30,7 +30,7 @@ export default function handler(req, res) {
             description: "hier habe ich folgendes gelernt :)"
           },
           {
-            name: "Curso completo de gestión de proyectos",
+            name: "Udemy: Curso completo de gestión de proyectos",
             subTitle: "por Benjamin Schollän and Tobias Becker",
             educationsCertificatePath: "/images/education/UC-eeb37b8e-91f3-4750-ae17-7365a6a8204f.jpg",
             educationsPlatformPath: "https://www.udemy.com/course/projektmanagement-komplettkurs/?couponCode=KEEPLEARNING",
@@ -56,8 +56,86 @@ export default function handler(req, res) {
     
       {
         id: 3,
-        title: "Conocimientos de programación",
+        title: "Conocimientos de programación y gestión de proyectos",
         description: null,
+        skillstable: [
+          {
+            title: 'Programación',
+            table: [
+              {
+                category: "Tecnologías Frontend",
+                items: [
+                    "HTML",
+                    "CSS",
+                    "JavaScript",
+                    "jQuery",
+                    "React",
+                    "Next.js",
+                    "React Native",
+                    "WordPress",
+                    "TypeScript"
+                ],
+              },
+              {
+                  category: "Herramientas de Construcción y Gestores de Paquetes",
+                  items: ["Webpack", "Babel", "npm / yarn"],
+              },
+              {
+                  category: "Preprocesadores y Frameworks CSS",
+                  items: ["Bootstrap", "Material-UI", "SASS/SCSS"],
+              },
+              {
+                  category: "Gestión del Estado",
+                  items: ["Redux", "MobX"]
+              },
+              {
+                  category: "Pruebas",
+                  items: ["React Testing Library", "Cypress", "Jest"]
+              },
+                {
+                    category: 'Tecnologías Backend (en desarrollo)',
+                    items: ["Node.js", 'Express.js', 'Firebase', 'Supabase', 'Heroku'],
+                },
+                {
+                    category: 'Bases de Datos',
+                    items: ['MongoDB (NoSQL)', 'PostgreSQL (relacional)'],
+                },
+                {
+                  category:'Servicios en la Nube',
+                  items:['Cloudinary']
+              },
+              {
+                  category:'Herramientas de Gestión de Proyectos',
+                  items:['Jira', 'Miro', 'Confluence', 'Microsoft Project'],
+              },
+              {
+                  category:'Conocimientos de API',
+                  items:['RESTful APIs', 'GraphQL']
+              },
+              {
+                  category:'Optimización del Rendimiento',
+                  items:[
+                      'Carga Perezosa',
+                      'División de Código'
+                  ]
+              }
+            ]
+          },
+          {
+            title: "Gestión de proyectos",
+            table: [
+              {
+                category: "Tools",
+                items: [
+                  "tool 1",
+                  "tool 2"
+                ]
+              }
+
+
+            ]
+          }
+        ],
         skillsTable: [
           {
               category: "Tecnologías Frontend",

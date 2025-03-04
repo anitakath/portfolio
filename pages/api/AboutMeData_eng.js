@@ -8,7 +8,7 @@ export default function handler(req, res) {
       {
         id: 1,
         title: "Short profile",
-        description: " I am a successfully trained registered nurse with a passion for technology and sports. As a creative mind, I like to test different applications and program my own solutions to develop innovative applications that help me to better structure my everyday (sporting) life. In addition to my enthusiasm for sports and programming, I am interested in traveling and am actively learning Spanish. I enjoy reading non-fiction books - I'm currently immersed in Women Living Deliciously by Florence Given - and to switch off mentally and physically, I like to visit thermal baths, spas and massages or bake cakes and tarts. I'm also passionate about watching live sporting events and supporting various teams, such as the Adendorf Ice Hockey Club.",
+        description:"I am a successfully trained certified health and nursing professional with a passion for technology and sports. As a creative thinker, I enjoy testing various applications and programming my own small solutions that help me better structure my (athletic) daily life. An example of this is my sports diary, which is listed in my portfolio below. In addition to my enthusiasm for sports and programming, I am interested in traveling and actively learning Spanish. I enjoy reading non-fiction books – currently, I am delving into 'Women Living Deliciously' by Florence Given. To unwind both mentally and physically, I like to visit thermal baths, spas, and massages or bake cakes and pastries. Additionally, I am passionate about watching live sports events and support various teams, such as the Adendorfer Ice Hockey Club.",
         imagePath: "/images/about-me-section/pexels-minan1398-681637.jpg"
       },
       {
@@ -18,7 +18,7 @@ export default function handler(req, res) {
           {
             name: "Udemy: Next.js 15 & React - The Complete Guide",
             subTitle: "by Maximilian Schwarzmüller",
-            educationsCertificatePath: "",
+            educationsCertificatePath: "/images/education/nextjs.jpg",
             educationsPlatformPath: "https://www.udemy.com/course/nextjs-react-the-complete-guide/?couponCode=KEEPLEARNING",
             description: "hier habe ich folgendes gelernt :)"
           },
@@ -30,7 +30,7 @@ export default function handler(req, res) {
             description: "hier habe ich folgendes gelernt :)"
           },
           {
-            name: "Project Management Complete Course",
+            name: "Udemy: Project Management Complete Course",
             subTitle: "by Benjamin Schollän and Tobias Becker",
             educationsCertificatePath: "/images/education/UC-eeb37b8e-91f3-4750-ae17-7365a6a8204f.jpg",
             educationsPlatformPath: "https://www.udemy.com/course/projektmanagement-komplettkurs/?couponCode=KEEPLEARNING",
@@ -57,8 +57,87 @@ export default function handler(req, res) {
     
       {
         id: 3,
-        title: "Programming skills",
+        title: "Programming and project management skills",
         description: null,
+        skillstable: [
+            {
+              title: "Programming",
+              table: [
+                {
+                  category: "Frontend Technologies",
+                  items: [
+                      "HTML",
+                      "CSS",
+                      "JavaScript",
+                      "jQuery",
+                      "React",
+                      "Next.js",
+                      "React Native",
+                      "WordPress",
+                      "TypeScript"
+                  ],
+              },
+              {
+                  category: "Build Tools & Package Managers",
+                  items: ["Webpack", "Babel", "npm / yarn"],
+              },
+              {
+                  category: "CSS Preprocessors & Frameworks",
+                  items: ["Bootstrap", "Material-UI", "SASS/SCSS"],
+              },
+              {
+                  category: "State Management",
+                  items: ["Redux", "MobX"]
+              },
+              {
+                  category: "Testing",
+                  items: ["React Testing Library", "Cypress", "Jest"]
+              },
+              {
+                  category: "Backend Technologies (in development)",
+                  items: ["Node.js", "Express.js", "Firebase", "Supabase", "Heroku"],
+              },
+              {
+                  category: "Databases",
+                  items: ["MongoDB (NoSQL)", "PostgreSQL (relational)"],
+              },
+              {
+                  category: "Cloud Services",
+                  items: ["Cloudinary"]
+              },
+              {
+                  category: "Project Management Tools",
+                  items: ["Jira", "Miro", "Confluence", "Microsoft Project"],
+              },
+              {
+                  category: "API Knowledge",
+                  items: ["RESTful APIs", "GraphQL"]
+              },
+              {
+                  category: "Performance Optimization",
+                  items: [
+                      "Lazy Loading",
+                      "Code Splitting"
+                  ]
+              }
+            ]
+          },
+          {
+            title: "Project management",
+            table: [
+              {
+                category: "Tools",
+                items: [
+                  "tool 1",
+                  "tool 2"
+                ]
+              }
+
+
+            ]
+          }
+
+        ],
         skillsTable: [
           {
               category: "Frontend Technologies",
