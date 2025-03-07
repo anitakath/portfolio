@@ -20,21 +20,24 @@ export default function handler(req, res) {
             subTitle: "by Maximilian Schwarzmüller",
             educationsCertificatePath: "/images/education/nextjs.jpg",
             educationsPlatformPath: "https://www.udemy.com/course/nextjs-react-the-complete-guide/?couponCode=KEEPLEARNING",
-            description: "hier habe ich folgendes gelernt :)"
+            description: "hier habe ich folgendes gelernt :)",
+            descriptionTable: []
           },
           {
             name: "Udemy: React Complete Guide 2025 (incl. Next.js, Redux)",
             subTitle: "by Maximilian Schwarzmüller",
             educationsCertificatePath: "",
             educationsPlatformPath: "https://www.udemy.com/course/react-the-complete-guide-incl-redux/?couponCode=KEEPLEARNING",
-            description: "hier habe ich folgendes gelernt :)"
+            description: "hier habe ich folgendes gelernt :)",
+            descriptionTable: []
           },
           {
             name: "Udemy: Project Management Complete Course",
             subTitle: "by Benjamin Schollän and Tobias Becker",
             educationsCertificatePath: "/images/education/UC-eeb37b8e-91f3-4750-ae17-7365a6a8204f.jpg",
             educationsPlatformPath: "https://www.udemy.com/course/projektmanagement-komplettkurs/?couponCode=KEEPLEARNING",
-            description: "hier habe ich folgendes gelernt :)"
+            description: "hier habe ich folgendes gelernt :)",
+            descriptionTable: []
           },
           { 
             name: "Care Certificate", 
@@ -43,12 +46,18 @@ export default function handler(req, res) {
           { 
             name: "Care Reference", 
             educationsCertificatePath: "/images/education/pflege-zeugnis.jpg", 
-            description: "In addition to my general nursing certificate, I also received my nursing certificate with grades in October 2019. Both the practical and theoretical parts of my exams were graded 2." },
+            descriptionTable: [
+              {paragraph: "In addition to my general nursing certificate, I also received my nursing certificate with grades in October 2019. Both the practical and theoretical parts of my exams were graded 2."}
+            ]
+          },
           { 
             name: "Hygiene Mentor Certificate", 
             educationsCertificatePath: "/images/education/hygienementorin.jpg", 
-            description: "In July 2021, I completed my training to become a hygiene mentor. This qualification enables me to conduct regular training and presentations for colleagues in a clinical context and to monitor and develop the hygiene processes on the ward." },
-          
+            descriptionTable:[
+              {paragraph: "In July 2021, I completed my training to become a hygiene mentor. This qualification enables me to conduct regular training and presentations for colleagues in a clinical context and to monitor and develop the hygiene processes on the ward." },
+            ]
+          },
+
           { name: "School Certificate", educationsZertificatePath: " ", description: "" },
         ],
         description: null,

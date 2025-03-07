@@ -25,14 +25,20 @@ export default function handler (req, res){
             subTitle: "by Maximilian Schwarzmüller",
             educationsCertificatePath: "/images/education/nextjs.jpg",
             educationsPlatformPath: "https://www.udemy.com/course/nextjs-react-the-complete-guide/?couponCode=KEEPLEARNING",
-            description: "hier habe ich folgendes gelernt ... :)"
+            descriptionTable: [
+              { paragraph: "Während meiner Arbeit mit diesem Udemy Kurs habe ich umfassende Kenntnisse in der Entwicklung von Webanwendungen erworben. Ich habe beispielsweise gelernt, wie Komponenten effizient ge(pre)rendert werden und wie die Navigation zwischen den Seiten funktioniert. Zudem habe ich mich intensiv mit dem Datenfetching beschäftigt, einschließlich der Implementierung von Caching-Mechanismen und deren Konfiguration."},
+              {paragraph: "Ein weiterer wichtiger Aspekt war der Umgang mit API-Routen, bei dem ich sowohl das Empfangen als auch das Versenden von Daten an ein externes Backend, wie MongoDB und supabase, erlernt habe. Darüber hinaus habe ich mich mit dem app-weiten State Management auseinandergesetzt, sowohl mithilfe des React Context API als auch mit Redux."},
+              {paragraph: "Ein weiterer Schwerpunkt meiner autodidaktischen Weiterbildung war die Implementierung von Authentifizierungslösungen unter Verwendung von NextAuth, was mir ermöglicht hat, sichere Benutzeranmeldungen zu integrieren. Insgesamt habe ich ein tiefes Verständnis für die Entwicklung moderner Webanwendungen mit Next.js entwickelt. "},
+              {paragraph: "Für eine detailierte Ansicht der Kurseinhalte habe ich den notwendigen Udemy-Link hinzugefügt."}
+            ],
+          
           },
           {
             name: "Udemy: React Complete Guide 2025 (incl. Next.js, Redux)",
             subTitle: "by Maximilian Schwarzmüller",
             educationsCertificatePath: "",
             educationsPlatformPath: "https://www.udemy.com/course/react-the-complete-guide-incl-redux/?couponCode=KEEPLEARNING",
-            description: "hier habe ich folgendes gelernt :)"
+            descriptionTable:[]
           },
           {
             name: "Udemy: Projektmanagement Komplettkurs",
@@ -44,17 +50,25 @@ export default function handler (req, res){
           {
             name: "Pflegeurkunde",
             educationsCertificatePath: "/images/education/pflege-urkunde.jpg",
-            description:"Meine Pflegeurkunde habe ich im Oktober 2019 nach bestandener Ausbildung in der Gesundheits- und Krankenpflege erhalten. Übergeben wurde sie mir durch die Mitarbeiter des Städtischen Klinikums und die DRK Augusta Schwesternschaft in Lüneburg."
+            descriptionTable:[
+              {paragraph: "Meine Pflegeurkunde habe ich im Oktober 2019 nach bestandener Ausbildung in der Gesundheits- und Krankenpflege erhalten. Übergeben wurde sie mir durch die Mitarbeiter des Städtischen Klinikums und die DRK Augusta Schwesternschaft in Lüneburg."},
+            ],
+          
           },
           {
             name: "Pflegezeugnis",
             educationsCertificatePath: "/images/education/pflege-zeugnis.jpg",
-            description: "neben meiner Pflegeurkunde habe ich im Oktober 2019 auch mein Pflegezeugnis erhalten. Sowohl der praktische als auch die theoretischen Teile meiner Prüfungen wurden mit der Note 2 benotet."
+            descriptionTable:[
+              {paragraph: "neben meiner Pflegeurkunde habe ich im Oktober 2019 auch mein Pflegezeugnis erhalten. Sowohl der praktische als auch die theoretischen Teile meiner Prüfungen wurden mit der Note 2 benotet." }
+            ],
+            
           },
           {
             name: "Zertifikat Hygienementorin",
             educationsCertificatePath: "/images/education/hygienementorin.jpg",
-            description: "Im Juli 2021 habe ich meine Fortbildung zur Hygienementorin abgeschlossen. Diese Qualifikation ermöglicht es mir, regelmäßige Schulungen und Präsentationen für Kolleg:innen im klinischen Kontext durchzuführen sowie die Hygieneprozesse auf der Station zu überwachen und weiterzuentwickeln."
+            descriptionTable:[
+              {paragraph:"Im Juli 2021 habe ich meine Fortbildung zur Hygienementorin abgeschlossen. Diese Qualifikation ermöglicht es mir, regelmäßige Schulungen und Präsentationen für Kolleg:innen im klinischen Kontext durchzuführen sowie die Hygieneprozesse auf der Station zu überwachen und weiterzuentwickeln."}
+            ],
           },
           /*
           {
@@ -255,7 +269,7 @@ export default function handler (req, res){
         imagePath: "/images/about-me-section/pexels-pixabay-355952.jpg",
         description: null, 
         descriptionTable:[
-          { listItem: "Porgrammier-, und Projektmanagementkentnisse vertiefen und ausbauen",
+          { listItem: "Programmier-, und Projektmanagementkentnisse vertiefen und ausbauen",
             listItemDescription: "Ich plane, meine Programmierkenntnisse kontinuierlich durch Onlinekurse und Bootcamps zu erweitern. Zudem möchte ich stets über aktuelle Trends und Technologien in der Informatik informiert bleiben."
           },
           { listItem: "Zertifizierungen",

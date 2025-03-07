@@ -85,7 +85,25 @@ const Education = ({ data }) => {
                                            alt="educations details infos"
                                        />
                                        <div className={styles.downloadLinkDiv}>
-                                           <p className={styles.description}> {education.description}</p>
+                                       <button 
+                                            className={styles.enlargeLink} 
+                                            onClick={(event) => handleEnlargeClick(event)}
+                                        >
+                                            {enlargeText}
+                                        </button>
+
+                                        <div className={styles.descriptionDiv}>
+
+                                            {education.descriptionTable && education.descriptionTable.map((item, index) => {
+                                                return (
+                                                    <div key={index}>
+                                                        <p className={styles.description}>{item.paragraph}</p>
+                                                    </div>
+                                                );
+                                            })}
+                                        </div>
+                                           
+                                          
                                            {/*<button
                                                className={styles.downloadLink}
                                                download
@@ -93,12 +111,7 @@ const Education = ({ data }) => {
                                                {downloadText}
                                            </button> */}
 
-                                           <button 
-                                               className={styles.enlargeLink} 
-                                               onClick={(event) => handleEnlargeClick(event)}
-                                           >
-                                               {enlargeText}
-                                           </button>
+                                          
                                        </div>
                                    </div>
                                )}

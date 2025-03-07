@@ -20,34 +20,52 @@ export default function handler(req, res) {
             subTitle: "de Maximilian Schwarzmüller",
             educationsCertificatePath:"/images/education/nextjs.jpg",
             educationsPlatformPath: "https://www.udemy.com/course/nextjs-react-the-complete-guide/?couponCode=KEEPLEARNING",
-            description: "hier habe ich folgendes gelernt :)"
+            description: "hier habe ich folgendes gelernt :)",
+            descriptionTable: [
+
+            ]
           },
           {
             name: "Udemy: React Complete Guide 2025 (incl. Next.js, Redux)",
             subTitle: "by Maximilian Schwarzmüller",
             educationsCertificatePath: "",
             educationsPlatformPath: "https://www.udemy.com/course/react-the-complete-guide-incl-redux/?couponCode=KEEPLEARNING",
-            description: "hier habe ich folgendes gelernt :)"
+            description: "hier habe ich folgendes gelernt :)",
+            descriptionTable: [
+
+            ]
           },
           {
             name: "Udemy: Curso completo de gestión de proyectos",
             subTitle: "por Benjamin Schollän and Tobias Becker",
             educationsCertificatePath: "/images/education/UC-eeb37b8e-91f3-4750-ae17-7365a6a8204f.jpg",
             educationsPlatformPath: "https://www.udemy.com/course/projektmanagement-komplettkurs/?couponCode=KEEPLEARNING",
-            description: "hier habe ich folgendes gelernt :)"
+            description: "hier habe ich folgendes gelernt :)",
+            descriptionTable: [
+
+            ]
           },
           { 
             name: "Certificado de Cuidado", 
-            educationsCertificatePath: "/images/education/pflege-urkunde.jpg", 
-            description: "Recibí mi certificado de enfermería en octubre de 2019 tras completar mi formación en asistencia sanitaria y enfermería. Me lo entregaron los empleados del Hospital Municipal y de la DRK Augusta Schwesternschaft de Luneburgo." },
+            educationsCertificatePath: "/images/education/pflege-urkunde.jpg",
+            descriptionTable: [
+              "Recibí mi certificado de enfermería en octubre de 2019 tras completar mi formación en asistencia sanitaria y enfermería. Me lo entregaron los empleados del Hospital Municipal y de la DRK Augusta Schwesternschaft de Luneburgo."
+            ], 
+         },
           { 
             name: "Certificado de Cuidado Profesional", 
             educationsCertificatePath: "/images/education/pflege-zeugnis.jpg" , 
-            description: "Además de mi certificado de enfermería general, también recibí mi certificado de enfermería con calificaciones en octubre de 2019. Tanto la parte práctica como la teórica de mis exámenes obtuvieron una calificación de 2"},
+            descriptionTable:[
+              {paragraph: "Además de mi certificado de enfermería general, también recibí mi certificado de enfermería con calificaciones en octubre de 2019. Tanto la parte práctica como la teórica de mis exámenes obtuvieron una calificación de 2"}
+            ],
+          },
           { 
             name: "Certificado de Mentora en Higiene", 
             educationsCertificatePath: "/images/education/hygienementorin.jpg", 
-            description: "En julio de 2021, completé mi formación para convertirme en mentora de higiene. Esta cualificación me permite realizar sesiones de formación periódicas y presentaciones para compañeros en un contexto clínico, así como supervisar y seguir desarrollando los procesos de higiene en la sala." },
+            descriptionTable:[
+              {paragraph: "En julio de 2021, completé mi formación para convertirme en mentora de higiene. Esta cualificación me permite realizar sesiones de formación periódicas y presentaciones para compañeros en un contexto clínico, así como supervisar y seguir desarrollando los procesos de higiene en la sala."}
+            ],
+          },
           { name: "Certificado Escolar", educationsZertificatePath: " ", description: ""},
       ],
         description: null,
