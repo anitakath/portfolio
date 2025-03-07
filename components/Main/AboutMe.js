@@ -92,6 +92,7 @@ const AboutMe = ({ setIsVisible }) => {
 
 
   console.log(visibleSkillGroups)
+  console.log(aboutMeData)
 
   return (
       <div id="aboutMe" className="sub_container">
@@ -108,72 +109,82 @@ const AboutMe = ({ setIsVisible }) => {
                       {/* Back side of the card */}
                       <motion.div className={styles.cardBack}>
                           {flippedIndex === data.id && (
-                              <div className="flex-col overflow-scroll items-center justify-center w-full h-full pl-1 bg-purple-100">
-                               
+                              <div className="flex-col overflow-scroll items-center justify-center w-full h-full pl-1 bg-white">
+                  
                                 {data.skillstable && data.skillstable.map((skillGroup) => (
-                                  <div>
-                                  <div key={skillGroup.title}>
-                                    <button 
-                                      onClick={(event) => toggleSkillsGroups(event, null, skillGroup.title)}
-                                      className={`${styles.toggleSkillGroupButton} ${visibleSkillGroups[skillGroup.title] ? styles.toggleSkillGroupButtonActive : ''}`}
-                                    > 
-                                      {skillGroup.title} 
-                                    </button>
-                                    
-                                    {visibleSkillGroups[skillGroup.title] && skillGroup.table.length > 0 && (
-                                      <ul className={styles.table}>
-                                      
-                                        {skillGroup.table.map((skillCategory) => (
-                                          <li key={skillCategory.category} className="m-2 mb-4">
-                                            <button
-                                              className={styles.listItemButton}
-                                              onClick={(event) => toggleSkills(event, skillCategory.category)}
-                                              style={{ border: 'none', padding: 0, cursor: 'pointer' }}
-                                            >
-                                            {skillCategory.category}
-                                            </button>
-                                            {visibleSkills[skillCategory.category] && (
-                                              <ul className="mt-2">
-                                                {skillCategory.items.map((item, itemIndex) => (
-                                                  <li key={itemIndex} className={styles.categoryDescription}>{item}</li>
-                                                ))}
-                                              </ul>
-                                            )}
-                                          </li>
-                                        ))}
-                                      </ul>
-                                    )}
-                                  </div>
-                                  </div>
-                                ))}
+                                  <div >
+
+                                    {/* CREATE A NEW SEPARATE COMPONENT FOR THE FOLLOWING CONTENT!!! */}
+                                    {/* CREATE A NEW SEPARATE COMPONENT FOR THE FOLLOWING CONTENT!!! */}
+                                    {/* CREATE A NEW SEPARATE COMPONENT FOR THE FOLLOWING CONTENT!!! */}
+                                    {/* CREATE A NEW SEPARATE COMPONENT FOR THE FOLLOWING CONTENT!!! */}
+                                    {/* CREATE A NEW SEPARATE COMPONENT FOR THE FOLLOWING CONTENT!!! */}
+                                    {/* CREATE A NEW SEPARATE COMPONENT FOR THE FOLLOWING CONTENT!!! */}
+
+
+                                    <div key={skillGroup.title} className={styles.cardContainer}>
+                                      <button className={styles.title} onClick={(event) => toggleSkillsGroups(event, null, skillGroup.title)}>
+                                        {skillGroup.title} 
+                                      </button>
+
+                                      <motion.div 
+                                        className={styles.detailsContainer}
+                                        initial={{ opacity: 0, height: 0 }} 
+                                        animate={{ opacity: visibleSkillGroups[skillGroup.title] ? 1 : 0, height: visibleSkillGroups[skillGroup.title] ? 'auto' : 0 }} 
+                                        exit={{ opacity: 0, height: 0 }} 
+                                        transition={{ duration: 0.3 }} 
+                                      >
+                                        {visibleSkillGroups[skillGroup.title] && skillGroup.table.length > 0 && (
+                                          <ul className={styles.table}>
+                                            {skillGroup.table.map((skillCategory) => (
+                                              <li key={skillCategory.category} className="m-2 mb-4 w-full">
+                                                <button
+                                                  className={styles.listItemButton}
+                                                  onClick={(event) => toggleSkills(event, skillCategory.category)}
+                                                  style={{ border: 'none', padding: 0, cursor: 'pointer' }}
+                                                >
+                                                  {skillCategory.category} 
+                                                </button>
+
+
+                                      <motion.div 
+                                        className={styles.detailsContainer}
+                                        initial={{ opacity: 0, height: 0 }} 
+                                        animate={{ opacity: visibleSkills[skillCategory.category] ? 1 : 0, height: visibleSkills[skillCategory.category] ? 'auto' : 0 }} 
+                                        exit={{ opacity: 0, height: 0 }} 
+                                        transition={{ duration: 0 }} 
+                                      >
+                                        {visibleSkills[skillCategory.category] && (
+                                          <ul className="mt-2 flex flex-wrap">
+                                            {skillCategory.items.map((item, itemIndex) => (
+                                              <li key={itemIndex} className={styles.categoryDescription}>
+                                                <div className={styles.categoryDescriptionImageDiv}> </div>
+                                               <span className={styles.categoryDescriptionText}>{item}</span>
+                                              </li>
+                                            ))}
+                                          </ul>
+                                        )}
+                                      </motion.div>
+                                    </li>
+                                  ))}
+                                </ul>
+                                  )}
+                                </motion.div>
+                              </div> 
+
+                              {/* CREATED A NEW SEPARATE COMPONENT FOR THE PREVIOUS CONTENT??? */}  
+                              {/* CREATED A NEW SEPARATE COMPONENT FOR THE PREVIOUS CONTENT??? */}
+                              {/* CREATED A NEW SEPARATE COMPONENT FOR THE PREVIOUS CONTENT??? */}
+                              {/* CREATED A NEW SEPARATE COMPONENT FOR THE PREVIOUS CONTENT??? */}
+                              {/* CREATED A NEW SEPARATE COMPONENT FOR THE PREVIOUS CONTENT??? */}
+                              </div>
+                            ))}
                        
-                               {/*
-                               {data.skillsTable && (
-                                   <ul className={styles.table}>
-                                   {data.skillsTable.map((skillCategory) => (
-                                     <li key={skillCategory.category} className="m-2 mb-4">
-                                       <button
-                                         className={styles.listItemButton}
-                                         onClick={(event) => toggleSkills(event, skillCategory.category)}
-                                         style={{ border: 'none', padding: 0, cursor: 'pointer' }}
-                                       >
-                                         <strong>{skillCategory.category}</strong>
-                                       </button>
-                                       {visibleSkills[skillCategory.category] && (
-                                         <ul className="mt-2">
-                                           {skillCategory.items.map((item, itemIndex) => (
-                                             <li key={itemIndex} className={styles.categoryDescription}>{item}</li>
-                                           ))}
-                                         </ul>
-                                       )}
-                                     </li>
-                                   ))}
-                                 </ul>
-                               )}*/}
+                              
 
                                 {data.description && (
                                   <div >
-                                    <p className={styles.description}>{data.description}</p>
+                                    <p className={styles.description}>{data.description} </p>
                                   </div>
                                 )}
 
@@ -185,23 +196,34 @@ const AboutMe = ({ setIsVisible }) => {
                                 )}
                     
     
-                                <ul>
-                                  {data.descriptionTable && data.descriptionTable.map((item) => (
-                                    <li key={item.listItem} className={styles.listItem}>
-                                    <button 
-                                      className={styles.listItemButton}
-                                      onClick={(event) => toggleDescription(event, item.listItem)} // Event übergeben
-                                      style={{ border: 'none', padding: 0, cursor: 'pointer' }}
-                                    >
-                                      <strong className="px-2  text-start ">{item.listItem}</strong>
-                                    </button>
-                                    {visibleDescriptions[item.listItem] && (
-                                      <span className={styles.listItemDescription}>{item.listItemDescription}</span>
-                                      )}
-                                    </li>
-                                  ))}
-                                  </ul>
-                              </div>
+                        <ul>
+                          {data.descriptionTable && data.descriptionTable.map((item) => (
+                            <li key={item.listItem} className={styles.listItem}>
+                              <button 
+                                className={styles.listItemButton} 
+                                onClick={(event) => toggleDescription(event, item.listItem)} // Event übergeben
+                                style={{ border: 'none', padding: 0, cursor: 'pointer' }}
+                              >
+                                <strong className="px-2 text-start">{item.listItem}</strong>
+                              </button>
+
+                              {/* Hier wird der motion.div hinzugefügt */}
+                              <motion.div 
+                                initial={{ opacity: 0, height: 0 }} 
+                                animate={{ opacity: visibleDescriptions[item.listItem] ? 1 : 0, height: visibleDescriptions[item.listItem] ? 'auto' : 0 }} 
+                                exit={{ opacity: 0, height: 0 }} 
+                                transition={{ duration: 0.3 }} 
+                              >
+                                {visibleDescriptions[item.listItem] && (
+                                  <span className={styles.listItemDescription}>
+                                    {item.listItemDescription}
+                                  </span>
+                                )}
+                              </motion.div>
+                            </li>
+                          ))}
+                        </ul>
+                                                      </div>
                           )}
                       </motion.div>
                   </motion.div>

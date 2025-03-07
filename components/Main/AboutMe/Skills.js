@@ -1,6 +1,6 @@
 
 import styles from '../AboutMe.module.css'
-
+import { motion } from 'framer-motion'
 
 const Skills = ({data}) =>{
 
@@ -22,13 +22,23 @@ const Skills = ({data}) =>{
                       >
                         <strong>{skillCategory.category}</strong>
                       </button>
-                      {visibleSkills[skillCategory.category] && (
-                        <ul className="mt-2">
-                          {skillCategory.items.map((item, itemIndex) => (
-                            <li key={itemIndex} className={styles.categoryDescription}>{item}</li>
-                          ))}
-                        </ul>
-                      )}
+                      <h1> HALLO </h1>
+                      <motion.div 
+                           className={styles.detailsContainer}
+                           initial={{ opacity: 0, height: 0 }} 
+                           animate={{ opacity: 1, height: 'auto' }} 
+                           exit={{ opacity: 0, height: 0 }} 
+                           transition={{ duration: 0.3 }} 
+                       >
+                         {visibleSkills[skillCategory.category] && (
+                            <ul className="mt-2  border-2">
+                              {skillCategory.items.map((item, itemIndex) => (
+                                <li key={itemIndex} className={styles.categoryDescription}>{item}</li>
+                              ))}
+                            </ul>
+                          )}
+                       </motion.div>
+                     
                     </li>
                   ))}
                 </ul>

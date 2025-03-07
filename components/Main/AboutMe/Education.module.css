@@ -49,7 +49,6 @@
     width: 100%;
     max-height: 240px;
     overflow: scroll;
-    border: 2px solid red;
 }
 
 
@@ -109,8 +108,7 @@
 .link{
     margin: 10px 2px;
     font-size: 1rem;
-    padding: 2px;
-   /* width: 20%;*/
+    padding: 5px 10px;
     margin-right: 50px;
     display: flex;
     justify-content: end;
@@ -119,6 +117,7 @@
     position: absolute;
     top: -7px;
     right: -10px;
+    background-color: white;
 }
 
 .link:hover{
@@ -128,6 +127,7 @@
 .linkGif{
    position: relative;
    right: 2px;
+   background-color: rgba(233, 216, 253, 1);
 }
 
 

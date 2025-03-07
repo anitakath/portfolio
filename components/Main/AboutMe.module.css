@@ -24,6 +24,15 @@
 }
 
 
+.cardContainer{
+    margin: 20px 0px;
+    padding: 0px 5px;
+    font-size: 1rem;
+    display: flex; 
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
 
 .cardTitle{
     font-size: 1rem;
@@ -72,6 +81,19 @@
 }
 
 
+.title{
+    font-size: 1rem;
+    font-weight: bolder;
+}
+
+.cardContainer{
+    margin-top: 20px;
+}
+
+.detailsContainer{
+    width: 98%;
+}
+
 
 
 .toggleSkillGroupButton{
@@ -99,6 +121,7 @@
 
 .table{
     font-size: 1rem;
+    width: 100%;
 }
 
 
@@ -114,7 +137,7 @@
     justify-content: start;
     align-items: start;
     margin: 20px 0px;
-
+    padding: 0px 5px;
 }
 
 .listItemButton{
@@ -133,14 +156,37 @@
 
 .listItemDescription{
     font-size: 0.9rem;
-    margin-top: 10px;
-    padding: 0px 10px;
+    margin-top: 10px;    
 }
 
 .categoryDescription{
     font-size: 0.9rem;
-    padding: 2px 10px;
+    padding: 5px 10px;
+    margin: 1px;
+    background: rgba(0,0,0,0.1);
+    width: 90px;
+    height: 90px;
+    overflow: hidden;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    position: relative;
 
+}
+
+.categoryDescriptionImageDiv{
+    position: absolute;
+    background-color: rgba(255,255,255, 0.5);
+    width: 90%;
+    height: 90%;
+}
+
+.categoryDescriptionText{
+    font-size: 0.7rem;
+    z-index: 1000;
+    padding: 5px;
+    width: 100%;
+    background-color: rgba(255,255,255, 0.5);
 }
 
 
