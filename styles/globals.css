@@ -57,3 +57,7 @@
   padding-top: 10vh;
   }
 }
+
+h1, h2, p, li, Link, button{
+  font-family: "Source Serif 4", serif;
+}
