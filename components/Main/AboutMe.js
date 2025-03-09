@@ -164,6 +164,28 @@ const AboutMe = ({ setIsVisible }) => {
                                             ))}
                                           </ul>
                                         )}
+
+                                        {/*
+                                         {visibleSkills[skillCategory.category] && (
+                                          <ul className="mt-2 border-2">
+                                            {skillCategory.items.map((subCategory, subIndex) => (
+                                              <li key={subIndex} >
+                                               
+                                                <span className="my-2">{subCategory.subtitle}</span>
+                                                <ul className="ml-4 border-2 flex relative"> 
+                                                  <div className={styles.two}>
+                                                  
+                                                  </div>
+                                                  {subCategory.skills.map((item, itemIndex) => (
+                                                    <li key={itemIndex} className={styles.softSkillLink}>
+                                                      {item}
+                                                    </li>
+                                                  ))}
+                                                </ul>
+                                              </li>
+                                            ))}
+                                          </ul>
+                                        )}*/}
                                       </motion.div>
                                     </li>
                                   ))}
@@ -206,6 +228,8 @@ const AboutMe = ({ setIsVisible }) => {
                               >
                                 <strong className="px-2 text-start">{item.listItem}</strong>
                               </button>
+
+                            
 
                               {/* Hier wird der motion.div hinzugefügt */}
                               <motion.div 

@@ -170,19 +170,141 @@ export default function handler (req, res){
           {
             title: "Projektmanagement",
             table: [
-             
               {
                 category: 'Tools',
-                items: ['Jira', 'Miro', 'Asana', 'Trello', 'Microsoft Project']
+                items: [
+                  'Jira', 
+                  'Miro', 
+                  'Asana', 
+                  'Trello', 
+                  'Microsoft Project',
+                  /*
+                  'ServiceNow', // IT-Service-Management
+                  'Jira Service Management', // IT-Service-Management
+                  'Nagios', // Monitoring-Tools
+                  'Zabbix', // Monitoring-Tools
+                  'Grafana', // Monitoring-Tools
+                  'AWS', // Cloud-Plattformen
+                  'Azure', // Cloud-Plattformen
+                  'Google Cloud Platform' // Cloud-Plattformen
+                  */
+                ]
               },
               {
                 category: 'Methoden',
-                items: ['Agile', 'Scrum', 'Kanban', 'Wasserfall']
+                items: [
+                  'Agile', 
+                  'Scrum', 
+                  'Kanban', 
+                  'Wasserfall'
+                  /*
+                  'ITIL', // IT-Service-Management Best Practices
+                  'DevOps' // Integration von Entwicklung und Betrieb
+                  */
+                ]
               },
+
+              /*
+              {
+                "category": "Soft Skills",
+                "items": [
+                  {
+                    "subtitle": "Zwischenmenschliche Fähigkeiten",
+                    "skills": [
+                      "Empathie",
+                      "Kommunikationsfähigkeit",
+                      "Teamarbeit",
+                      "Wertschätzung und Respekt",
+                      "Interkulturelle Kompetenz"
+                    ]
+                  },
+                  {
+                    "subtitle": "Problemlösungsfähigkeiten",
+                    "skills": [
+                      "Kreativität",
+                      "Problemlösung",
+                      "Strategisches Denken"
+                    ]
+                  },
+                  {
+                    "subtitle": "Selbstmanagement",
+                    "skills": [
+                      "Zeitmanagement",
+                      "Stressbewältigung",
+                      "Stressresistenz",
+                      "Geduld",
+                      "Detailgenauigkeit"
+                    ]
+                  },
+                  {
+                    "subtitle": "Verantwortungsbewusstsein und Führung",
+                    "skills": [
+                      "Verantwortungsbewusstsein",
+                      "Führungskompetenz",
+                      "Selbstbewusstsein"
+                    ]
+                  },
+                  {
+                    "subtitle": "Anpassungsfähigkeit",
+                    "skills": [
+                      "Flexibilität und Anpassungsfähigkeit"
+                    ]
+                  },
+                  {
+                    "subtitle": "Fehlerkultur",
+                    "skills": [
+                      "Gute Fehlerkultur"
+                    ]
+                  }
+                ]
+              },*/
+              
+              
               {
                 category: 'Soft Skills',
-                items: ['Kommunikation', 'Teamarbeit', 'Problemlösung', 'Zeitmanagement']
-              }
+                items: [
+                  //Zwischenmenschliche Fähigkeiten
+                  'Empathie',
+                  'Kommunikationsfähigkeit', 
+                  'Teamarbeit', 
+                  'Wertschätzung udn Respekt',
+                  'Interkulturelle Kompetenz',
+                  'Gute Fehlerkultur',
+                  'Flexibilität und Anpassungsfähigkeit',
+
+                  //Problemlösungsfähigkeiten
+                  'Problemlösung',
+                  'Kreaitivität', 
+                  'Strategisches Denken',
+
+                  //Selbstmanagement
+                  'Zeitmanagement',
+                  'Stressbewältigung',
+                  'Stressresistenz',
+                  'Geduld',
+                  'Detailgenauigkeit',
+
+                  //Verantwortungsbewusstsein und FÜhrung
+                  'Verantwortungsbewusstsein',
+                  'Führungskompetenz',
+                  'Selbstbewusstsein',
+                  
+                  /*
+                  'Verhandlungsgeschick' 
+                  */
+                ]
+              },
+              {
+                category: 'Technische Fähigkeiten',
+                items: [
+                  'IT-Infrastrukturkenntnisse', // Verständnis von Netzwerken, Servern etc.
+                  'Softwareentwicklung', // Grundkenntnisse in Programmiersprachen, basierend auf JS
+                  /*
+                  'Sicherheitsmanagement', // Kenntnisse über Cybersecurity-Praktiken
+                  'Datenanalyse' // Fähigkeit zur Analyse von Daten zur Unterstützung von Entscheidungen
+                  */
+                ]
+              },
 
 
             ]

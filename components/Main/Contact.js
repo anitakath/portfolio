@@ -44,6 +44,7 @@ const Contact = () =>{
           <FaEnvelope className={styles.icon} onClick={handleEmailClick} />
           <p> wagner.annekathrin@gmx.de</p>
         </div>
+        {/*}
         <div>
           <Link
             href="https://www.instagram.com/ankaath/"
@@ -65,7 +66,8 @@ const Contact = () =>{
           </Link>
 
           <p> ankaathh </p>
-        </div>
+        </div> 
+        */}
       </div>
     </div>
   );
