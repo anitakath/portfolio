@@ -110,6 +110,26 @@ const Portfolio = () => {
                         
                       </div>
                       <p className={styles.description_p}>{item.description}</p>
+
+                      {item.descriptionsTable && (
+                        <div className="px-2">
+                            {item.descriptionsTable.length > 0 && (
+                                <h2 className="border-b-2 my-2 text-center pb-2">
+                                    {item.descriptionsTable[0].paragraph}
+                                </h2>
+                            )}
+                            {item.descriptionsTable.length > 1 && (
+                                <ul>
+                                    {item.descriptionsTable.slice(1).map((paragraph, index) => (
+                                        <li key={index} className="my-2 ">
+                                           💜 {paragraph.paragraph}
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+                        </div>
+                    )}
+
                       {/* Hier wird auf subDescriptions des aktuellen Items zugegriffen */}
                       {/*{item.subDescriptions && item.subDescriptions.length > 0 && (
                         <ul className="w-full">
