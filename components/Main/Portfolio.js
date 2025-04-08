@@ -38,11 +38,7 @@ const Portfolio = () => {
     ENGLISH: "Password required!",
     GERMAN: "Passwort erforderlich!",
     SPANISH: "¡Se requiere contraseña!"
-  };
-
-  //console.log(portfolioData)
-  console.log(data)
-
+  }
 
 
   return (
