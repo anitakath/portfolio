@@ -7,7 +7,7 @@ import styles from "./AboutMe.module.css";
 import { useSelector } from "react-redux";
 //COMPONENTS
 import Education from "./AboutMe/Education";
-
+import Link from "next/link";
 
 
 const languageMap = {
@@ -102,7 +102,7 @@ const AboutMe = ({ setIsVisible }) => {
                       {/* Front side of the card */}
                       <motion.div className={styles.cardFront}>
                           {flippedIndex !== data.id && (
-                              <h1 className={styles.cardTitle}>{data.title}</h1>
+                              <h1 className={styles.cardTitle}>{data.title} </h1>
                           )}
                           <Image src={data.imagePath} width={800} height={800} className={styles.cardImage} alt="sample images from pexel" />
                       </motion.div>
@@ -124,7 +124,7 @@ const AboutMe = ({ setIsVisible }) => {
 
                                     <div key={skillGroup.title} className={styles.cardContainer}>
                                       <button className={styles.title} onClick={(event) => toggleSkillsGroups(event, null, skillGroup.title)}>
-                                        {skillGroup.title} 
+                                        {skillGroup.title}  
                                       </button>
 
                                       <motion.div 
@@ -206,7 +206,7 @@ const AboutMe = ({ setIsVisible }) => {
 
                                 {data.description && (
                                   <div >
-                                    <p className={styles.description}>{data.description} </p>
+                                    <p className={styles.description}>{data.description}</p>
                                   </div>
                                 )}
 
@@ -240,7 +240,7 @@ const AboutMe = ({ setIsVisible }) => {
                               >
                                 {visibleDescriptions[item.listItem] && (
                                   <span className={styles.listItemDescription}>
-                                    {item.listItemDescription}
+                                    {item.listItemDescription} 
                                   </span>
                                 )}
                               </motion.div>

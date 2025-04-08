@@ -4,8 +4,7 @@ import styles from '../../styles/Main/Main.module.css'
 import { FaPhone, FaEnvelope, FaInstagram, FaTiktok } from "react-icons/fa";
 //REDUX
 import { useSelector } from 'react-redux';
-import Link from 'next/link';
-import { current } from '@reduxjs/toolkit';
+
 
 const Contact = () =>{
 
@@ -34,8 +33,7 @@ const Contact = () =>{
 
 
   return (
-    <div className="sub_container" id="contact">
-      <div className={styles.flexContainer}>
+      <div className={styles.flexContainer} id="contact">
         <div>
           <FaPhone className={styles.icon} onClick={handlePhoneClick} />
           <p> +49 17632951307 </p>
@@ -69,7 +67,7 @@ const Contact = () =>{
         </div> 
         */}
       </div>
-    </div>
+
   );
 }
 

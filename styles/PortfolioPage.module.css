@@ -1,0 +1,112 @@
+
+.container{
+    padding: 20px;
+    height: 100vh;
+    overflow: scroll;
+}
+
+.title{
+    font-size: 2rem;
+    padding: 10px;
+}
+
+.skills_div{
+    background-color: rgba(0,0,0,0.05);
+    overflow: scroll;
+    width: 100%;
+    margin: 0px 0px 10px 0px;
+    
+}
+
+.skill{
+    padding: 5px;
+    margin: 0px 5px;
+}
+
+
+
+.descriptionsContainer{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.descriptionsContainer div{
+    width: 50%;
+    margin: 5px;
+    padding: 10px;
+}
+
+.descriptionsTableLinks{
+    margin: 10px 0px;
+    padding: 10px 0px;
+    border-bottom: 1px solid red;
+}
+
+
+
+.imageGridContainer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px; 
+    padding: 16px;
+  }
+  
+.imageGridContainer img{
+    width: 100%; 
+    height: auto; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+    transition: 0.2s ease;
+}
+
+.imageGridContainer img:hover{
+    transform: scale(1.01);
+    cursor: pointer;
+}
+
+.link_div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    transition: 0.2s ease-in-out;
+    margin: 10px 0px;
+    position: relative;
+    top: 20px;
+}
+
+.link_div:hover{
+    color: var(--font-plum)
+}
+
+.project_link{
+    margin-left: 4px;
+}
+
+
+
+@media screen and (max-width: 1000px){
+    .descriptionsContainer{
+        flex-direction: column;
+    }
+
+    .descriptionsContainer div{
+        width: 100%;
+        margin: 10px 0px;
+        border-bottom: 1px solid red;
+    }
+
+    .imageGridContainer{
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+
+@media screen and (max-width: 600px){
+    .imageGridContainer{
+        border: 2px solid gold;
+        grid-template-columns: repeat(1, 1fr); 
+    }
+}
