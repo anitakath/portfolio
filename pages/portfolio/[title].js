@@ -6,6 +6,7 @@ import { useEffect, useState} from 'react'
 import { FaGithub} from "react-icons/fa";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faN } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 //MODAL
 import PortfolioItemImageModal from '@/components/UI/Modals/PortfolioItemImageModal'
 const PortfolioItem = ({item}) =>{
@@ -74,32 +75,34 @@ const PortfolioItem = ({item}) =>{
         <div className={styles.container}>
 
             
-            <div>
-                <Link href="/"> zurück </Link>
+            <div className={styles.linkContainer}>
+                <Link href="/"> 
+                  <FontAwesomeIcon icon={faArrowLeft} />
+                </Link>
             </div>
 
          
             <h1 className={styles.title}>{portfolioData.title}</h1>
-            <div className={styles.skills_div}>
-                {portfolioData.skills && portfolioData.skills.length > 0 && (
-                    <ul className="w-full flex justify-center items-center">
-                        {portfolioData.skills.map((description, index) => (
-                          <li key={index} className={styles.skill}>{description}</li>
-                        ))}
-                      </ul>
-                    )} 
-            </div>
+            
+              <div className={styles.skills_div}>
+                {portfolioData.skills && portfolioData.skills.length > 0 &&  portfolioData.skills.map((description, index) => (
+                  <div key={index} className={styles.skill}> {description}</div>
+                ))}
+              </div>   
+        
 
             <div className={styles.descriptionsContainer}>
-                <div>
-                    {portfolioData.description}
+                <div className={styles.mainDescription}>
+                    <h1 className={styles.descriptionTitle}> 
+                      {portfolioData.description}
+                    </h1>
                 </div>
-                <div>
-                   <p> Möglichkeiten:</p>
+                <div  className={styles.subDescription}>
+                   <h1 className={styles.descriptionTitle}> Möglichkeiten für den User: </h1>
                     <ul className={styles.descriptionsTable}>
                     {portfolioData.subDescriptions && portfolioData.subDescriptions.map((data, index) =>(
                        
-                        <li className={styles.descriptionsTableLinks}> - {data}</li>
+                        <li className={styles.descriptionsTableLinks}> {data}</li>
                         
                     ))}
                     </ul>
@@ -137,15 +140,15 @@ const PortfolioItem = ({item}) =>{
                 </div>
 
                 <div className={styles.link_div}>
-                <FontAwesomeIcon icon={faN} />
-                {portfolioData && portfolioData.netlify_path ? (
-                    <Link href={portfolioData.netlify_path} className={styles.project_link} target="_blank" rel="noopener noreferrer">
-                    <span className={styles.span}>Netlify</span>
-                    </Link>
-                ) : (
-                    <span className={styles.disabled_link}>Netlify link not available</span>
-                )}
-                </div>
+                  <FontAwesomeIcon icon={faN} />
+                  {portfolioData && portfolioData.netlify_path ? (
+                      <Link href={portfolioData.netlify_path} className={styles.project_link} target="_blank" rel="noopener noreferrer">
+                      <span className={styles.span}>Netlify</span>
+                      </Link>
+                  ) : (
+                      <span className={styles.disabled_link}>Netlify link not available</span>
+                  )}
+                  </div>
              
     
 

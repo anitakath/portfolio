@@ -40,7 +40,6 @@ const Portfolio = () => {
     SPANISH: "¡Se requiere contraseña!"
   }
 
-
   return (
     <div className="sub_container" id="portfolio">
       <div className={styles.portfolio_container}>

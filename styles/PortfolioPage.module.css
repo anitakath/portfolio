@@ -5,6 +5,11 @@
     overflow: scroll;
 }
 
+
+.linkContainer{
+    font-size: 1.2rem;
+}
+
 .title{
     font-size: 2rem;
     padding: 10px;
@@ -15,26 +20,45 @@
     overflow: scroll;
     width: 100%;
     margin: 0px 0px 10px 0px;
+    overflow: scroll;
+    display: flex;
+    justify-content: center;
+    padding: 5px 0px;
     
 }
 
 .skill{
     padding: 5px;
-    margin: 0px 5px;
+    margin: 0px 10px;
 }
+
+
 
 
 
 .descriptionsContainer{
     display: flex;
     justify-content: space-between;
-    
 }
 
-.descriptionsContainer div{
+.mainDescription, .subDescription {
     width: 50%;
     margin: 5px;
     padding: 10px;
+}
+
+
+.mainDescription{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+    background-color: rgba(0,0,0,0.05);
+}
+.descriptionTitle{
+    font-size: 1.4rem;
+    margin-bottom: 10px;
 }
 
 .descriptionsTableLinks{
@@ -42,8 +66,6 @@
     padding: 10px 0px;
     border-bottom: 1px solid red;
 }
-
-
 
 .imageGridContainer{
     display: grid;
@@ -86,16 +108,26 @@
 }
 
 
+@media screen and (max-width: 1200px){
+    .mainDescription{
+        padding: 30px;
+    }
+}
+
 
 @media screen and (max-width: 1000px){
     .descriptionsContainer{
         flex-direction: column;
     }
 
-    .descriptionsContainer div{
+    .mainDescription, .subDescription{
         width: 100%;
         margin: 10px 0px;
         border-bottom: 1px solid red;
+    }
+
+    .mainDescription{
+        margin: 20px 0px;
     }
 
     .imageGridContainer{
@@ -104,8 +136,54 @@
 }
 
 
+@media screen and (max-width: 800px){
+    
+    .container{
+        padding: 0px;
+    }
+
+    .linkContainer{
+        padding: 5px;
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        z-index: 1000;
+    }
+}
+
 @media screen and (max-width: 600px){
+
+    .skills_div{
+        flex-wrap: wrap;
+        padding: 10px 0px;
+    }
+
+
     .imageGridContainer{
         grid-template-columns: repeat(1, 1fr); 
+        
     }
+
+    .descriptionsContainer{
+        padding: 0px 5px;
+     
+    }
+
+  
+
+    .subDescription{
+        margin: 0px 0px 4px 0px;
+        padding: 2px;
+    }
+
+    .mainDescription{
+        padding: 20px 5px;
+        margin: 10px 0px 20px 0px;
+
+    }
+
+   
+  
+
+   
 }
