@@ -82,16 +82,6 @@
 
 
 
-.enlargeLink{  
-    transition: 0.2s ease-in-out;
-    margin: 5px 0px;
-    font-size: 1rem;
-    border-bottom: 1px solid black;
-}
-
-.enlargeLink:hover{
-    color: var(--font-plum);
-}
 
 
 .certificateImage{
@@ -121,6 +111,14 @@
     top: -15px;
     right: -10px;
     background-color: white;
+}
+
+.linkMobile{
+    display: flex;
+}
+
+.linkMobile span{
+    padding: 0px 5px;
 }
 
 .link:hover{
@@ -163,9 +161,24 @@
       margin-top: 5px;
       margin-bottom: 5px;
       padding-bottom: 5px;
-      align-items: center;
+      align-items: start;
       justify-content: center;
       border-bottom: 1px solid var(--font-plum)
     }
 
+
+
+    .link{
+        right: -50px;
+    }
+
+}
+
+@media screen and (max-width: 450px){
+
+    .link{
+     
+        display: none;
+      
+    }
 }

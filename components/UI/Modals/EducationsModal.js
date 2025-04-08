@@ -12,12 +12,7 @@ const EducationsModal = ({ openItems, educationsTable, onClose }) => {
                         <button onClick={onClose} className={styles.closeButton}> 
                             <Image src="/images/icons8-close-50.png" width={20} height={30} alt="educations details"/>
                         </button> 
-                        {/*
-                        <button className={styles.downloadButton}> 
-                            <Image src="/images/icons8-download-50.png" width={22} height={30}/>
-                    
-                        </button> 
-                        */}
+                       
                         <Image src={selectedEducation.educationsCertificatePath} alt="educations details" width={500} height={200} fetchPriority='high' className={styles.image} /> 
                     </div> 
                 ) : ( 

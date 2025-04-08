@@ -36,7 +36,7 @@ const MenuButton = ({isHovered, setIsHovered}) => {
             style={{  background: 'transparent', cursor: 'pointer', marginRight: '30px' }}
         >
             {isHovered ? (
-                <Image src="/images/button-icons/icons8-close-50.png" width={30} height={30} alt="Close Menu" className={styles.menuIcon}/>
+                <Image src="/images/button-icons/icons8-menu-50.png" width={30} height={30} alt="Close Menu" className={styles.menuIcon}/>
             ) : (
                 <Image src="/images/button-icons/icons8-menu-50.png" width={30} height={30} alt="Open Menu" className={styles.menuIcon}/>
             )}

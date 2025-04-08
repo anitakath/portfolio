@@ -58,8 +58,20 @@ const Education = ({ data }) => {
                     <li key={education.name} className={styles.listItem}>
                         <button className={styles.itemButton} onClick={(event) => toggleEducation(event, education.name)}>
                             <strong>{education.name}</strong>
+                            {education.educationsPlatformPath && (
+                                <Link href={education.educationsPlatformPath} target="_blank" rel="noopener noreferrer" className={styles.link}>
+                                    <img 
+                                        src="/gifs/icons8-link.gif" 
+                                        alt="Udemy Link" 
+                                        style={{ width: '20px', height: '20px' }} 
+                                        className={styles.linkGif}
+                                    />
+                                    <span> udemy </span>
+                                </Link>
+                            )}
+
                             {education.subTitle && (
-                                 <span className={styles.titleSpan}> {education.subTitle} </span>
+                                 <span className={styles.titleSpan}> {education.subTitle}  </span>
                             )}
                            
                         </button>
@@ -77,20 +89,18 @@ const Education = ({ data }) => {
                             
                                {education.educationsCertificatePath && (
                                    <div className={styles.detailsDiv}>
-                                       <Image 
+                                    <button onClick={(event) => handleEnlargeClick(event)}>
+                                        <Image 
                                            src={education.educationsCertificatePath}
                                            width={200}
                                            height={200}
                                            className={styles.certificateImage}
                                            alt="educations details infos"
                                        />
+                                    </button>
+                                       
                                        <div className={styles.downloadLinkDiv}>
-                                       <button 
-                                            className={styles.enlargeLink} 
-                                            onClick={(event) => handleEnlargeClick(event)}
-                                        >
-                                            {enlargeText}
-                                        </button>
+                                       
 
                                         <div className={styles.descriptionDiv}>
 
@@ -122,19 +132,21 @@ const Education = ({ data }) => {
                                 </div>
                                )}
 
-                                {education.educationsPlatformPath && (
-                                    <Link href={education.educationsPlatformPath} target="_blank" rel="noopener noreferrer" className={styles.link}>
-                                        <img 
-                                            src="/gifs/icons8-link.gif" 
-                                            alt="Udemy Link" 
-                                            style={{ width: '20px', height: '20px' }} 
-                                            className={styles.linkGif}
-                                        />
-                                        <span> udemy </span>
-                                    </Link>
-                                )}
+                          
 
+                               
                            </div>
+                           {education.educationsPlatformPath && (
+                                <Link href={education.educationsPlatformPath} target="_blank" rel="noopener noreferrer" className={styles.linkMobile}>
+                                    <img 
+                                        src="/gifs/icons8-link.gif" 
+                                        alt="Udemy Link" 
+                                        style={{ width: '20px', height: '20px' }} 
+                                        className={styles.linkGifMobile}
+                                    />
+                                    <span> udemy </span>
+                                </Link>
+                            )}
                        </motion.div>
                         )}
                     </li>

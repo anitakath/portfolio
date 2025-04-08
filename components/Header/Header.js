@@ -10,7 +10,7 @@ import { motion } from 'framer-motion';
 import ScrollIndicator from './ScrollIndicator';
 import MenuButton from '../UI/MenuButton';
 import useSkills from '@/custom-hooks/useSkills';
-import SkillsSlider from './SkillsSlider';
+
 //CUSTOM HOOK
 import useNavigation from '@/custom-hooks/useNavigation';
 
