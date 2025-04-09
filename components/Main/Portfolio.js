@@ -24,6 +24,7 @@ const Portfolio = () => {
   }, [currentLanguage, data.portfolio]);
 
   const handleToggle = (id) => {
+
     // Überprüfen, ob die ID bereits im hideProjectIds-Array vorhanden ist
     if (hideProjectIds.includes(id)) {
       // Wenn ja, entferne sie
@@ -37,8 +38,10 @@ const Portfolio = () => {
   const messages = {
     ENGLISH: "Password required!",
     GERMAN: "Passwort erforderlich!",
-    SPANISH: "¡Se requiere contraseña!"
+   /* SPANISH: "¡Se requiere contraseña!"*/
   }
+
+  console.log(portfolioData )
 
   return (
     <div className="sub_container" id="portfolio">

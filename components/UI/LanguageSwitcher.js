@@ -1,19 +1,35 @@
 import styles from '../../styles/UI/LanguageSwitcher.module.css'
 import { motion } from 'framer-motion';
+import { useSelector, useDispatch } from 'react-redux';
+import { setLanguage } from '@/store/languageSlice';
 
 const LanguageSwitcher = ({ isHovered, languageMap }) => {
+
+    const currentLanguage = useSelector((state) => state.language.currentLanguage)
+    const dispatch = useDispatch();
+
+    const toggleLanguage = () =>{
+
+        if(currentLanguage === "GERMAN"){
+            dispatch(setLanguage("ENGLISH"))
+
+        } else if(currentLanguage === "ENGLISH"){
+            dispatch(setLanguage("GERMAN"))
+
+        }
+
+    }
+
     return (
         <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: isHovered ? 1 : 0 }}
-            transition={{ duration: 0.5 }} // Dauer der Animation
-            style={{ position: 'absolute', right: '15px', backgroundColor: 'rgba(255, 255, 255, 0.8)' }}
+            initial={{ opacity: 1 }}
+            animate={{ opacity: isHovered ? 1 : 1 }}
+            transition={{ duration: 0.5 }} 
         >
-            {Object.keys(languageMap).map((lang) => (
-                <button key={lang} onClick={() => updateLanguage(lang)} className={styles.language_btn}>
-                    {lang === "GERMAN" ? "🇩🇪" : lang === "ENGLISH" ? "🇬🇧" : "🇪🇸"}
-                </button>
-            ))}
+       
+            <button  className={styles.language_btn} onClick={() => toggleLanguage()}>
+                {currentLanguage === "GERMAN" ?  "🇬🇧" : "🇩🇪"}
+            </button>
         </motion.div>
     );
 };

@@ -6,7 +6,9 @@ import { useEffect, useState} from 'react'
 import { FaGithub} from "react-icons/fa";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faN } from "@fortawesome/free-solid-svg-icons";
+import { faCamera } from '@fortawesome/free-solid-svg-icons'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import LanguageSwitcher from '@/components/UI/LanguageSwitcher'
 //MODAL
 import PortfolioItemImageModal from '@/components/UI/Modals/PortfolioItemImageModal'
 const PortfolioItem = ({item}) =>{
@@ -29,11 +31,13 @@ const PortfolioItem = ({item}) =>{
           let tableName;
           if (currentLanguage === "GERMAN") {
             tableName = 'portfolio_german';
-          } else if (currentLanguage === "SPANISH") {
+          } /*else if (currentLanguage === "SPANISH") {
             tableName = 'portfolio_spanish';
-          } else if (currentLanguage === "ENGLISH") {
+          }*/ else if (currentLanguage === "ENGLISH") {
             tableName = 'portfolio_english';
           }
+
+          console.log(tableName)
     
           // Führe die Abfrage durch
           const { data, error } = await supabase
@@ -68,9 +72,14 @@ const PortfolioItem = ({item}) =>{
 
       console.log(portfolioData)
       console.log(openItems)
+      console.log(currentLanguage)
 
-
-
+      const scrollIntoView = () => {
+        const element = document.getElementById("imageContainer");
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      };
     return(
         <div className={styles.container}>
 
@@ -79,10 +88,14 @@ const PortfolioItem = ({item}) =>{
                 <Link href="/"> 
                   <FontAwesomeIcon icon={faArrowLeft} />
                 </Link>
+                <LanguageSwitcher/>
             </div>
 
          
             <h1 className={styles.title}>{portfolioData.title}</h1>
+            <button onClick={() => scrollIntoView()} className={styles.cameraButtonContainer}>  
+              <FontAwesomeIcon icon={faCamera} />
+            </button>
             
               <div className={styles.skills_div}>
                 {portfolioData.skills && portfolioData.skills.length > 0 &&  portfolioData.skills.map((description, index) => (
@@ -98,7 +111,8 @@ const PortfolioItem = ({item}) =>{
                     </h1>
                 </div>
                 <div  className={styles.subDescription}>
-                   <h1 className={styles.descriptionTitle}> Möglichkeiten für den User: </h1>
+
+                   <h1 className={styles.descriptionTitle}> {currentLanguage === "GERMAN" ? 'Möglichkeiten für den User:' : 'Options for the user:'}</h1>
                     <ul className={styles.descriptionsTable}>
                     {portfolioData.subDescriptions && portfolioData.subDescriptions.map((data, index) =>(
                        
@@ -109,7 +123,7 @@ const PortfolioItem = ({item}) =>{
                 </div>
             </div>
 
-            <div className={styles.imageGridContainer}>
+            <div className={styles.imageGridContainer} id="imageContainer">
                 {portfolioData.images && portfolioData.images.map((image, index) => (
                     <img 
                         key={index} 

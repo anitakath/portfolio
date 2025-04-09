@@ -8,6 +8,8 @@
 
 .linkContainer{
     font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
 }
 
 .title{
@@ -15,21 +17,44 @@
     padding: 10px;
 }
 
+.cameraButtonContainer{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.cameraButtonContainer:hover{
+    color:var(--font-plum)
+}
+
 .skills_div{
     background-color: rgba(0,0,0,0.05);
     overflow: scroll;
     width: 100%;
+    max-height: 300px;
     margin: 0px 0px 10px 0px;
     overflow: scroll;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     padding: 5px 0px;
+
     
 }
 
 .skill{
     padding: 5px;
-    margin: 0px 10px;
+    margin: 5px 10px;
+    background-color: rgba(255,255,255, 0.5);
+    min-width: 100px;
+    height: 60px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+    overflow: scroll;
 }
 
 
@@ -149,6 +174,10 @@
         top: 5px;
         z-index: 1000;
     }
+
+    .descriptionTitle{
+        font-size: 1.2rem;
+    }
 }
 
 @media screen and (max-width: 600px){
@@ -183,7 +212,22 @@
     }
 
    
-  
 
-   
+}
+
+@media screen and (max-width: 400px){
+    .descriptionTitle{
+        font-size: 1.1rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    .subDescription{
+        padding: 0px
+    }
+
+    .descriptionsTableLinks{
+        padding: 2px 5px;
+        margin-bottom: 30px;
+    }
 }

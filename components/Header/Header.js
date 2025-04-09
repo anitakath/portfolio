@@ -31,14 +31,14 @@ const languageMap = {
             description: "I craft modern, dynamic and user-friendly web applications for every need"
         } 
     },
-    SPANISH: { 
+    /*SPANISH: { 
         aboutMe: "SOBRE MI", 
         contact: "CONTACTO",
         headerInformation: {
             subTitle: "Cuido, bailo y creo",
             description: "Creo aplicaciones web modernas, dinámicas y fáciles de usar para cada necesidad"
         }
-    },
+    },*/
 };
 
 const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, }) => {
@@ -55,6 +55,18 @@ const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, }) =
     //const [headerInformation, setHeaderInformation] = useState({subTitle: "Ich pflege, tanze und erschaffe", description: "Ich erstelle moderne, dynamische und benutzerfreundliche Webanwendungen für jeden Bedarf"})
     const [headerInformation, setHeaderInformation] = useState(languageMap[currentLanguage]?.headerInformation || languageMap.DEUTSCH.headerInformation);
     const [isHovered, setIsHovered] = useState(false);
+    const [scrollY, setScrollY] = useState(0);
+    const [windowWidth, setWindowWidth] = useState(0);
+    const [slideDirection, setSlideDirection] = useState('right');
+    const {skills} =useSkills();
+    const [isVisible, setIsVisible] = useState(false);
+
+
+    const onScroll = useCallback(() => {
+        setScrollY(window.pageYOffset);
+        setIsVisible(window.pageYOffset >= 150);
+    }, []);
+
     const updateLanguage = (language) => {
 
         dispatch(setLanguage(language));
@@ -64,15 +76,6 @@ const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, }) =
 
         setIsLanguageVisible(false); 
     };
-    const [scrollY, setScrollY] = useState(0);
-    const [windowWidth, setWindowWidth] = useState(0);
-    const [slideDirection, setSlideDirection] = useState('right');
-    const {skills} =useSkills();
-
-    const onScroll = useCallback(() => {
-        setScrollY(window.pageYOffset);
-        setIsVisible(window.pageYOffset >= 150);
-    }, []);
 
     const handleResize = () => {
         setWindowWidth(window.innerWidth);
@@ -111,30 +114,6 @@ const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, }) =
         zIndex: "10000",
     };
 
-    const upContainer = {
-        position: "fixed",
-        left: "10px",
-        top: scrollY >= 150 ? "0px" : (windowWidth <= 600 ? "5px" : "14px"),
-        width: "50px",
-        height: "50px",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        fontWeight: "bolder",
-    };
-
-
-    const mobileLanguageButtonStyle = {
-      display: windowWidth < 900 ? (isLanguageVisible ? 'none' : 'inline-block') : 'none', 
-      position: 'absolute', 
-      top: windowWidth <= 600 ? '10px' : '63px', 
-      right: '20px', 
-      opacity: isLanguageVisible || windowWidth >= 900 ? '0.3' : '1'
-   };
-
-
-   const [isVisible, setIsVisible] = useState(false);
-
    const handleScroll = () => {
        const headerElement = document.getElementById('header');
        if (headerElement) {
@@ -158,10 +137,6 @@ const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, }) =
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
-
-
-    
-
 
 
     useEffect(() => {
@@ -213,7 +188,8 @@ const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, }) =
                     >
                         {Object.keys(languageMap).map((lang) => (
                             <button key={lang} onClick={() => updateLanguage(lang)} className={styles.language_btn}>
-                                {lang === "GERMAN" ? "🇩🇪" : lang === "ENGLISH" ? "🇬🇧" : "🇪🇸"}
+                                {/*{lang === "GERMAN" ? "🇩🇪" : lang === "ENGLISH" ? "🇬🇧" : "🇪🇸"}*/}
+                                {lang === "GERMAN" ? "🇩🇪 " : "🇬🇧 "}
                             </button>
                         ))}
                         </motion.div>
@@ -241,14 +217,6 @@ const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, }) =
                </div>
         </div>
 
-
-        {/*
-            <SkillsSlider 
-                windowWidth={windowWidth} 
-                skills={skills} 
-                slideDirection={slideDirection}
-            /> 
-        */}
         <div className={`  ${styles.skillsContainer}`}> 
             {windowWidth <= 1000 ? (
                 skills.map(({ name, logo }) => (

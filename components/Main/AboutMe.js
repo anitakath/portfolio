@@ -91,8 +91,8 @@ const AboutMe = ({ setIsVisible }) => {
   }
 
 
-  console.log(visibleSkillGroups)
-  console.log(aboutMeData)
+  //console.log(visibleSkillGroups)
+  //console.log(aboutMeData)
 
   return (
       <div id="aboutMe" className="sub_container">
