@@ -104,7 +104,7 @@ const AboutMe = ({ setIsVisible }) => {
                           {flippedIndex !== data.id && (
                               <h1 className={styles.cardTitle}>{data.title} </h1>
                           )}
-                          <Image src={data.imagePath} width={800} height={800} className={styles.cardImage} alt="sample images from pexel" />
+                          <Image src={data.imagePath} width={800} height={800} className={`${styles.cardImage} ${data.imagePath === "/images/E589D925-9A60-4FF0-809B-B77745A757D4.jpg" ? styles.cardImageAnne : ""}`} alt="sample images from pexel" />
                       </motion.div>
                       {/* Back side of the card */}
                       <motion.div className={styles.cardBack}>

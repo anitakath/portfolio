@@ -14,7 +14,7 @@ export default function handler (req, res){
             listItemDescription: null,
           }
         ],
-        imagePath: "/images/about-me-section/pexels-minan1398-681637.jpg"
+        imagePath: "/images/E589D925-9A60-4FF0-809B-B77745A757D4.jpg"
       },
       {
         id: 2,

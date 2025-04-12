@@ -165,7 +165,7 @@ const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, }) =
                <div className={styles.header_row} style={headerRowStyle}>
                    <div className={styles.title_container}>
                        <h1> ANNE-KATHRIN WAGNER </h1>
-                       <h3>{subtitles[currentSubtitleIndex]}</h3>
+                       {/*<h3>{subtitles[currentSubtitleIndex]}</h3>*/}
                    </div>
                 
                    <div className={styles.navigationContainer}>
@@ -201,7 +201,7 @@ const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, }) =
 
            {/* Header-Bild */}
         <div className={styles.headerImage_row}>
-               <Image src="/images/Anne-Kathrin.jpg" height={1400} width={1400} className={styles.portrait} alt={"a portrait of me"} />
+               <Image src="/images/IMG_7199.jpg" height={1400} width={1400} className={styles.portrait} alt={"a portrait of me"} />
                <div className={styles.gradientOverlay}></div> 
                <div className={styles.innerContextContainer}>
 

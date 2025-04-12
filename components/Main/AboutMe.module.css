@@ -44,29 +44,30 @@
     font-size: 1rem;
     transition: 0.2s ease;
     z-index: 1000;
-    background-color: rgba(255,255,255, 0.2);
+    background-color: rgba(255,255,255, 0.7);
     padding: 10px 5px;
     width: 100%;
     height: 5vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0px 10px;
     cursor: pointer;
     font-family: "Source Serif 4", serif;
 }
 
 .cardTitle:hover{
-    background-color: rgba(255,255,255, 0.3);
+    background-color: rgba(255,255,255, 0.7);
     color:var(--font-plum);
     font-size: 1.03rem;
+    height: 100%;
 }
 
 
 .cardFront {
     display: flex;
-    align-items: center;
+    align-items: end;
     justify-content: center;
+    overflow: hidden;
     
 }
 
@@ -74,9 +75,16 @@
     position: absolute;
     z-index: -10;
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
+
 }
+
+.cardImageAnne{
+    top: -250px;
+}
+
+
 
 .cardBack {
     transform: rotateY(180deg); /* Rückseite umdrehen */
@@ -91,6 +99,7 @@
     font-size: 1rem;
     font-weight: bolder;
 }
+
 
 .cardContainer{
     margin-top: 20px;
@@ -213,11 +222,26 @@
 }*/
 
 
+@media screen and (max-width: 1200px){
+    .cardImageAnne{
+        top: -200px;
+
+    }
+}
+
 @media screen and (max-width: 1000px){
     .card{
         width: 100%;
-        height: 500px;
+        height: 400px;
     }
+
+
+    .cardImageAnne{
+        top:-400px;
+    }
+  
+
+
 /*
     .toggleSkillGroupButton{
         height: 234px;
@@ -248,6 +272,11 @@
         top: 0px;
     }
 
+
+    .cardImageAnne{
+        top:-300px;
+    }
+
 }
 
 @media screen and (max-width: 700px){
@@ -270,13 +299,40 @@
   
     .card{
         width: 100%;
-        height: 90vh;
+    }
+
+    .cardImageAnne{
+        top: -230px;
     }
 
     .password{
        font-size: 0.8rem;
     }
 }
+
+@media screen and (max-width: 600px){
+    .cardImageAnne{
+        top: -200px;
+    }
+
+}
+
+
+@media screen and (max-width: 500px){
+    .cardImageAnne{
+        top: -170px;
+    }
+
+}
+
+
+@media screen and (max-width: 400px){
+    .cardImageAnne{
+        top: -120px;
+    }
+
+}
+
 
 
 
