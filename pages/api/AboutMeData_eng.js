@@ -9,7 +9,7 @@ export default function handler(req, res) {
         id: 1,
         title: "Short profile",
         description:"I am a successfully trained certified health and nursing professional with a passion for technology and sports. As a creative thinker, I enjoy testing various applications and programming my own small solutions that help me better structure my (athletic) daily life. An example of this is my sports diary, which is listed in my portfolio below. In addition to my enthusiasm for sports and programming, I am interested in traveling and actively learning Spanish. I enjoy reading non-fiction books – currently, I am delving into 'Women Living Deliciously' by Florence Given. To unwind both mentally and physically, I like to visit thermal baths, spas, and massages or bake cakes and pastries. Additionally, I am passionate about watching live sports events and support various teams, such as the Adendorfer Ice Hockey Club.",
-        imagePath: "/images/about-me-section/pexels-minan1398-681637.jpg"
+        imagePath: "/images/IMG_7201.jpg"
       },
       {
         id: 2,
@@ -61,7 +61,7 @@ export default function handler(req, res) {
           { name: "School Certificate", educationsZertificatePath: " ", description: "" },
         ],
         description: null,
-        imagePath: "/images/about-me-section/pexels-pixabay-433333.jpg",
+        imagePath: "/images/about-me-section/pexels-cottonbro-4153146.jpg",
       },
     
       {
@@ -206,7 +206,8 @@ export default function handler(req, res) {
               ]
           }
       ],
-        imagePath: "/images/about-me-section/pexels-negativespace-169573.jpg",
+      imagePath: "/images/about-me-section/pexels-shkrabaanthony-4348403.jpg",
+     
       },
       {
         id: 4,
@@ -254,7 +255,7 @@ export default function handler(req, res) {
               listItemDescription: "I want to actively focus on the continuous development of my existing projects. This includes optimizing existing features as well as implementing new ideas to continuously improve quality and user-friendliness."
           }
       ],
-        imagePath: "/images/about-me-section/pexels-pixabay-355952.jpg",
+        imagePath: "/images/about-me-section/pexels-polina-zimmerman-3782134.jpg",
       },
     ];
 

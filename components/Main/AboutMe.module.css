@@ -9,6 +9,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
+
 }
 
 .card{
@@ -29,8 +30,7 @@
     height: 100%;
 }
 
-
-.cardContainer{
+/*.cardContainer{
     margin: 20px 0px;
     padding: 0px 5px;
     font-size: 1rem;
@@ -38,16 +38,19 @@
     flex-direction: column;
     justify-content: start;
     align-items: start;
-}
 
+}
+*/
 .cardTitle{
     font-size: 1rem;
     transition: 0.2s ease;
     z-index: 1000;
-    background-color: rgba(255,255,255, 0.7);
+    background-color: rgba(255,255,255, 0.3);
     padding: 10px 5px;
     width: 100%;
     height: 5vh;
+    top: 0;
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,7 +59,7 @@
 }
 
 .cardTitle:hover{
-    background-color: rgba(255,255,255, 0.7);
+    background-color: rgba(255,255,255, 0.5);
     color:var(--font-plum);
     font-size: 1.03rem;
     height: 100%;
@@ -77,6 +80,7 @@
     width: 100%;
     height: auto;
     object-fit: cover;
+    height: auto;
 
 }
 
@@ -98,12 +102,17 @@
 .title{
     font-size: 1rem;
     font-weight: bolder;
+    transition: 0.2s ease-in-out;
 }
 
-
+.title:hover{
+    color: var(--font-plum)
+}
+/*
 .cardContainer{
     margin-top: 20px;
-}
+    border: 2px solid brown;
+}*/
 
 .detailsContainer{
     width: 98%;
@@ -137,6 +146,7 @@
 .table{
     font-size: 1rem;
     width: 100%;
+    
 }
 
 
@@ -153,6 +163,7 @@
     align-items: start;
     margin: 20px 0px;
     padding: 0px 5px;
+
 }
 
 .listItemButton{
@@ -170,8 +181,8 @@
 }
 
 .listItemDescription{
-    font-size: 0.9rem;
-    margin-top: 10px;    
+    font-size: 1rem;
+    margin:10px;    
 }
 
 
@@ -206,58 +217,50 @@
 }
 
 
-.description{
-    font-size: 1rem;
-    padding: 10px;
-    text-align: justify;
-    margin: 0px 10px;
-}
 
-/*
-.softSkillLink{
-    border: 2px solid red;
-    width: 100px;
-    height: 100px;
-    overflow: hidden;
-}*/
+
 
 
 @media screen and (max-width: 1200px){
     .cardImageAnne{
-        top: -200px;
-
+        top: -300px;
     }
-}
 
-@media screen and (max-width: 1000px){
+
+    .aboutmeContainer{
+        flex-direction: column;
+    }
+
     .card{
+       height: 90vh;
         width: 100%;
-        height: 400px;
     }
 
-
-    .cardImageAnne{
-        top:-400px;
-    }
-  
-
-
-/*
-    .toggleSkillGroupButton{
-        height: 234px;
+    .cardTitle{
+        height: 10vh;
+        font-size: 1.3rem;
     }
 
-    .toggleSkillGroupButtonActive{
-        height: 50px;
-        margin: 0;
-        margin-top: 10px;
-        background-color: var(--font-plum);
-        color: beige;
-    }*/
+    .cardTitle:hover{
+        font-size: 2rem;
+    }
+
+    .cardContainer{
+        margin: 10px;
+    }
+
 }
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 800px){
 
+    .card{
+
+        background-color: var(--font-plum);
+        height: 50vh;
+    }
+
+   
+  
     .item_title{
         height: 50px;
     }
@@ -277,13 +280,19 @@
         top:-300px;
     }
 
+
+
+
 }
+
 
 @media screen and (max-width: 700px){
     .toggleSkillGroupButton{
         text-align: center;
         height: 314px;
     }
+
+ 
 
     .toggleSkillGroupButtonActive{
         height: 50px;
@@ -293,55 +302,27 @@
         color: beige;
     
     }
-}
-
-@media screen and (max-width: 700px){
-  
-    .card{
-        width: 100%;
-    }
-
-    .cardImageAnne{
-        top: -230px;
-    }
-
-    .password{
-       font-size: 0.8rem;
+    .cardTitle:hover{
+        text-align: center;
     }
 }
+
 
 @media screen and (max-width: 600px){
     .cardImageAnne{
-        top: -200px;
+        top: -150px;
     }
+  
 
-
-}
-
-
-@media screen and (max-width: 500px){
-    .cardImageAnne{
-        top: -170px;
-    }
-
-    .aboutmeContainer {
-        margin-top: 15px;
-    }
-
+   
 }
 
 
 @media screen and (max-width: 400px){
     .cardImageAnne{
+        border: 2px solid red;
         top: -120px;
     }
 
-    .aboutmeContainer {
-        margin-top: 20px;
-    }
+  
 }
-
-
-
-
-

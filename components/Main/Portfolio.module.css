@@ -26,6 +26,7 @@
 .portfolio_item_header{
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin: 5px 0px;
     border-bottom: 2px solid lightgrey;
     height: 70px;
@@ -38,14 +39,14 @@
   margin-right: 20px;
   padding-left: 20px;
   transition: 0.2s ease;
-  
 }
 
 
 
 .item_toggleButton{
-    font-size: 1rem;
+    font-size: 1.4rem;
     z-index: 10000;
+    margin: 0px 20px;
 }
 
 

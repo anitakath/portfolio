@@ -4,15 +4,16 @@
 .header_space{
     height: 10vh;
     width: 100vw;
+
 }
 
 .header_row{
     position: relative;
+
 }
 
 .upContainer{
     position: absolute;
-    border: 2px solid green;
     left: -20px;
     top:0;
 }
@@ -22,7 +23,6 @@
     cursor: pointer;
     color: var(--font-plum);
 
-    border: 2px solid red;
 }
 
 .up:hover{
@@ -56,7 +56,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1rem;
+    font-size: 1.2rem;
     position: relative;
     top: 2px;
 }
@@ -82,7 +82,7 @@
 }
 
 .navigationContainer ul li{
-   font-size: 0.9rem;
+   font-size: 1rem;
    letter-spacing: 1px;
    margin: 0px 40px;
 }
@@ -314,19 +314,32 @@
 
 @media screen and (max-width: 1000px){
     .title_container{
-        left: 70px;
+        left: 0px;
+        width: 300px;
     }
 
     .title_container h1{
-        font-size: 0.9rem;
+        font-size: 1rem;
+        padding: 0;
+    
     }
 
     .title_container h3{
         font-size: 0.7rem;
     }
 
+
+    .navigationContainer{
+        justify-content: start;
+        padding: 0;
+        width: 60%;
+
+
+    }
+
     .navigationContainer ul li{
-        font-size: 0.8rem;
+        font-size: 1rem;
+        margin: 0px 15px;
     }
 
     .skillsDiv{
@@ -396,10 +409,18 @@
 
 
 @media screen and (max-width: 800px){
+
     .header_row{
         flex-direction: column;
         position: relative;
         justify-content: space-between;
+        margin: 0;
+        padding: 0;
+        height: auto;
+    }
+
+    .header_space{
+        height: 11vh;
     }
 
     .title_container{
@@ -470,6 +491,13 @@
 
     .header_space{
         height: 12vh;
+
+    }
+
+    .navigationContainer{
+
+        width: 100%;
+
     }
 
     .title_container{

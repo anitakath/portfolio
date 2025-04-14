@@ -14,7 +14,7 @@ export default function handler (req, res){
             listItemDescription: null,
           }
         ],
-        imagePath: "/images/E589D925-9A60-4FF0-809B-B77745A757D4.jpg"
+        imagePath: "/images/IMG_7201.jpg"
       },
       {
         id: 2,
@@ -82,14 +82,14 @@ export default function handler (req, res){
             description: ""
           },
         ],
-        imagePath: "/images/about-me-section/pexels-pixabay-433333.jpg",
+        imagePath: "/images/about-me-section/pexels-cottonbro-4153146.jpg",
         description: null,
          /* "Im Jahr 2002 wurde ich in Lüneburg eingeschult. Aufgrund von häufigen Umzügen und meinem Wechsel zwischen verschiedenen Schulformen, habe ich in meiner Schullaufbahn viele Schulwechsel erlebt. Dies führte dazu, dass ich ca alle zwei Jahre eine neue Schule besuchte. Trotz dieser Herausforderungen habe ich meine Schullaufbahn im Jahr 2015 erfolgreich abgeschlossen. Ich muss zugeben, dass ich keine Freundin der Schule war. Dennoch habe ich während meiner Schulzeit wichtige Fähigkeiten wie Anpassungsfähigkeit, Durchhaltevermögen und Selbstständigkeit entwickelt. Diese Erfahrungen haben mich gelehrt, flexibel zu sein und mich nicht nur schnell in neue Umgebungen einzufinden, sondern auch ein flexibles und vielseitiges Interesse für die verschiedensten Dinge zu haben. Es war und ist mir keine Schwierigkeit mich schnell in neue Gruppen oder neue Arbeitsweisen einzufinden und mit den unterschiedlichsten Menschen und Themen auszukommen - ich mag das sogar und bin stets offen für Neues. Meine Schulzeit hat mich zudem gelehrt, dass Erfolg nicht immer geradlinig verläuft und dass es wichtig ist, sich neuen Herausforderungen zu stellen. Ich bin stolz darauf, dass ich trotz der Schwierigkeiten meiner Schullaufbahn meinen Abschluss erfolgreich bestanden habe. Ich bin überzeugt davon, dass diese Erfahrungen mich zu einer belastbaren und angenehmen Kollegin machen, die auch in ungewohnten Situationen ihr Bestes gibt. Ich freue mich darauf, meine Fähigkeiten und mein Engagement in einem neuen beruflichen Umfeld unter Beweis stellen zu dürfen.",*/
       },
       {
         id: 3,
         title: "Programmier-, und Projektmanagementkentnisse",
-        imagePath: "/images/about-me-section/pexels-negativespace-169573.jpg",
+        imagePath: "/images/about-me-section/pexels-shkrabaanthony-4348403.jpg",
         description: null,
         skillstable: [
           {
@@ -388,7 +388,7 @@ export default function handler (req, res){
       {
         id: 4,
         title: "Zukunftspläne",
-        imagePath: "/images/about-me-section/pexels-pixabay-355952.jpg",
+        imagePath: "/images/about-me-section/pexels-polina-zimmerman-3782134.jpg",
         description: null, 
         descriptionTable:[
           { listItem: "Programmier-, und Projektmanagementkentnisse vertiefen und ausbauen",
@@ -404,7 +404,7 @@ export default function handler (req, res){
             listItemDescription:"Der Aufbau eines professionellen Netzwerks ist mir wichtig. Ich möchte Kontakte zu Fachleuten knüpfen, um von deren Erfahrungen zu lernen und mögliche Kooperationen zu fördern."
           },
           { listItem: "Projekte realisieren",
-            listItemDescription:"Ich plane, eigene Projekte umzusetzen, um meine Fähigkeiten in der Softwareentwicklung und im Projektmanagement praktisch anzuwenden."
+            listItemDescription:"Ich plane, eigene Projekte umzusetzen und stetig weiterzuentwickeln, um meine Fähigkeiten in der Softwareentwicklung und im Projektmanagement praktisch anzuwenden und zu verbessern."
           },
           {
             listItem: "Interdisziplinäre Ansätze nutzen",
@@ -418,11 +418,9 @@ export default function handler (req, res){
             listItemDescription:"Die Disziplin und das Engagement, die ich im Sport (z.B. Pole Dance und Eiskunstlauf) entwickelt habe, möchte ich auch in meiner neuen Karriere als Programmiererin oder Projektmanagerin einbringen."
           },
           {listItem: "Ausbildung zur Pole Dance Trainerin",
-            listItemDescription: "Im März 2025 werde ich eine Ausbildung zur Pole Dance Trainerin absolvieren. Diese Erfahrung wird mir helfen, meine Fähigkeiten im Umgang mit Gruppen zu stärken und komplexe Inhalte verständlich zu vermitteln."
+            listItemDescription: "✅Im März 2025 werde ich eine Ausbildung zur Pole Dance Trainerin absolvieren. Diese Erfahrung wird mir helfen, meine Fähigkeiten im Umgang mit Gruppen zu stärken und komplexe Inhalte verständlich zu vermitteln."
           },
-          {listItem: "Eigene Projekte weiterentwickeln",
-            listItemDescription: "Ich möchte mich aktiv der stetigen Weiterentwicklung meiner bereits bestehenden Projekte widmen. Dies umfasst die Optimierung bestehender Funktionen sowie die Implementierung neuer Ideen, um die Qualität und Benutzerfreundlichkeit kontinuierlich zu verbessern."
-          }
+        
         ]
       },
     ];

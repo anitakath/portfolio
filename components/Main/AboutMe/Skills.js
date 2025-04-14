@@ -22,7 +22,7 @@ const Skills = ({data}) =>{
                       >
                         <strong>{skillCategory.category}</strong>
                       </button>
-                      <h1> HALLO </h1>
+                 
                       <motion.div 
                            className={styles.detailsContainer}
                            initial={{ opacity: 0, height: 0 }} 

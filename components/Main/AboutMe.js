@@ -7,7 +7,7 @@ import styles from "./AboutMe.module.css";
 import { useSelector } from "react-redux";
 //COMPONENTS
 import Education from "./AboutMe/Education";
-import Link from "next/link";
+import ShortProfile from "./AboutMe/ShortProfile";
 
 
 const languageMap = {
@@ -97,6 +97,7 @@ const AboutMe = ({ setIsVisible }) => {
   return (
       <div id="aboutMe" className="sub_container">
           <div className={styles.aboutmeContainer}>
+            
               {aboutMeData.map((data) => (
                   <motion.div key={data.title} className={styles.card} onClick={() => flipCard(data.id)} initial={{ rotateY: 0 }} animate={{ rotateY: flippedIndex === data.id ? 180 : 0 }} transition={{ duration: 0.6 }}>
                       {/* Front side of the card */}
@@ -104,15 +105,17 @@ const AboutMe = ({ setIsVisible }) => {
                           {flippedIndex !== data.id && (
                               <h1 className={styles.cardTitle}>{data.title} </h1>
                           )}
-                          <Image src={data.imagePath} width={800} height={800} className={`${styles.cardImage} ${data.imagePath === "/images/E589D925-9A60-4FF0-809B-B77745A757D4.jpg" ? styles.cardImageAnne : ""}`} alt="sample images from pexel" />
+                          <Image src={data.imagePath} width={800} height={800} className={`${styles.cardImage} ${data.imagePath === "/images/IMG_7201.jpg" ? styles.cardImageAnne : ""}`} alt="sample images from pexel" />
                       </motion.div>
                       {/* Back side of the card */}
                       <motion.div className={styles.cardBack}>
                           {flippedIndex === data.id && (
-                              <div className="flex-col overflow-scroll items-center justify-center w-full h-full pl-1 bg-white">
+                              <div className="flex-col  overflow-scroll items-center justify-center w-full h-full pl-1 bg-white">
                   
+
+                              
                                 {data.skillstable && data.skillstable.map((skillGroup) => (
-                                  <div >
+                                  <div>
 
                                     {/* CREATE A NEW SEPARATE COMPONENT FOR THE FOLLOWING CONTENT!!! */}
                                     {/* CREATE A NEW SEPARATE COMPONENT FOR THE FOLLOWING CONTENT!!! */}
@@ -143,7 +146,7 @@ const AboutMe = ({ setIsVisible }) => {
                                                   onClick={(event) => toggleSkills(event, skillCategory.category)}
                                                   style={{ border: 'none', padding: 0, cursor: 'pointer' }}
                                                 >
-                                                  {skillCategory.category} 
+                                                  {skillCategory.category}  
                                                 </button>
 
 
@@ -165,27 +168,7 @@ const AboutMe = ({ setIsVisible }) => {
                                           </ul>
                                         )}
 
-                                        {/*
-                                         {visibleSkills[skillCategory.category] && (
-                                          <ul className="mt-2 border-2">
-                                            {skillCategory.items.map((subCategory, subIndex) => (
-                                              <li key={subIndex} >
-                                               
-                                                <span className="my-2">{subCategory.subtitle}</span>
-                                                <ul className="ml-4 border-2 flex relative"> 
-                                                  <div className={styles.two}>
-                                                  
-                                                  </div>
-                                                  {subCategory.skills.map((item, itemIndex) => (
-                                                    <li key={itemIndex} className={styles.softSkillLink}>
-                                                      {item}
-                                                    </li>
-                                                  ))}
-                                                </ul>
-                                              </li>
-                                            ))}
-                                          </ul>
-                                        )}*/}
+                                       
                                       </motion.div>
                                     </li>
                                   ))}
@@ -205,8 +188,8 @@ const AboutMe = ({ setIsVisible }) => {
                               
 
                                 {data.description && (
-                                  <div >
-                                    <p className={styles.description}>{data.description}</p>
+                                  <div className=" h-full flex overflow-scroll">
+                                    <ShortProfile data={data} />
                                   </div>
                                 )}
 
@@ -226,7 +209,7 @@ const AboutMe = ({ setIsVisible }) => {
                                 onClick={(event) => toggleDescription(event, item.listItem)} // Event übergeben
                                 style={{ border: 'none', padding: 0, cursor: 'pointer' }}
                               >
-                                <strong className="px-2 text-start">{item.listItem}</strong>
+                                <strong className="px-2 text-start">{item.listItem} </strong>
                               </button>
 
                             
@@ -239,15 +222,15 @@ const AboutMe = ({ setIsVisible }) => {
                                 transition={{ duration: 0.3 }} 
                               >
                                 {visibleDescriptions[item.listItem] && (
-                                  <span className={styles.listItemDescription}>
-                                    {item.listItemDescription} 
-                                  </span>
+                                  <p className={styles.listItemDescription}>
+                                    {item.listItemDescription}  
+                                  </p>
                                 )}
                               </motion.div>
                             </li>
                           ))}
                         </ul>
-                                                      </div>
+                      </div>
                           )}
                       </motion.div>
                   </motion.div>

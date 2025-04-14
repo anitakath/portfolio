@@ -7,7 +7,7 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUpRightAndDownLeftFromCenter } from "@fortawesome/free-solid-svg-icons";
 import { faDownLeftAndUpRightToCenter } from "@fortawesome/free-solid-svg-icons";
-
+import { motion } from "framer-motion";
 //CUSTOM HOOKS
 import useSkills from "@/custom-hooks/useSkills";
 const Portfolio = () => {
@@ -49,9 +49,9 @@ const Portfolio = () => {
         <div className={styles.portfolio_field}>
 
           {portfolioData && portfolioData.map((item) => (
-            <div key={item.id} className="flex flex-col justify-center items-center">
+            <div key={item.id} className="flex flex-col">
               <div className={styles.portfolio_item_header}>
-                <h2 className={styles.item_title}>{item.title}</h2>
+                <h2 className={styles.item_title}>{item.title} </h2>
 
                 <button 
                   className={styles.item_toggleButton} 
@@ -81,23 +81,27 @@ const Portfolio = () => {
 
     
                     
-                    <div className={styles.item_imageDiv}>
-                     {item.images && item.images[0] &&  (
-                      <Link href={item.detailsPath}>
-                         <Image 
-                          key="moin" // Verwende den Index als Schlüssel (oder eine eindeutige ID, wenn verfügbar)
-                          src={item.image}
-                          alt="portfolio image" // Alternativtext für jedes Bild
-                          layout="responsive" 
-                          width={800} 
-                          height={800} 
-                          className={styles.image}
-                          
-                        />
-                      </Link>
-                      )}
-
-                    </div>
+          <motion.div
+            initial={{ opacity: 0, y: -20 }} // Startposition (unsichtbar und leicht nach oben)
+            animate={{ opacity: 1, y: 0 }} // Endposition (sichtbar und an der ursprünglichen Position)
+            exit={{ opacity: 0, y: 20 }} // Ausgangsposition (unsichtbar und leicht nach unten)
+            transition={{ duration: 0.5 }} // Dauer der Animation
+            className={styles.item_imageDiv}
+          >
+            {item.images && item.images[0] && (
+                <Link href={item.detailsPath}>
+                    <Image
+                        key="moin" // Verwende den Index als Schlüssel (oder eine eindeutige ID, wenn verfügbar)
+                        src={item.image}
+                        alt="portfolio image" // Alternativtext für jedes Bild
+                        layout="responsive"
+                        width={800}
+                        height={800}
+                        className={styles.image}
+                    />
+                </Link>
+            )}
+        </motion.div>
                 </div>
               )}
             </div>
