@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Anek+Devanagari:wght@100..800&family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Cabin+Sketch:wght@400;700&family=Carrois+Gothic&family=Codystar:wght@300;400&family=Cormorant:ital,wght@0,300;1,300&family=Fredoka:wght@300..700&family=Funnel+Display:wght@300..800&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Gowun+Dodum&family=Gruppo&family=Kulim+Park:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&family=Kumbh+Sans:wght@100..900&family=Lexend+Peta:wght@100..900&family=Manjari:wght@100;400;700&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Pangolin&family=Poiret+One&family=Pompiere&family=Pontano+Sans:wght@300..700&family=Rubik:ital,wght@0,300..900;1,300..900&family=Thasadith:ital,wght@0,400;0,700;1,400;1,700&family=Wix+Madefor+Display:wght@400..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Meow+Script&family=Parisienne&family=Playwrite+IN:wght@100..400&family=Scheherazade+New:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
 
 .header_space{
@@ -93,7 +93,7 @@
     color: var(--font-plum);
 }
 
-
+/*
 .languageContainer {
     width: 10%;
     display: flex;
@@ -103,9 +103,15 @@
     right: 15px;
     background-color: rgba(255, 255, 255, 0.8);
     top: var(--top-position); 
+    border: 2px solid green;
+}*/
+
+
+.languageButtonsContainer{
+    display: flex;
+    position: absolute;
+    right: 20px;
 }
-
-
 
 
 .language_btn{
@@ -113,6 +119,7 @@
     flex-grow: 1;
     font-size: 1.5rem;
     cursor: pointer;
+    transition: 0.2s ease-in-out;
 }
 
 
@@ -142,22 +149,39 @@
     width: 100%;
     height: 100%;
     z-index: 1000;
-
+    position: relative;
 
 }
 
-.subTitle{
-    font-family: 'Playwrite India', cursive;
-    color: var(--font-plum);
-    font-size: 2rem;
+.subRow{
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
+    padding: 10px 0px;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+
+}
+
+
+
+.subTitle{
+    color: var(--font-plum);
+    font-size: 1.5rem;
+    width: 100%;
+    text-align: center;
+    font-family: 'Kumbh Sans', sans-serif;
+
 }
 
 
 .andContainer{
     color: var(--font-plum-light);
     position: absolute;
-    top:50px;
+    top:0px;
     width: 5rem;
     height: 5rem;
     display: flex;
@@ -166,14 +190,16 @@
     font-size: 7rem;
     z-index: -10; 
     animation: fadeIn 4s ease forwards;
+    
 }
 
 .description{
-    width: 400px;
     color: var(--font-plum);
     font-family: 'Source Serif 4', cursive;
     font-size: 1.3rem;
-    margin-top: 30px;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
 }
 
 .skillsContainer{
@@ -255,6 +281,7 @@
         top: -400px;
     }
 
+
 }
 
 @media screen and (max-width: 1200px){
@@ -272,12 +299,17 @@
         left: 0;
     }
     
+    
 }
 
 @media screen and (max-width: 1150px){
     .portrait{
         top: -300px;
     }
+
+
+  
+  
 }
 
 @media screen and (max-width: 1000px){
@@ -304,22 +336,35 @@
     .portrait{
         top: -220px;
     }
+
+
+
+    .subTitle{
+        font-size: 1.3rem;
+    }
+
+ 
+  
+
+    .description{
+        font-size: 1rem;
+    }
+
+    .language_btn{
+
+        font-size: 1.3rem;
+    }
+
+  
 }
 
 @media screen and (max-width: 980px){
-
-    .andContainer{
-        top: 50px;
-    }
-
-    .subTitle{
-        width: 400px;
-    }
 
     .skillsContainer{
         margin: 0;
         margin-top: 4px;
     }
+
 }
 
 
@@ -338,6 +383,14 @@
     }
 
 
+    .languageButtonsContainer{
+        right: 5px;
+
+    }
+
+    .language_btn{
+        margin: 0px 8px;
+    }
  
 }
 
@@ -387,17 +440,28 @@
         padding: 0;
     }
 
+    .languageButtonsContainer{
+        right: 10px;
+        top: 5px;
+        
+    }
 
+    .language_btn{
+        margin: 0px 10px;
+    }
+
+
+  
  
 }
 
 @media screen and (max-width: 770px){
-    .andContainer{
-        top: 5px;
-    }
+ 
     .portrait{
         top: -150px;
     }
+
+  
 }
 
 
@@ -425,8 +489,15 @@
  
 
 
+    .languageButtonsContainer{
+        right: 10px;
+        top: 6px;
+        
+    }
+
     .language_btn{
         font-size: 1.3rem;
+
     }
 
     .navigationContainer{
@@ -434,10 +505,17 @@
         /*border: 2px solid gold;*/
     }
 
+   
+
 
     
+  
+    .subTitle{
+        font-size: 1rem;
+    }
+
     .description{
-        width: 200px;
+        font-size: 0.9rem;
     }
 
 
@@ -447,7 +525,6 @@
         top: -90px;
     }
   
-
  
 }
 
@@ -478,12 +555,20 @@
     }
 
 
+    .languageButtonsContainer{
+ 
+        top: 15px;
+    }
 
+    .language_btn{
+        margin: 0px 13px;
+    }
 
 
     .portrait{
         top: 0px;
     }
+
    
   
   
@@ -492,23 +577,8 @@
 @media screen and (max-width: 400px){
 
     .navigationContainer ul li{
-        font-size: 0.8rem;
-        margin: 0px 10px;
-        
-    }
-
-    .subTitle{
-        width: 300px;
-        font-size: 1.5rem;
-    }
-
-    .description{
-        font-size: 1.2rem;
-    }
-
-    .andContainer{
-        top: 0px;
-        font-size: 6rem;
+        font-size: 0.9rem;
+        margin: 0px 15px;
     }
 
     
@@ -516,14 +586,35 @@
         height: 30px;
         width: 40px;
     }
+    .language_btn{
+        margin: 0px 13px;
+    }
 
 
+    .subRow {
+        padding: 20px 4px;
+        bottom: 0px;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    }
+   
 
     .navigationContainer{
-
         margin: 0;
         position: relative;
-        top: -1px;
+        top: 20px;
+
+    }
+
+    .portrait{
+        top: 20px;
+    
     }
     
+}
+
+@media screen and (max-width: 360px){
+    .subRow {
+        bottom: 10px;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    }
 }

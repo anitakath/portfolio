@@ -176,15 +176,15 @@ const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, }) =
                        </ul>
                    </div>
                   
-                   <MenuButton isHovered={isHovered} setIsHovered={setIsHovered}/>
+                 
                  
                    {/* Sprachumschaltung */}
-                   {isHovered && (
+                   
                     <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: isHovered ? 1 : 0 }}
+                        initial={{ opacity: 1 }}
+                        animate={{ opacity: isHovered ? 1 : 1 }}
                         transition={{ duration: 0.5 }} 
-                        style={{ position: 'absolute', right: '15px', top:'65px', backgroundColor: 'white' }}
+                        className={styles.languageButtonsContainer}
                     >
                         {Object.keys(languageMap).map((lang) => (
                             <button key={lang} onClick={() => updateLanguage(lang)} className={styles.language_btn}>
@@ -193,7 +193,7 @@ const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, }) =
                             </button>
                         ))}
                         </motion.div>
-                   )}
+                
                </div>
         </div>
 
@@ -205,13 +205,13 @@ const Header = ({ showMobileMenu, setShowMobileMenu, openMobileMenuHandler, }) =
                <div className={styles.gradientOverlay}></div> 
                <div className={styles.innerContextContainer}>
 
-                <div className='md:p-12 md:w-6/12 mt-10 relative top-10 left-4'>
+                <div className={styles.subRow}>
                     <h2 className={styles.subTitle}> {headerInformation.subTitle} </h2>
                     {/* CREATE DYNAMIC &  !!*/}
                     <div className={`${styles.andContainer} ${isVisible ? styles.visible : styles.hidden}`}>
                         & 
                     </div>
-                    <h1 className={styles.description}> {headerInformation.description}</h1>
+                    <p className={styles.description}> {headerInformation.description}</p>
                 </div>
                
                </div>
