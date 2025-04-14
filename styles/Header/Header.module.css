@@ -537,7 +537,7 @@
 
 
     .header_space{
-        height: 14vh;
+        height: 13vh;
     }
 
     .title_container{
@@ -578,10 +578,13 @@
 
     .navigationContainer ul li{
         font-size: 0.9rem;
-        margin: 0px 15px;
+        margin: 0px 15px -15px 15px;
+   
     }
 
+
     
+
     .skillsDiv{
         height: 30px;
         width: 40px;

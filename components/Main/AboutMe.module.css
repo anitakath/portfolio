@@ -315,12 +315,17 @@
         top: -200px;
     }
 
+
 }
 
 
 @media screen and (max-width: 500px){
     .cardImageAnne{
         top: -170px;
+    }
+
+    .aboutmeContainer {
+        margin-top: 15px;
     }
 
 }
@@ -331,6 +336,9 @@
         top: -120px;
     }
 
+    .aboutmeContainer {
+        margin-top: 20px;
+    }
 }
 
 
