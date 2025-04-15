@@ -41,7 +41,15 @@ const Portfolio = () => {
    /* SPANISH: "¡Se requiere contraseña!"*/
   }
 
-  console.log(portfolioData )
+  console.log(portfolioData)
+
+  let info =" ";
+
+  if(currentLanguage === "GERMAN"){
+    info = "Weitere Projekte folgen ... 💜"
+  } else if(currentLanguage === "ENGLISH"){
+    info="More projects to follow ... 💜"
+  }
 
   return (
     <div className="sub_container" id="portfolio">
@@ -51,7 +59,7 @@ const Portfolio = () => {
           {portfolioData && portfolioData.map((item) => (
             <div key={item.id} className="flex flex-col">
               <div className={styles.portfolio_item_header}>
-                <h2 className={styles.item_title}>{item.title} </h2>
+                <h2 className={styles.item_title} onClick={() => handleToggle(item.id)} >{item.title} </h2>
 
                 <button 
                   className={styles.item_toggleButton} 
@@ -107,7 +115,7 @@ const Portfolio = () => {
             </div>
           ))}
         </div>
-        <h1 className="my-4"> Weitere Projekte folgen ... 💜 </h1>
+        <h1 className="my-4"> {info} </h1>
       </div>
     </div>
   );

@@ -9,7 +9,7 @@
     cursor: pointer;
     transition: 0.2s ease;
     position: relative;
-    top: -3px;
+    top: -1px;
 }
 
 
@@ -24,3 +24,5 @@
         right: -10px;
     }
  }
+
+ 

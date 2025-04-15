@@ -312,15 +312,22 @@
     .cardImageAnne{
         top: -150px;
     }
+
+    
   
 
    
 }
 
+@media screen and (max-width: 500px){
+    .aboutmeContainer {
+        margin-top: 30px;
+    
+    }
+}
 
 @media screen and (max-width: 400px){
     .cardImageAnne{
-        border: 2px solid red;
         top: -120px;
     }
 

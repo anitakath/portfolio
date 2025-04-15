@@ -9,6 +9,7 @@
   --foreground-light: rgba(136, 54, 119, 0.2);
   --font-light: #E1E5EE;
   --font-dark: #605856;
+  --font-plum_opaque: hsl(312, 43%, 37%);
   --font-plum: hsl(312, 43%, 37%);
   --font-plum-opacity: rgba(135, 54, 119, 0.1);
   --font-plum-light: rgba(222, 171, 211, 0.5);
