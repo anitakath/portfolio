@@ -14,7 +14,7 @@
 
 .modalContent {
     width: 90%;
-    height: 90%;
+    height: auto;
     padding: 10px;
     position: relative;
     font-size: 1rem;
@@ -44,7 +44,8 @@
 }
 
 
-
-.detailedInformationsContainer{
-    /*border: 2px solid gold;*/
+@media screen and (max-width: 600px){
+    .modalContent{
+        width: 100%;
+    }
 }

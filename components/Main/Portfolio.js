@@ -10,6 +10,7 @@ import { faDownLeftAndUpRightToCenter } from "@fortawesome/free-solid-svg-icons"
 import { motion } from "framer-motion";
 //CUSTOM HOOKS
 import useSkills from "@/custom-hooks/useSkills";
+
 const Portfolio = () => {
   const currentLanguage = useSelector((state) => state.language.currentLanguage);
   const [portfolioData, setPortfolioData] = useState([]);
@@ -23,8 +24,7 @@ const Portfolio = () => {
     }
   }, [currentLanguage, data.portfolio]);
 
-  const handleToggle = (id) => {
-
+  const handleToggle = (id, itemImage) => {
     // Überprüfen, ob die ID bereits im hideProjectIds-Array vorhanden ist
     if (hideProjectIds.includes(id)) {
       // Wenn ja, entferne sie
@@ -32,6 +32,15 @@ const Portfolio = () => {
     } else {
       // Wenn nein, füge sie hinzu
       setHideProjectIds([...hideProjectIds, id]);
+    }
+    if (itemImage) {
+      setTimeout(() => {
+        const element = document.getElementById(itemImage);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+      }, 100); // Warten Sie 100 Millisekunden ab 
     }
   };
 
@@ -41,7 +50,6 @@ const Portfolio = () => {
    /* SPANISH: "¡Se requiere contraseña!"*/
   }
 
-  console.log(portfolioData)
 
   let info =" ";
 
@@ -59,11 +67,11 @@ const Portfolio = () => {
           {portfolioData && portfolioData.map((item) => (
             <div key={item.id} className="flex flex-col">
               <div className={styles.portfolio_item_header}>
-                <h2 className={styles.item_title} onClick={() => handleToggle(item.id)} >{item.title} </h2>
+                <h2 className={styles.item_title} onClick={() => handleToggle(item.id, item.image)} >{item.title} </h2>
 
                 <button 
                   className={styles.item_toggleButton} 
-                  onClick={() => handleToggle(item.id)} 
+                  onClick={() => handleToggle(item.id, item.image)} 
                 >
                   {hideProjectIds.includes(item.id) ? (
                     <FontAwesomeIcon icon={faDownLeftAndUpRightToCenter} />
@@ -95,6 +103,7 @@ const Portfolio = () => {
             exit={{ opacity: 0, y: 20 }} // Ausgangsposition (unsichtbar und leicht nach unten)
             transition={{ duration: 0.5 }} // Dauer der Animation
             className={styles.item_imageDiv}
+            
           >
             {item.images && item.images[0] && (
                 <Link href={item.detailsPath}>
@@ -103,9 +112,10 @@ const Portfolio = () => {
                         src={item.image}
                         alt="portfolio image" // Alternativtext für jedes Bild
                         layout="responsive"
-                        width={800}
-                        height={800}
+                        width={600}
+                        height={600}
                         className={styles.image}
+                        id={item.image}
                     />
                 </Link>
             )}
